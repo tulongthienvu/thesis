@@ -1,0 +1,32 @@
+\begin{thenomenclature} 
+
+ \nomgroup{A}
+
+  \item [{$3DS-HONV:$}]\begingroup 3D Spherical-Histogram of Oriented Nomal Vectors\nomeqref {0}
+		\nompageref{xiii}
+  \item [{$BoF:$}]\begingroup Bag of Feature - Giỏ đặc trưng\nomeqref {0}
+		\nompageref{xiii}
+  \item [{$Confusion:$}]\begingroup Ma trận nhầm lẫn - dùng để mô tả số kết quả phân loại đúng và sai tại mỗi lớp(class)\nomeqref {0}
+		\nompageref{xiii}
+  \item [{$DTW:$}]\begingroup Dynamic Time Warping - thuật toán so khớp các chuỗi tín hiệu tương tự theo thời gian\nomeqref {0}
+		\nompageref{xiii}
+  \item [{$HOF:$}]\begingroup Histogram of Optical Flows - Lược đồ phân bố 1luồng chuyển động\nomeqref {0}
+		\nompageref{xiii}
+  \item [{$HOG:$}]\begingroup Histogram of Oriented Gradients - Lược đồ phân bố cường độ hướng biến thiên độ xám\nomeqref {0}
+		\nompageref{xiii}
+  \item [{$HONV:$}]\begingroup Histogram of Oriented Normal Vectors - Lược đồ phân bố hướng của các vector pháp tuyến\nomeqref {0}
+		\nompageref{xiii}
+  \item [{$kNN:$}]\begingroup k Nearest Neighbors - k láng giềng gần nhất\nomeqref {0}
+		\nompageref{xiii}
+  \item [{$R.O.I: $}]\begingroup Region of Interest - Vùng ứng viên hay Vùng quan tâm\nomeqref {0}
+		\nompageref{xiii}
+  \item [{$SC:$}]\begingroup Sparse Coding\nomeqref {0}
+		\nompageref{xiii}
+  \item [{$STIP:$}]\begingroup Space-Time Interest Points - Điểm trọng yếu không-thời gian\nomeqref {0}
+		\nompageref{xiii}
+  \item [{$SVM:$}]\begingroup Support Vector Machine - Bô phân lớp Máy hỗ trợ vector\nomeqref {0}
+		\nompageref{xiii}
+  \item [{$TGMT: $}]\begingroup Thị giác máy tính\nomeqref {0}
+		\nompageref{xiii}
+
+\end{thenomenclature}

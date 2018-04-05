@@ -1,0 +1,16 @@
+\glossarysection[\glossarytoctitle]{\glossarytitle}\glossarypreamble
+\begin{theglossary}\glossaryheader
+\glsgroupheading{glssymbols}\relax \glsresetentrylist %
+\glossaryentryfield{acr_early_fusion}{\glsnamefont{$A-B\hspace {0.2in}$}}{Phép kết hợp trước 2 vector đặc trưng A và B (early fusion)}{\relax }{\glossaryentrynumbers{\relax 
+		\setentrycounter[]{page}\glsnumberformat{29}}}%
+\glossaryentryfield{acr_late_fusion}{\glsnamefont{$A/B\hspace {0.2in}$}}{Phép kết hợp trễ 2 vector đặc trưng A và B (late fusion)}{\relax }{\glossaryentrynumbers{\relax 
+		\setentrycounter[]{page}\glsnumberformat{29}}}%
+\glossaryentryfield{acr_concate}{\glsnamefont{$\odot \hspace {0.2in}$}}{Phép nối 2 vector đặc trưng}{\relax }{\glossaryentrynumbers{\relax 
+		\setentrycounter[]{page}\glsnumberformat{30}\delimN 
+		\setentrycounter[]{page}\glsnumberformat{35}\delimN 
+		\setentrycounter[]{page}\glsnumberformat{50}}}%
+\glossaryentryfield{acr_hist}{\glsnamefont{$hist\hspace {0.1in}$}}{Lược đồ phân bố (histogram)}{\relax }{\glossaryentrynumbers{\relax 
+		\setentrycounter[]{page}\glsnumberformat{35}}}%
+\glossaryentryfield{acr_st}{\glsnamefont{$s.t.\hspace {0.1in}$}}{thỏa điều kiện (subject to)}{\relax }{\glossaryentrynumbers{\relax 
+		\setentrycounter[]{page}\glsnumberformat{35}}}%
+\end{theglossary}\glossarypostamble

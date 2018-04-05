@@ -1,0 +1,48 @@
+\BOOKMARK [0][]{chapter*.1}{LI CAM N}{}% 1
+\BOOKMARK [0][]{chapter*.1}{\320 CNG CHI TIT}{}% 2
+\BOOKMARK [0][]{chapter*.2}{T\323M TT}{}% 3
+\BOOKMARK [0][]{chapter*.2}{MUC LUC}{}% 4
+\BOOKMARK [0][]{chapter*.2}{DANH MUC H\314NH ANH}{}% 5
+\BOOKMARK [0][]{chapter*.2}{DANH MUC BANG}{}% 6
+\BOOKMARK [0][]{chapter.1}{1 Gii thiu }{}% 7
+\BOOKMARK [1][]{section.1.1}{1.1 \320ng lc}{chapter.1}% 8
+\BOOKMARK [1][]{section.1.2}{1.2 Ph\341t biu b\340i to\341n}{chapter.1}% 9
+\BOOKMARK [2][]{subsection.1.2.1}{1.2.1 Gii han b\340i to\341n }{section.1.2}% 10
+\BOOKMARK [2][]{subsection.1.2.2}{1.2.2 C\341c th\341ch thc}{section.1.2}% 11
+\BOOKMARK [2][]{subsection.1.2.3}{1.2.3 C\341c b\340i to\341n con }{section.1.2}% 12
+\BOOKMARK [1][]{section.1.3}{1.3 \320\363ng g\363p cua lun van}{chapter.1}% 13
+\BOOKMARK [1][]{section.1.4}{1.4 T chc cua kh\363a lun}{chapter.1}% 14
+\BOOKMARK [0][]{chapter.2}{2 C\341c nghi\352n cu li\352n quan v\340 Hng tip cn}{}% 15
+\BOOKMARK [1][]{section.2.1}{2.1 S lc v 3D Camera}{chapter.2}% 16
+\BOOKMARK [2][]{subsection.2.1.1}{2.1.1 Stereo Camera}{section.2.1}% 17
+\BOOKMARK [2][]{subsection.2.1.2}{2.1.2 TOF Camera}{section.2.1}% 18
+\BOOKMARK [2][]{subsection.2.1.3}{2.1.3 Kinect Camera}{section.2.1}% 19
+\BOOKMARK [1][]{section.2.2}{2.2 C\341c phng ph\341p r\372t tr\355ch c trng cp thp da tr\352n th\364ng tin ni bt \( Salience-based Low-level Features\)}{chapter.2}% 20
+\BOOKMARK [1][]{section.2.3}{2.3 C\341c phng ph\341p biu din c chi/ h\340nh ng cua ngi \(Human Gesture/Action Representation\)}{chapter.2}% 21
+\BOOKMARK [2][]{subsection.2.3.1}{2.3.1 Dang biu din tr\352n th\364ng tin chui d liu \(Sequence-based \)}{section.2.3}% 22
+\BOOKMARK [2][]{subsection.2.3.2}{2.3.2 Dang biu din tr\352n khi th t\355ch \(Volume-based\)}{section.2.3}% 23
+\BOOKMARK [2][]{subsection.2.3.3}{2.3.3 Dang biu din tr\352n th\364ng tin quy ao chuyn ng\(Trajectory-based\)}{section.2.3}% 24
+\BOOKMARK [2][]{subsection.2.3.4}{2.3.4 Dang biu din da tr\352n c trng to\340n cuc-cuc b}{section.2.3}% 25
+\BOOKMARK [1][]{section.2.4}{2.4 Kt chng}{chapter.2}% 26
+\BOOKMARK [0][]{chapter.3}{3 C\341c phng ph\341p tr\355ch chon v\340 Biu din c trng}{}% 27
+\BOOKMARK [1][]{section.3.1}{3.1 \320c trng r\372t tr\355ch tr\352n video m\340u}{chapter.3}% 28
+\BOOKMARK [1][]{section.3.2}{3.2 \320c trng r\372t tr\355ch tr\352n video \040s\342u}{chapter.3}% 29
+\BOOKMARK [1][]{section.3.3}{3.3 Kt chng}{chapter.3}% 30
+\BOOKMARK [0][]{chapter.4}{4 M\364 h\354nh nhn dang h\340nh ng - c chi tr\352n video}{}% 31
+\BOOKMARK [1][]{section.4.1}{4.1 Tng quan}{chapter.4}% 32
+\BOOKMARK [1][]{section.4.2}{4.2 M\364 h\354nh nhn dang trong giai oan ngoai tuyn}{chapter.4}% 33
+\BOOKMARK [1][]{section.4.3}{4.3 M\364 h\354nh nhn dang trong giai oan trc tuyn}{chapter.4}% 34
+\BOOKMARK [1][]{section.4.4}{4.4 Kt chng}{chapter.4}% 35
+\BOOKMARK [0][]{chapter.5}{5 Thc nghim}{}% 36
+\BOOKMARK [1][]{section.5.1}{5.1 Gii thiu tp d liu}{chapter.5}% 37
+\BOOKMARK [1][]{section.5.2}{5.2 Kt qua thc nghim}{chapter.5}% 38
+\BOOKMARK [2][]{subsection.5.2.1}{5.2.1 Tr\352n video \040s\342u}{section.5.2}% 39
+\BOOKMARK [2][]{subsection.5.2.2}{5.2.2 Tr\352n video m\340u + \040s\342u}{section.5.2}% 40
+\BOOKMARK [2][]{subsection.5.2.3}{5.2.3 Gii thiu chng tr\354nh c\340i t}{section.5.2}% 41
+\BOOKMARK [1][]{section.5.3}{5.3 Kt chng}{chapter.5}% 42
+\BOOKMARK [0][]{chapter.6}{6 Kt lun v\340 Hng ph\341t trin}{}% 43
+\BOOKMARK [1][]{section.6.1}{6.1 Kt lun}{chapter.6}% 44
+\BOOKMARK [1][]{section.6.2}{6.2 Hng ph\341t trin}{chapter.6}% 45
+\BOOKMARK [2][]{subsection.6.2.1}{6.2.1 Nhn dang h\340nh ng c\363 tng t\341c \(Human interaction recognition\)}{section.6.2}% 46
+\BOOKMARK [2][]{subsection.6.2.2}{6.2.2 Nhn dang hoat ng theo nh\363m \(Group activity analysis\)}{section.6.2}% 47
+\BOOKMARK [2][]{subsection.6.2.3}{6.2.3 Khai th\341c th\364ng tin ngoai canh}{section.6.2}% 48
