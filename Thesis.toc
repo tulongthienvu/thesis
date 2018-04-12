@@ -4,7 +4,7 @@
 \contentsline {chapter}{DANH M\IeC {\d U}C B\IeC {\h A}NG}{v}{chapter*.1}
 \contentsline {chapter}{\numberline {1}Gi\IeC {\'\ohorn }i Thi\IeC {\d \ecircumflex }u }{1}{chapter.1}
 \contentsline {chapter}{\numberline {2}Ki\IeC {\'\ecircumflex }n Th\IeC {\'\uhorn }c N\IeC {\`\ecircumflex }n T\IeC {\h a}ng}{6}{chapter.2}
-\contentsline {section}{\numberline {2.1}``Sparse Coding''}{6}{section.2.1}
+\contentsline {section}{\numberline {2.1}``M\IeC {\^o} h\IeC {\`\i }nh ng\IeC {\^o}n ng\IeC {\~\uhorn } (Language modeling)''}{6}{section.2.1}
 \contentsline {section}{\numberline {2.2}``Sparse Auto-Encoders''}{10}{section.2.2}
 \contentsline {section}{\numberline {2.3}``Softmax Regression''}{12}{section.2.3}
 \contentsline {subsection}{\numberline {2.3.1}H\IeC {\`a}m d\IeC {\d \uhorn } \IeC {\dj }o\IeC {\'a}n c\IeC {\h u}a ``Softmax Regression''}{12}{subsection.2.3.1}

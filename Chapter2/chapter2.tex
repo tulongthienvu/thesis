@@ -6,10 +6,21 @@
 \fi
 
 \begin{quote}
-\textit{Trong chương này, đầu tiên chúng tôi trình bày về thuật toán học đặc trưng không giám sát ``Sparse Coding''. Sau đó, chúng tôi trình bày về ``Sparse Auto-Encoders'' (SAEs) và so sánh với ``Sparse Coding'' để thấy được sự kết nối giữa SAEs và ``Sparse Coding'' cũng như là những điểm lợi của SAEs so với ``Sparse Coding''; những điểm lợi này là lý do để chúng tôi tập trung nghiên cứu SAEs. Ngoài ra, chúng tôi cũng trình bày về ``Softmax Regression'' - mô hình phân lớp mà chúng tôi sẽ sử dụng để đánh giá các đặc trưng học được, và thuật toán ``Stochastic Gradient Descent'' - thuật toán mà chúng tôi sẽ sử dụng để cực tiểu hóa hàm chi phí của SAEs cũng như của ``Softmax Regression''. Chương này, đặc biệt là phần về ``Sparse Coding'' và SAEs, cung cấp những kiến thức nền tảng để có thể hiểu rõ về những đề xuất của chúng tôi ở chương kế tiếp.}
+
+Trong chương này, chúng tôi sẽ trình bày những kiến thức nền tảng trên ba chủ đề chính bao gồm \textit{Mô hình ngôn ngữ (language modeling)} là một công cụ được sử dụng rộng rãi trong lĩnh vực dịch máy nói riêng và xử lý ngôn ngữ tự nhiên nói chung. Với một câu cho trước, nó cung cấp một xác suất thể hiện sự khả dĩ (\textit{likelihood}) của câu đó. Mô hình ngôn ngữ có thể tìm được từ tiếp theo từ một chuỗi từ hoặc tạo ra một chuỗi từ mới. Tiếp theo, chúng tôi sẽ nói sơ lược về \textit{Mạng nơ-ron hồi quy (Recurrent neural network)} và \textit{Long short-term memory}, một bản nâng cấp của Mạng nơ-ron hồi quy để giải quyết vấn đề \textit{long term dependencies} mà mạng nơ-ron hồi quy truyền thống gặp phải. Chúng tôi cũng trình bày về Mô hình dịch máy nơ-ron dựa trên kiến trúc \textit{Sequences to sequences} với cốt lõi là Mạng nơ-ron hồi quy. Những kiến thức được trình bày trong chương này cung cấp những nền tảng cũng như các vấn đề mà Mô hình dịch máy nơ-ron gặp phải để đi đến chương tiếp theo về cơ chế \textit{Attention} trong dịch máy Nơ-ron.
+
 \end{quote}
-\section{``Sparse Coding''}
-``Sparse Coding'' được đề xuất lần đầu tiên trong lĩnh vực khoa học nơ-ron (neuroscience) để mô hình vùng vỏ não thị giác V1 \cite{olshausen1996emergence}. ``Sparse Coding'' sử dụng \emph{sự hiểu biết trước (prior) về tính thưa của các yếu tố giải thích ẩn} (với mỗi mẫu dữ liệu quan sát được, chỉ có một số ít các yếu tố giải thích trong tập lớn các yếu tố giải thích) để phân tách chúng. Mục tiêu của ``Sparse Coding'' là tìm ra tập các véc-tơ cơ sở (tập các yếu tố giải thích) sao cho mỗi mẫu dữ liệu có thể được ``giải thích'' bởi một số ít các véc-tơ cơ sở (chỉ có một số ít các véc-tơ cơ sở có hệ số khác 0, hay nói một cách khác, véc-tơ hệ số ``thưa''). Lưu ý là số chiều của không gian đặc trưng (số lượng véc-tơ cơ sở tìm được) có thể lớn hơn số chiều của không gian ban đầu; tính chất này được gọi là ``over-complete''.
+\section{``Mô hình ngôn ngữ (Language modeling)''}
+Mô hình ngôn ngữ ban đầu được sử dụng trong các hệ thống nhận dạng tiếng nói, ngày nay nói được sử dụng rộng rãi trong nhiều tác vụ khác của xử lý ngôn ngữ tự nhiên. Một mô hình ngôn ngữ được định nghĩa là một phân bố xác suất trên tập các chuỗi từ (câu). Cụ thể hơn, cho trước một từ từ vựng $V$ là tập tất cả các từ khác nhau trong một ngôn ngữ, ví dụ, trong tiếng Việt ta có\\\\
+\centerline{$V$ = \{tôi, ăn, xe, đẹp, gà, vịt, qua,...\}}\\\\
+Giả sử tập $V$ là hữu hạn, một \textit{câu} $S$ được định nghĩa là chuỗi các từ
+
+$$S = w_1w_2...w_n$$
+Trong đó $n \geq 1$ và $w_i \in V$ với $i \in {1...n}$. Gọi $D$ là tập bao gồm $N$ câu trong sao cho
+
+$$D=\{S^1, S^2,...,S^N\}$$
+Với mỗi câu $S^n$ mang chiều dài $n$ có dạng:
+$$S^n=w^n_1, w^n_2,...,w^n_{T^n}$$
 
 Một cách cụ thể, với một véc-tơ đầu vào $x$ có kích thước $D_x \times 1$, ``Sparse Coding'' tối thiểu hóa hàm chi phí sau sau:
 \begin{equation} \label{eq_SparseCoding}
