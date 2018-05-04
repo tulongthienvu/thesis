@@ -1,18 +1,19 @@
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {1.1}{\ignorespaces Minh h\IeC {\d o}a v\IeC {\`\ecircumflex } m\IeC {\d \ocircumflex }t bi\IeC {\h \ecircumflex }u di\IeC {\~\ecircumflex }n \IeC {\dj }\IeC {\d \abreve }c tr\IeC {\uhorn }ng t\IeC {\'\ocircumflex }t}}{2}{figure.caption.2}
+\contentsline {figure}{\numberline {1.1}{\ignorespaces L\IeC {\d i}ch s\IeC {\h \uhorn } t\IeC {\'o}m t\IeC {\'\abreve }t c\IeC {\h u}a D\IeC {\d i}ch m\IeC {\'a}y}}{2}{figure.caption.2}
+\contentsline {figure}{\numberline {1.2}{\ignorespaces Minh h\IeC {\d o}a v\IeC {\`\ecircumflex } m\IeC {\d \ocircumflex }t bi\IeC {\h \ecircumflex }u di\IeC {\~\ecircumflex }n \IeC {\dj }\IeC {\d \abreve }c tr\IeC {\uhorn }ng t\IeC {\'\ocircumflex }t}}{5}{figure.caption.3}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {2.1}{\ignorespaces Minh h\IeC {\d o}a c\IeC {\'a}c \IeC {\dj }\IeC {\d \abreve }c tr\IeC {\uhorn }ng h\IeC {\d o}c \IeC {\dj }\IeC {\uhorn }\IeC {\d \ohorn }c c\IeC {\h u}a ``Sparse Coding'' khi hu\IeC {\'\acircumflex }n luy\IeC {\d \ecircumflex }n tr\IeC {\^e}n \IeC {\h a}nh t\IeC {\d \uhorn } nhi\IeC {\^e}n}}{9}{figure.caption.3}
-\contentsline {figure}{\numberline {2.2}{\ignorespaces Minh h\IeC {\d o}a ``Auto-Encoders''\relax }}{11}{figure.caption.4}
-\contentsline {figure}{\numberline {2.3}{\ignorespaces So s\IeC {\'a}nh gi\IeC {\~\uhorn }a ``Sparse Coding'' v\IeC {\`a} SAEs}}{12}{figure.caption.5}
-\contentsline {figure}{\numberline {2.4}{\ignorespaces Minh h\IeC {\d o}a qu\IeC {\'a} tr\IeC {\`\i }nh ch\IeC {\d a}y c\IeC {\h u}a thu\IeC {\d \acircumflex }t to\IeC {\'a}n BGD}}{15}{figure.caption.6}
-\contentsline {figure}{\numberline {2.5}{\ignorespaces Minh h\IeC {\d o}a chi\IeC {\'\ecircumflex }n l\IeC {\uhorn }\IeC {\d \ohorn }c ``d\IeC {\`\uhorn }ng s\IeC {\'\ohorn }m''}}{20}{figure.caption.7}
+\contentsline {figure}{\numberline {2.1}{\ignorespaces Minh h\IeC {\d o}a c\IeC {\'a}c \IeC {\dj }\IeC {\d \abreve }c tr\IeC {\uhorn }ng h\IeC {\d o}c \IeC {\dj }\IeC {\uhorn }\IeC {\d \ohorn }c c\IeC {\h u}a ``Sparse Coding'' khi hu\IeC {\'\acircumflex }n luy\IeC {\d \ecircumflex }n tr\IeC {\^e}n \IeC {\h a}nh t\IeC {\d \uhorn } nhi\IeC {\^e}n}}{12}{figure.caption.4}
+\contentsline {figure}{\numberline {2.2}{\ignorespaces Minh h\IeC {\d o}a ``Auto-Encoders''\relax }}{14}{figure.caption.5}
+\contentsline {figure}{\numberline {2.3}{\ignorespaces So s\IeC {\'a}nh gi\IeC {\~\uhorn }a ``Sparse Coding'' v\IeC {\`a} SAEs}}{15}{figure.caption.6}
+\contentsline {figure}{\numberline {2.4}{\ignorespaces Minh h\IeC {\d o}a qu\IeC {\'a} tr\IeC {\`\i }nh ch\IeC {\d a}y c\IeC {\h u}a thu\IeC {\d \acircumflex }t to\IeC {\'a}n BGD}}{18}{figure.caption.7}
+\contentsline {figure}{\numberline {2.5}{\ignorespaces Minh h\IeC {\d o}a chi\IeC {\'\ecircumflex }n l\IeC {\uhorn }\IeC {\d \ohorn }c ``d\IeC {\`\uhorn }ng s\IeC {\'\ohorn }m''}}{23}{figure.caption.8}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {3.1}{\ignorespaces Minh h\IeC {\d o}a h\IeC {\`a}m $KL(\rho \delimiter "026B30D \mathaccentV {bar}016{h}_j)$ v\IeC {\'\ohorn }i $\rho =0.2$}}{24}{figure.caption.8}
-\contentsline {figure}{\numberline {3.2}{\ignorespaces So s\IeC {\'a}nh gi\IeC {\~\uhorn }a h\IeC {\`a}m sai bi\IeC {\d \ecircumflex }t KL v\IeC {\`a} h\IeC {\`a}m l\IeC {\~\ocircumflex }i b\IeC {\`\i }nh ph\IeC {\uhorn }\IeC {\ohorn }ng}}{27}{figure.caption.9}
-\contentsline {figure}{\numberline {3.3}{\ignorespaces Minh h\IeC {\d o}a SRAEs}}{32}{figure.caption.10}
-\contentsline {figure}{\numberline {3.4}{\ignorespaces Minh h\IeC {\d o}a m\IeC {\d \abreve }t phi tuy\IeC {\'\ecircumflex }n m\IeC {\`a} SRAEs h\IeC {\d o}c \IeC {\dj }\IeC {\uhorn }\IeC {\d \ohorn }c}}{33}{figure.caption.11}
+\contentsline {figure}{\numberline {3.1}{\ignorespaces Minh h\IeC {\d o}a h\IeC {\`a}m $KL(\rho \delimiter "026B30D \mathaccentV {bar}016{h}_j)$ v\IeC {\'\ohorn }i $\rho =0.2$}}{27}{figure.caption.9}
+\contentsline {figure}{\numberline {3.2}{\ignorespaces So s\IeC {\'a}nh gi\IeC {\~\uhorn }a h\IeC {\`a}m sai bi\IeC {\d \ecircumflex }t KL v\IeC {\`a} h\IeC {\`a}m l\IeC {\~\ocircumflex }i b\IeC {\`\i }nh ph\IeC {\uhorn }\IeC {\ohorn }ng}}{30}{figure.caption.10}
+\contentsline {figure}{\numberline {3.3}{\ignorespaces Minh h\IeC {\d o}a SRAEs}}{35}{figure.caption.11}
+\contentsline {figure}{\numberline {3.4}{\ignorespaces Minh h\IeC {\d o}a m\IeC {\d \abreve }t phi tuy\IeC {\'\ecircumflex }n m\IeC {\`a} SRAEs h\IeC {\d o}c \IeC {\dj }\IeC {\uhorn }\IeC {\d \ohorn }c}}{36}{figure.caption.12}
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {4.1}{\ignorespaces M\IeC {\d \ocircumflex }t s\IeC {\'\ocircumflex } \IeC {\h a}nh m\IeC {\~\acircumflex }u c\IeC {\h u}a b\IeC {\d \ocircumflex } d\IeC {\~\uhorn } li\IeC {\d \ecircumflex }u MNIST\relax }}{35}{figure.caption.12}
-\contentsline {figure}{\numberline {4.2}{\ignorespaces So s\IeC {\'a}nh gi\IeC {\~\uhorn }a SGD v\IeC {\'\ohorn }i SW-SGD}}{37}{figure.caption.13}
-\contentsline {figure}{\numberline {4.3}{\ignorespaces So s\IeC {\'a}nh gi\IeC {\~\uhorn }a c\IeC {\'a}c b\IeC {\d \ocircumflex } l\IeC {\d o}c h\IeC {\d o}c \IeC {\dj }\IeC {\uhorn }\IeC {\d \ohorn }c b\IeC {\h \ohorn }i SGD v\IeC {\'\ohorn }i SW-SGD}}{38}{figure.caption.14}
+\contentsline {figure}{\numberline {4.1}{\ignorespaces M\IeC {\d \ocircumflex }t s\IeC {\'\ocircumflex } \IeC {\h a}nh m\IeC {\~\acircumflex }u c\IeC {\h u}a b\IeC {\d \ocircumflex } d\IeC {\~\uhorn } li\IeC {\d \ecircumflex }u MNIST\relax }}{38}{figure.caption.13}
+\contentsline {figure}{\numberline {4.2}{\ignorespaces So s\IeC {\'a}nh gi\IeC {\~\uhorn }a SGD v\IeC {\'\ohorn }i SW-SGD}}{40}{figure.caption.14}
+\contentsline {figure}{\numberline {4.3}{\ignorespaces So s\IeC {\'a}nh gi\IeC {\~\uhorn }a c\IeC {\'a}c b\IeC {\d \ocircumflex } l\IeC {\d o}c h\IeC {\d o}c \IeC {\dj }\IeC {\uhorn }\IeC {\d \ohorn }c b\IeC {\h \ohorn }i SGD v\IeC {\'\ohorn }i SW-SGD}}{41}{figure.caption.15}
 \addvspace {10\p@ }
