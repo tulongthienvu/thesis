@@ -3,32 +3,32 @@
 \contentsline {chapter}{DANH M\IeC {\d U}C H\IeC {\`I}NH \IeC {\h A}NH}{iv}{chapter*.1}
 \contentsline {chapter}{DANH M\IeC {\d U}C B\IeC {\h A}NG}{v}{chapter*.1}
 \contentsline {chapter}{\numberline {1}Gi\IeC {\'\ohorn }i Thi\IeC {\d \ecircumflex }u }{1}{chapter.1}
-\contentsline {subsection}{\numberline {1.0.1}C\IeC {\'a}c ph\IeC {\uhorn }\IeC {\ohorn }ng ph\IeC {\'a}p D\IeC {\d i}ch m\IeC {\'a}y}{3}{subsection.1.0.1}
-\contentsline {subsection}{\numberline {1.0.2}D\IeC {\d i}ch m\IeC {\'a}y N\IeC {\ohorn }-ron}{3}{subsection.1.0.2}
-\contentsline {chapter}{\numberline {2}Ki\IeC {\'\ecircumflex }n Th\IeC {\'\uhorn }c N\IeC {\`\ecircumflex }n T\IeC {\h a}ng}{9}{chapter.2}
-\contentsline {section}{\numberline {2.1}``M\IeC {\^o} h\IeC {\`\i }nh ng\IeC {\^o}n ng\IeC {\~\uhorn } (Language modeling)''}{9}{section.2.1}
-\contentsline {section}{\numberline {2.2}``Sparse Auto-Encoders''}{13}{section.2.2}
-\contentsline {section}{\numberline {2.3}``Softmax Regression''}{15}{section.2.3}
-\contentsline {subsection}{\numberline {2.3.1}H\IeC {\`a}m d\IeC {\d \uhorn } \IeC {\dj }o\IeC {\'a}n c\IeC {\h u}a ``Softmax Regression''}{15}{subsection.2.3.1}
-\contentsline {subsection}{\numberline {2.3.2}T\IeC {\`\i }m c\IeC {\'a}c tham s\IeC {\'\ocircumflex } c\IeC {\h u}a h\IeC {\`a}m d\IeC {\d \uhorn } \IeC {\dj }o\IeC {\'a}n c\IeC {\h u}a ``Softmax Regression''}{16}{subsection.2.3.2}
-\contentsline {section}{\numberline {2.4}``Gradient Descent''}{17}{section.2.4}
-\contentsline {subsection}{\numberline {2.4.1}``Batch Gradient Descent''}{17}{subsection.2.4.1}
-\contentsline {subsection}{\numberline {2.4.2}``Stochastic Gradient Descent''}{20}{subsection.2.4.2}
-\contentsline {subsection}{\numberline {2.4.3}Chi\IeC {\'\ecircumflex }n l\IeC {\uhorn }\IeC {\d \ohorn }c ``d\IeC {\`\uhorn }ng s\IeC {\'\ohorn }m''}{22}{subsection.2.4.3}
-\contentsline {chapter}{\numberline {3}Sparse Rectified Auto-Encoders}{25}{chapter.3}
-\contentsline {section}{\numberline {3.1}``Sparse Rectified Auto-Encoders'' (SRAEs)}{25}{section.3.1}
-\contentsline {section}{\numberline {3.2}R\IeC {\`a}ng bu\IeC {\d \ocircumflex }c th\IeC {\uhorn }a trong SRAEs}{26}{section.3.2}
-\contentsline {subsection}{\numberline {3.2.1}Kh\IeC {\'o} kh\IeC {\u a}n c\IeC {\h u}a vi\IeC {\d \ecircumflex }c hu\IeC {\'\acircumflex }n luy\IeC {\d \ecircumflex }n SRAEs v\IeC {\'\ohorn }i chu\IeC {\h \acircumflex }n L1}{28}{subsection.3.2.1}
-\contentsline {subsection}{\numberline {3.2.2}Thu\IeC {\d \acircumflex }t to\IeC {\'a}n ``Sleep-Wake Stochastic Gradient Descent''}{31}{subsection.3.2.2}
-\contentsline {section}{\numberline {3.3}R\IeC {\`a}ng bu\IeC {\d \ocircumflex }c tr\IeC {\d o}ng s\IeC {\'\ocircumflex } trong SRAEs}{33}{section.3.3}
-\contentsline {subsection}{\numberline {3.3.1}C\IeC {\'a}ch r\IeC {\`a}ng bu\IeC {\d \ocircumflex }c tr\IeC {\d o}ng s\IeC {\'\ocircumflex } \IeC {\dj }\IeC {\`\ecircumflex } xu\IeC {\'\acircumflex }t cho SRAEs}{34}{subsection.3.3.1}
-\contentsline {chapter}{\numberline {4}C\IeC {\'a}c K\IeC {\'\ecircumflex }t Qu\IeC {\h a} Th\IeC {\'\i } Nghi\IeC {\d \ecircumflex }m}{37}{chapter.4}
-\contentsline {section}{\numberline {4.1}C\IeC {\'a}c thi\IeC {\'\ecircumflex }t l\IeC {\d \acircumflex }p th\IeC {\'\i } nghi\IeC {\d \ecircumflex }m}{37}{section.4.1}
-\contentsline {section}{\numberline {4.2}SGD v\IeC {\`a} SW-SGD}{39}{section.4.2}
-\contentsline {section}{\numberline {4.3}C\IeC {\'a}ch r\IeC {\`a}ng bu\IeC {\d \ocircumflex }c tr\IeC {\d o}ng s\IeC {\'\ocircumflex } \IeC {\dj }\IeC {\`\ecircumflex } xu\IeC {\'\acircumflex }t c\IeC {\h u}a ch\IeC {\'u}ng t\IeC {\^o}i v\IeC {\`a} c\IeC {\'a}c c\IeC {\'a}ch r\IeC {\`a}ng bu\IeC {\d \ocircumflex }c tr\IeC {\d o}ng s\IeC {\'\ocircumflex } kh\IeC {\'a}c}{42}{section.4.3}
-\contentsline {section}{\numberline {4.4}SRAEs v\IeC {\`a} c\IeC {\'a}c lo\IeC {\d a}i ``Auto-Encoders'' kh\IeC {\'a}c}{44}{section.4.4}
-\contentsline {chapter}{\numberline {5}K\IeC {\'\ecircumflex }t Lu\IeC {\d \acircumflex }n v\IeC {\`a} H\IeC {\uhorn }\IeC {\'\ohorn }ng Ph\IeC {\'a}t Tri\IeC {\h \ecircumflex }n}{46}{chapter.5}
-\contentsline {section}{\numberline {5.1}K\IeC {\'\ecircumflex }t lu\IeC {\d \acircumflex }n}{46}{section.5.1}
-\contentsline {section}{\numberline {5.2}H\IeC {\uhorn }\IeC {\'\ohorn }ng ph\IeC {\'a}t tri\IeC {\h \ecircumflex }n}{47}{section.5.2}
-\contentsline {chapter}{Ph\IeC {\d u} L\IeC {\d u}c: C\IeC {\'a}c C\IeC {\^o}ng Tr\IeC {\`\i }nh \IeC {\DJ }\IeC {\~a} C\IeC {\^o}ng B\IeC {\'\ocircumflex }}{49}{chapter*.19}
-\contentsline {chapter}{T\IeC {\`A}I LI\IeC {\d \ECIRCUMFLEX }U THAM KH\IeC {\h A}O}{60}{chapter*.20}
+\contentsline {section}{\numberline {1.1}C\IeC {\'a}c ph\IeC {\uhorn }\IeC {\ohorn }ng ph\IeC {\'a}p D\IeC {\d i}ch m\IeC {\'a}y}{3}{section.1.1}
+\contentsline {section}{\numberline {1.2}D\IeC {\d i}ch m\IeC {\'a}y N\IeC {\ohorn }-ron}{3}{section.1.2}
+\contentsline {chapter}{\numberline {2}Ki\IeC {\'\ecircumflex }n Th\IeC {\'\uhorn }c N\IeC {\`\ecircumflex }n T\IeC {\h a}ng}{6}{chapter.2}
+\contentsline {section}{\numberline {2.1}``M\IeC {\^o} h\IeC {\`\i }nh ng\IeC {\^o}n ng\IeC {\~\uhorn } (Language modeling)''}{6}{section.2.1}
+\contentsline {section}{\numberline {2.2}``Sparse Auto-Encoders''}{10}{section.2.2}
+\contentsline {section}{\numberline {2.3}``Softmax Regression''}{12}{section.2.3}
+\contentsline {subsection}{\numberline {2.3.1}H\IeC {\`a}m d\IeC {\d \uhorn } \IeC {\dj }o\IeC {\'a}n c\IeC {\h u}a ``Softmax Regression''}{12}{subsection.2.3.1}
+\contentsline {subsection}{\numberline {2.3.2}T\IeC {\`\i }m c\IeC {\'a}c tham s\IeC {\'\ocircumflex } c\IeC {\h u}a h\IeC {\`a}m d\IeC {\d \uhorn } \IeC {\dj }o\IeC {\'a}n c\IeC {\h u}a ``Softmax Regression''}{13}{subsection.2.3.2}
+\contentsline {section}{\numberline {2.4}``Gradient Descent''}{14}{section.2.4}
+\contentsline {subsection}{\numberline {2.4.1}``Batch Gradient Descent''}{14}{subsection.2.4.1}
+\contentsline {subsection}{\numberline {2.4.2}``Stochastic Gradient Descent''}{17}{subsection.2.4.2}
+\contentsline {subsection}{\numberline {2.4.3}Chi\IeC {\'\ecircumflex }n l\IeC {\uhorn }\IeC {\d \ohorn }c ``d\IeC {\`\uhorn }ng s\IeC {\'\ohorn }m''}{19}{subsection.2.4.3}
+\contentsline {chapter}{\numberline {3}Sparse Rectified Auto-Encoders}{22}{chapter.3}
+\contentsline {section}{\numberline {3.1}``Sparse Rectified Auto-Encoders'' (SRAEs)}{22}{section.3.1}
+\contentsline {section}{\numberline {3.2}R\IeC {\`a}ng bu\IeC {\d \ocircumflex }c th\IeC {\uhorn }a trong SRAEs}{23}{section.3.2}
+\contentsline {subsection}{\numberline {3.2.1}Kh\IeC {\'o} kh\IeC {\u a}n c\IeC {\h u}a vi\IeC {\d \ecircumflex }c hu\IeC {\'\acircumflex }n luy\IeC {\d \ecircumflex }n SRAEs v\IeC {\'\ohorn }i chu\IeC {\h \acircumflex }n L1}{25}{subsection.3.2.1}
+\contentsline {subsection}{\numberline {3.2.2}Thu\IeC {\d \acircumflex }t to\IeC {\'a}n ``Sleep-Wake Stochastic Gradient Descent''}{28}{subsection.3.2.2}
+\contentsline {section}{\numberline {3.3}R\IeC {\`a}ng bu\IeC {\d \ocircumflex }c tr\IeC {\d o}ng s\IeC {\'\ocircumflex } trong SRAEs}{30}{section.3.3}
+\contentsline {subsection}{\numberline {3.3.1}C\IeC {\'a}ch r\IeC {\`a}ng bu\IeC {\d \ocircumflex }c tr\IeC {\d o}ng s\IeC {\'\ocircumflex } \IeC {\dj }\IeC {\`\ecircumflex } xu\IeC {\'\acircumflex }t cho SRAEs}{31}{subsection.3.3.1}
+\contentsline {chapter}{\numberline {4}C\IeC {\'a}c K\IeC {\'\ecircumflex }t Qu\IeC {\h a} Th\IeC {\'\i } Nghi\IeC {\d \ecircumflex }m}{34}{chapter.4}
+\contentsline {section}{\numberline {4.1}C\IeC {\'a}c thi\IeC {\'\ecircumflex }t l\IeC {\d \acircumflex }p th\IeC {\'\i } nghi\IeC {\d \ecircumflex }m}{34}{section.4.1}
+\contentsline {section}{\numberline {4.2}SGD v\IeC {\`a} SW-SGD}{36}{section.4.2}
+\contentsline {section}{\numberline {4.3}C\IeC {\'a}ch r\IeC {\`a}ng bu\IeC {\d \ocircumflex }c tr\IeC {\d o}ng s\IeC {\'\ocircumflex } \IeC {\dj }\IeC {\`\ecircumflex } xu\IeC {\'\acircumflex }t c\IeC {\h u}a ch\IeC {\'u}ng t\IeC {\^o}i v\IeC {\`a} c\IeC {\'a}c c\IeC {\'a}ch r\IeC {\`a}ng bu\IeC {\d \ocircumflex }c tr\IeC {\d o}ng s\IeC {\'\ocircumflex } kh\IeC {\'a}c}{39}{section.4.3}
+\contentsline {section}{\numberline {4.4}SRAEs v\IeC {\`a} c\IeC {\'a}c lo\IeC {\d a}i ``Auto-Encoders'' kh\IeC {\'a}c}{41}{section.4.4}
+\contentsline {chapter}{\numberline {5}K\IeC {\'\ecircumflex }t Lu\IeC {\d \acircumflex }n v\IeC {\`a} H\IeC {\uhorn }\IeC {\'\ohorn }ng Ph\IeC {\'a}t Tri\IeC {\h \ecircumflex }n}{43}{chapter.5}
+\contentsline {section}{\numberline {5.1}K\IeC {\'\ecircumflex }t lu\IeC {\d \acircumflex }n}{43}{section.5.1}
+\contentsline {section}{\numberline {5.2}H\IeC {\uhorn }\IeC {\'\ohorn }ng ph\IeC {\'a}t tri\IeC {\h \ecircumflex }n}{44}{section.5.2}
+\contentsline {chapter}{Ph\IeC {\d u} L\IeC {\d u}c: C\IeC {\'a}c C\IeC {\^o}ng Tr\IeC {\`\i }nh \IeC {\DJ }\IeC {\~a} C\IeC {\^o}ng B\IeC {\'\ocircumflex }}{46}{chapter*.20}
+\contentsline {chapter}{T\IeC {\`A}I LI\IeC {\d \ECIRCUMFLEX }U THAM KH\IeC {\h A}O}{57}{chapter*.21}
