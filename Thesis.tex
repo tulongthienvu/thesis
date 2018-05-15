@@ -4,6 +4,7 @@
 \usepackage{mathptmx}
 \usepackage{amsmath,amsfonts,amssymb,fancyhdr}
 \usepackage{amsthm,amsxtra,latexsym, amscd}
+\usepackage{bm}
 \usepackage[utf8]{vietnam}
 %\usepackage[unicode,colorlinks=true]{hyperref} 
 %\usepackage[utf8]{inputenc}
@@ -23,21 +24,21 @@
 \usepackage[hyphens]{url}
 %\usepackage[hidelinks]{hyperref}
 \usepackage[ unicode, plainpages = false, pdfpagelabels, 
-                 pdfpagelayout = OneColumn, % display single page, advancing flips the page - Sasa Tomic
-                 bookmarks,
-                 bookmarksopen = true,
-                 bookmarksnumbered = true,
-                 breaklinks = true,
-                 linktocpage,
-                 pagebackref,
-                 colorlinks = true,
-                 linkcolor = blue,
-                 urlcolor  = blue,
-                 citecolor = red,
-                 anchorcolor = green,
-                 hyperindex = true,
-                 hyperfigures
-                 ]{hyperref} 
+pdfpagelayout = OneColumn, % display single page, advancing flips the page - Sasa Tomic
+bookmarks,
+bookmarksopen = true,
+bookmarksnumbered = true,
+breaklinks = true,
+linktocpage,
+pagebackref,
+colorlinks = true,
+linkcolor = blue,
+urlcolor  = blue,
+citecolor = red,
+anchorcolor = green,
+hyperindex = true,
+hyperfigures
+]{hyperref} 
 
 
 %\usepackage{algorithm2e}
@@ -46,7 +47,7 @@
 \usepackage{setspace}
 \makeatletter
 \newcommand{\newalgname}[1]{%
-  \renewcommand{\ALG@name}{#1}%
+	\renewcommand{\ALG@name}{#1}%
 }
 \usepackage{longtable}
 \usepackage[acronym]{glossaries}
@@ -63,135 +64,135 @@
 \setlength{\cftchapnumwidth}{2.5cm}
 \usepackage{titlesec}
 \titleformat{\chapter}[display]
-  {\normalfont\large\bfseries\centering}{\chaptertitlename\ \thechapter}{20pt}{\huge}
+{\normalfont\large\bfseries\centering}{\chaptertitlename\ \thechapter}{20pt}{\huge}
 \linespread{1.3}
 
 %\baselineskip 19.5 pt
-                 
+
 \begin{document}
-
-%\includepdf[pages=1]{docs/BiaChinh}
-\includepdf{docs/BiaPhu}
-%\includepdf[pages=1-2]{docs/NhanXet}
-
-\pagenumbering{roman}
-\input {Acknowledgments}
-
-%\newpage
-%\thispagestyle{empty}
-%\mbox{}
-
-%\newpage
-%\addcontentsline{toc}{chapter}{ĐỀ CƯƠNG CHI TIẾT}
-%\includepdf[pages=1-2,pagecommand=\thispagestyle{plain}]{docs/DeCuongChiTiet}
-
-%\include{Abstract/abstract}
-
-\newpage
-\renewcommand{\contentsname}{\centerline{MỤC LỤC}}
-\addcontentsline{toc}{chapter}{MỤC LỤC}
-\tableofcontents
-
-\newpage
-\renewcommand\listfigurename{\centerline{DANH MỤC HÌNH ẢNH}}
-\addcontentsline{toc}{chapter}{DANH MỤC HÌNH ẢNH}
-\listoffigures
-
-
-\newpage
-\renewcommand\listtablename{\centerline{DANH MỤC BẢNG}}
-\addcontentsline{toc}{chapter}{DANH MỤC BẢNG}
-\listoftables
-%
-%\newpage
-%\renewcommand{\nomname}{
-%	\addcontentsline{toc}{chapter}{DANH MỤC THUẬT NGỮ VIẾT TẮT}
-%	{\fontsize{25}{25}\selectfont
-%	DANH MỤC THUẬT NGỮ VIẾT TẮT}
-%	}	
-%%\makeglossaries
-%\nomenclature{$STIP:$}{Space-Time Interest Points - Điểm trọng yếu không-thời gian}
-%\nomenclature{$SC:$}{Sparse Coding}
-%\nomenclature{$BoF:$}{Bag of Feature - Giỏ đặc trưng}
-%\nomenclature{$HOG:$}{Histogram of Oriented Gradients - Lược đồ phân bố cường độ hướng biến thiên độ xám}
-%\nomenclature{$HONV:$}{Histogram of Oriented Normal Vectors - Lược đồ phân bố hướng của các vector pháp tuyến}
-%\nomenclature{$HOF:$}{Histogram of Optical Flows - Lược đồ phân bố 1luồng chuyển động}
-%\nomenclature{$3DS-HONV:$}{3D Spherical-Histogram of Oriented Nomal Vectors}
-%\nomenclature{$SVM:$}{Support Vector Machine - Bô phân lớp "Máy hỗ trợ vector"}
-%\nomenclature{$kNN:$}{k Nearest Neighbors - k láng giềng gần nhất}
-%\nomenclature{$Confusion:$}{Ma trận nhầm lẫn - dùng để mô tả số kết quả phân loại đúng và sai tại mỗi lớp(class)}
-%\nomenclature{$DTW:$}{Dynamic Time Warping - thuật toán so khớp các chuỗi tín hiệu tương tự theo thời gian}
-%\nomenclature{$R.O.I: $}{Region of Interest - Vùng ứng viên hay Vùng quan tâm}
-%\nomenclature{$TGMT: $}{Thị giác máy tính}
-%%\printglossary[type=\acronymtype,title=Abbreviations]
-%\printnomenclature[7em]
-%
-%\newpage
-%%\newglossaryentry{acr_norm}{
-%%  name = $\left\| \right\|$ ,
-%%  description = Phép tính norm,
-%%}
-%\newglossaryentry{acr_concate}{
-%  name = $\odot\hspace{0.2in}$ ,
-%  description = Phép nối 2 vector đặc trưng
-%}
-%\newglossaryentry{acr_early_fusion}{
-%  name = $A-B\hspace{0.2in}$ ,
-%  description = Phép kết hợp trước 2 vector đặc trưng A và B (early fusion)
-%}
-%\newglossaryentry{acr_late_fusion}{
-%  name = $A/B\hspace{0.2in}$ ,
-%  description = Phép kết hợp trễ 2 vector đặc trưng A và B (late fusion)
-%}
-%\newglossaryentry{acr_st}{
-%  name = $s.t.\hspace{0.1in}$ ,
-%  description = thỏa điều kiện (subject to)
-%}
-%\newglossaryentry{acr_hist}{
-%  name = $hist\hspace{0.1in}$ ,
-%  description = Lược đồ phân bố (histogram)
-%}
-%\makeglossaries
-%
-%\printglossary[title=KÝ HIỆU - QUY ƯỚC]{\addcontentsline{toc}{chapter}{KÝ HIỆU-QUY ƯỚC}}
-
-
-%\input{Abstract}
-\newpage
-\pagenumbering{arabic}
-
-\include{Chapter1/chapter1}
-\include{Chapter2/chapter2}
-\include{Chapter3/chapter3}
-\include{Chapter4/chapter4}
-%\include{Chapter5/chapter5}
-\include{Conclusions/conclusions}
-\include{Appendix/appendix}
-%\input{Introduction}
-%
-%\input{RelatedWork}
-%
-%\input{Overview}
-%
-%\input{Implementation}
-%
-%\input{Modeling}
-%
-%\input{ExperimentalResults}
-%
-%\input{ApplicationAndFutureWork}
-%
-%\input{Conclusion}
-
-\renewcommand{\bibname}{
-	\addcontentsline{toc}{chapter}{TÀI LIỆU THAM KHẢO}
-	TÀI LIỆU THAM KHẢO
+	
+	%\includepdf[pages=1]{docs/BiaChinh}
+	\includepdf{docs/BiaPhu}
+	%\includepdf[pages=1-2]{docs/NhanXet}
+	
+	\pagenumbering{roman}
+	\input {Acknowledgments}
+	
+	%\newpage
+	%\thispagestyle{empty}
+	%\mbox{}
+	
+	%\newpage
+	%\addcontentsline{toc}{chapter}{ĐỀ CƯƠNG CHI TIẾT}
+	%\includepdf[pages=1-2,pagecommand=\thispagestyle{plain}]{docs/DeCuongChiTiet}
+	
+	%\include{Abstract/abstract}
+	
+	\newpage
+	\renewcommand{\contentsname}{\centerline{MỤC LỤC}}
+	\addcontentsline{toc}{chapter}{MỤC LỤC}
+	\tableofcontents
+	
+	\newpage
+	\renewcommand\listfigurename{\centerline{DANH MỤC HÌNH ẢNH}}
+	\addcontentsline{toc}{chapter}{DANH MỤC HÌNH ẢNH}
+	\listoffigures
+	
+	
+	\newpage
+	\renewcommand\listtablename{\centerline{DANH MỤC BẢNG}}
+	\addcontentsline{toc}{chapter}{DANH MỤC BẢNG}
+	\listoftables
+	%
+	%\newpage
+	%\renewcommand{\nomname}{
+	%	\addcontentsline{toc}{chapter}{DANH MỤC THUẬT NGỮ VIẾT TẮT}
+	%	{\fontsize{25}{25}\selectfont
+	%	DANH MỤC THUẬT NGỮ VIẾT TẮT}
+	%	}	
+	%%\makeglossaries
+	%\nomenclature{$STIP:$}{Space-Time Interest Points - Điểm trọng yếu không-thời gian}
+	%\nomenclature{$SC:$}{Sparse Coding}
+	%\nomenclature{$BoF:$}{Bag of Feature - Giỏ đặc trưng}
+	%\nomenclature{$HOG:$}{Histogram of Oriented Gradients - Lược đồ phân bố cường độ hướng biến thiên độ xám}
+	%\nomenclature{$HONV:$}{Histogram of Oriented Normal Vectors - Lược đồ phân bố hướng của các vector pháp tuyến}
+	%\nomenclature{$HOF:$}{Histogram of Optical Flows - Lược đồ phân bố 1luồng chuyển động}
+	%\nomenclature{$3DS-HONV:$}{3D Spherical-Histogram of Oriented Nomal Vectors}
+	%\nomenclature{$SVM:$}{Support Vector Machine - Bô phân lớp "Máy hỗ trợ vector"}
+	%\nomenclature{$kNN:$}{k Nearest Neighbors - k láng giềng gần nhất}
+	%\nomenclature{$Confusion:$}{Ma trận nhầm lẫn - dùng để mô tả số kết quả phân loại đúng và sai tại mỗi lớp(class)}
+	%\nomenclature{$DTW:$}{Dynamic Time Warping - thuật toán so khớp các chuỗi tín hiệu tương tự theo thời gian}
+	%\nomenclature{$R.O.I: $}{Region of Interest - Vùng ứng viên hay Vùng quan tâm}
+	%\nomenclature{$TGMT: $}{Thị giác máy tính}
+	%%\printglossary[type=\acronymtype,title=Abbreviations]
+	%\printnomenclature[7em]
+	%
+	%\newpage
+	%%\newglossaryentry{acr_norm}{
+	%%  name = $\left\| \right\|$ ,
+	%%  description = Phép tính norm,
+	%%}
+	%\newglossaryentry{acr_concate}{
+	%  name = $\odot\hspace{0.2in}$ ,
+	%  description = Phép nối 2 vector đặc trưng
+	%}
+	%\newglossaryentry{acr_early_fusion}{
+	%  name = $A-B\hspace{0.2in}$ ,
+	%  description = Phép kết hợp trước 2 vector đặc trưng A và B (early fusion)
+	%}
+	%\newglossaryentry{acr_late_fusion}{
+	%  name = $A/B\hspace{0.2in}$ ,
+	%  description = Phép kết hợp trễ 2 vector đặc trưng A và B (late fusion)
+	%}
+	%\newglossaryentry{acr_st}{
+	%  name = $s.t.\hspace{0.1in}$ ,
+	%  description = thỏa điều kiện (subject to)
+	%}
+	%\newglossaryentry{acr_hist}{
+	%  name = $hist\hspace{0.1in}$ ,
+	%  description = Lược đồ phân bố (histogram)
+	%}
+	%\makeglossaries
+	%
+	%\printglossary[title=KÝ HIỆU - QUY ƯỚC]{\addcontentsline{toc}{chapter}{KÝ HIỆU-QUY ƯỚC}}
+	
+	
+	%\input{Abstract}
+	\newpage
+	\pagenumbering{arabic}
+	
+	\include{Chapter1/chapter1}
+	\include{Chapter2/chapter2}
+	\include{Chapter3/chapter3}
+	\include{Chapter4/chapter4}
+	%\include{Chapter5/chapter5}
+	\include{Conclusions/conclusions}
+	\include{Appendix/appendix}
+	%\input{Introduction}
+	%
+	%\input{RelatedWork}
+	%
+	%\input{Overview}
+	%
+	%\input{Implementation}
+	%
+	%\input{Modeling}
+	%
+	%\input{ExperimentalResults}
+	%
+	%\input{ApplicationAndFutureWork}
+	%
+	%\input{Conclusion}
+	
+	\renewcommand{\bibname}{
+		\addcontentsline{toc}{chapter}{TÀI LIỆU THAM KHẢO}
+		TÀI LIỆU THAM KHẢO
 	}
-\bibliographystyle{Classes/IEEEtranS}
-\bibliographystyle{unsrt}
-\bibliography{References/my_bib}
-
-
-%\input{Appendix}
-
+	\bibliographystyle{Classes/IEEEtranS}
+	\bibliographystyle{unsrt}
+	\bibliography{References/my_bib}
+	
+	
+	%\input{Appendix}
+	
 \end{document}

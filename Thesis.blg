@@ -6,7 +6,7 @@ A level-1 auxiliary file: Chapter4/chapter4.aux
 A level-1 auxiliary file: Conclusions/conclusions.aux
 A level-1 auxiliary file: Appendix/appendix.aux
 The style file: Classes/IEEEtranS.bst
-Illegal, another \bibstyle command---line 31 of file Thesis.aux
+Illegal, another \bibstyle command---line 33 of file Thesis.aux
  : \bibstyle
  :          {unsrt}
 I'm skipping whatever remains of this command
@@ -15,7 +15,6 @@ Database file #1: References/my_bib.bib
 -- http://www.michaelshell.org/tex/ieeetran/bibtex/
 -- See the "IEEEtran_bst_HOWTO.pdf" manual for usage information.
 ** Sorting version - not for normal IEEE work.
-Warning--empty journal in bengio2013representation
 Warning--empty booktitle in zeiler2013rectified
 
 Done.

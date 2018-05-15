@@ -21,10 +21,6 @@
 \providecommand{\BIBdecl}{\relax}
 \BIBdecl
 
-\bibitem{bengio2013representation}
-Y.~Bengio, A.~Courville, and P.~Vincent, ``Representation learning: A review
-  and new perspectives,'' 2013.
-
 \bibitem{bergstra+al:2010-scipy}
 J.~Bergstra, O.~Breuleux, F.~Bastien, P.~Lamblin, R.~Pascanu, G.~Desjardins,
   J.~Turian, D.~Warde-Farley, and Y.~Bengio, ``Theano: a {CPU} and {GPU} math
@@ -40,15 +36,28 @@ A.~Coates, A.~Y. Ng, and H.~Lee, ``An analysis of single-layer networks in
   unsupervised feature learning,'' in \emph{International Conference on
   Artificial Intelligence and Statistics}, 2011, pp. 215--223.
 
-\bibitem{glorot2011deep}
-X.~Glorot, A.~Bordes, and Y.~Bengio, ``Deep sparse rectifier networks,'' in
-  \emph{Proceedings of the 14th International Conference on Artificial
-  Intelligence and Statistics. JMLR W\&CP Volume}, vol.~15, 2011, pp. 315--323.
+\bibitem{attentionhistory2011}
+\BIBentryALTinterwordspacing
+M.~Denil, L.~Bazzani, H.~Larochelle, and N.~de~Freitas, ``Learning where to
+  attend with deep architectures for image tracking,'' \emph{CoRR}, vol.
+  abs/1109.3737, 2011. [Online]. Available:
+  \url{http://arxiv.org/abs/1109.3737}
+\BIBentrySTDinterwordspacing
 
 \bibitem{goodfellow2009measuring}
 I.~Goodfellow, H.~Lee, Q.~V. Le, A.~Saxe, and A.~Y. Ng, ``Measuring invariances
   in deep networks,'' in \emph{Advances in neural information processing
   systems}, 2009, pp. 646--654.
+
+\bibitem{attentionhistory2010}
+\BIBentryALTinterwordspacing
+H.~Larochelle and G.~E. Hinton, ``Learning to combine foveal glimpses with a
+  third-order boltzmann machine,'' in \emph{Advances in Neural Information
+  Processing Systems 23}, J.~D. Lafferty, C.~K.~I. Williams, J.~Shawe-Taylor,
+  R.~S. Zemel, and A.~Culotta, Eds.\hskip 1em plus 0.5em minus 0.4em\relax
+  Curran Associates, Inc., 2010, pp. 1243--1251. [Online]. Available:
+  \url{http://papers.nips.cc/paper/4089-learning-to-combine-foveal-glimpses-with-a-third-order-boltzmann-machine.pdf}
+\BIBentrySTDinterwordspacing
 
 \bibitem{le2011ica}
 Q.~V. Le, A.~Karpenko, J.~Ngiam, and A.~Y. Ng, ``Ica with reconstruction cost
@@ -62,16 +71,6 @@ Y.~LeCun, ``The {MNIST} database,'' \url{http://yann.lecun.com/exdb/mnist/}.
 H.~Lee, A.~Battle, R.~Raina, and A.~Ng, ``Efficient sparse coding algorithms,''
   in \emph{Advances in neural information processing systems}, 2006, pp.
   801--808.
-
-\bibitem{nair2010rectified}
-V.~Nair and G.~E. Hinton, ``Rectified linear units improve restricted boltzmann
-  machines,'' in \emph{Proceedings of the 27th International Conference on
-  Machine Learning (ICML-10)}, 2010, pp. 807--814.
-
-\bibitem{olshausen1996emergence}
-B.~A. Olshausen \emph{et~al.}, ``Emergence of simple-cell receptive field
-  properties by learning a sparse code for natural images,'' \emph{Nature},
-  vol. 381, no. 6583, pp. 607--609, 1996.
 
 \bibitem{rifai2011HCAEs}
 S.~Rifai, G.~Mesnil, P.~Vincent, X.~Muller, Y.~Bengio, Y.~Dauphin, and
@@ -89,6 +88,14 @@ P.~Vincent, H.~Larochelle, Y.~Bengio, and P.-A. Manzagol, ``Extracting and
   composing robust features with denoising autoencoders,'' in \emph{Proceedings
   of the 25th international conference on Machine learning}.\hskip 1em plus
   0.5em minus 0.4em\relax ACM, 2008, pp. 1096--1103.
+
+\bibitem{showattendandtellXu2015}
+\BIBentryALTinterwordspacing
+K.~Xu, J.~Ba, R.~Kiros, K.~Cho, A.~C. Courville, R.~Salakhutdinov, R.~S. Zemel,
+  and Y.~Bengio, ``Show, attend and tell: Neural image caption generation with
+  visual attention,'' \emph{CoRR}, vol. abs/1502.03044, 2015. [Online].
+  Available: \url{http://arxiv.org/abs/1502.03044}
+\BIBentrySTDinterwordspacing
 
 \bibitem{zeiler2014thesis}
 M.~D. Zeiler, ``Hierarchical convolutional deep learning in computer vision,''
