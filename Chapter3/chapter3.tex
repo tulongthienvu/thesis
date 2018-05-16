@@ -88,9 +88,23 @@ Khi dịch mỗi từ ở câu đích, Attention Cục bộ chỉ đặt "sự c
 
 Dễ thấy, với cách hoạt động chỉ tập trung một số các từ gần nhau ở câu nguồn, mô hình hoạt động gần với cách con người tập trung vào một sự vật, hiện tượng nào đó. Chi phí cho huấn luyện và dự đoán sẽ được giảm bớt bởi vì chúng ta chỉ thực hiện tính véc-tơ trọng số gióng hàng $a_t$ cho những từ mà mô hình đặt "sự chú ý" lên.
 
-Để làm rõ hơn về cách thức hoạt động của mô hình Attention Cục bộ, chúng tôi sẽ trình bày cụ thể hơn về nền tảng Toán học của mô hình này. Bên cạnh những đại lượng đã có ở mô hình Attention Toàn cục, Attention Cục bộ có thêm một số đại lượng như sau:
+Để làm rõ hơn về cách thức hoạt động của mô hình Attention Cục bộ, chúng tôi sẽ trình bày cụ thể hơn về nền tảng Toán học của mô hình này. Bên cạnh những đại lượng đã có ở mô hình Attention Toàn cục, Attention Cục bộ có thêm và thay đổi một số đại lượng như sau:
 \begin{itemize}
-	\item $p_t$: vị trí được gióng hàng.
+	\item $p_t$: vị trí đã được gióng hàng. Tại mỗi thời điểm $t$, mô hình sẽ phát sinh một số thực $p_t$. Số thực này có giá trị nằm trong đoạn $[0, S]$ với ý nghĩa rằng đây là vị trí đã được gióng hàng của với từ ở câu nguồn tại thời điểm $t$ hiện tại. Hay nói cách khác, "sự chú ý" được đặt trên từ có vị trí $p_t$ này. Để ý thấy rằng có sự không tự nhiên khi $p_t$ là một số thực, do vậy $p_t$ không thể cho biết được chính xác từ nào sẽ được đặt "sự chú ý" lên. Thực tế, với miền giá trị số thực, $p_t$ có tác dụng là dùng để làm vị trí trung tâm cho các từ lân cận. Để làm rõ hơn về vấn đề này, chúng tôi sẽ trình bày rõ ràng hơn ở sau.
+	\item Đối quá trình tính véc-tơ ngữ cảnh $c_t$ có sự thay đổi rằng mô hình xét các vị trí ở câu nguồn mà nằm xung quanh vị trí $p_t$ một đoạn $D$. $D$ là một đại lượng với miền số nguyên lớn hơn 0 và được gọi là kích thước cửa sổ. Cụ thể:
+	\begin{equation}
+	c_t = \sum_{x \in [p_t - D, p_t + D]} a_{tx}\tilde{h}_x
+	\end{equation}
+	$D$ là một siêu tham số của mô hình. Việc lựa chọn giá trị của $D$ là dựa vào thực nghiệm. Theo đề xuất của \cite{attentionThangLuong2015}, chúng tôi lựa chọn $D = 10$.
+\end{itemize}
+
+Mô hình Attention Cục bộ có 2 biến thể:
+\begin{itemize}
+	\item Gióng hàng đều (monotonic alignment - local-m): vị trí được gióng hàng được phát sinh một cách đơn giản bằng cách cho $p_t = t$ tại mỗi thời điểm $t$. Ta giả định rằng các từ ở câu nguồn và các từ ở câu đích được gióng hàng đều nhau theo từng từ.
+	\item Gióng hàng dự đoán (predictive alignment - local-p): giả định rằng tất cả từ ở câu nguồn và câu đích đều được gióng hàng đều nhau không thực tế vì giữa 2 ngôn ngữ có ngữ pháp riêng và trật tự từ khác nhau. Chúng tôi sẽ trình bày rõ ràng hơn vào các phần sau. Do vậy, mô hình sẽ phát sinh vị trí được gióng hàng $p_t$ một cách tự nhiên hơn cho phù hợp đặc điểm của ngôn ngữ. Cụ thể mô hình sẽ phát sinh vị trí $p_t$ tại mỗi thời điểm $t$ như sau:
+	\begin{equation}
+	p_t = S \cdot \text{sigmoid} (v^T_p \tanh(W_ph_t))
+	\end{equation}
 \end{itemize}
 
 \subsection{Thuật toán ``Sleep-Wake Stochastic Gradient Descent''}

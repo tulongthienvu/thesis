@@ -72,6 +72,13 @@ H.~Lee, A.~Battle, R.~Raina, and A.~Ng, ``Efficient sparse coding algorithms,''
   in \emph{Advances in neural information processing systems}, 2006, pp.
   801--808.
 
+\bibitem{attentionThangLuong2015}
+\BIBentryALTinterwordspacing
+M.~Luong, H.~Pham, and C.~D. Manning, ``Effective approaches to attention-based
+  neural machine translation,'' \emph{CoRR}, vol. abs/1508.04025, 2015.
+  [Online]. Available: \url{http://arxiv.org/abs/1508.04025}
+\BIBentrySTDinterwordspacing
+
 \bibitem{rifai2011HCAEs}
 S.~Rifai, G.~Mesnil, P.~Vincent, X.~Muller, Y.~Bengio, Y.~Dauphin, and
   X.~Glorot, ``Higher order contractive auto-encoder,'' \emph{Machine Learning
