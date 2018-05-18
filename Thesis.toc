@@ -19,16 +19,17 @@
 \contentsline {section}{\numberline {3.1}C\IeC {\ohorn } ch\IeC {\'\ecircumflex } Attention}{22}{section.3.1}
 \contentsline {section}{\numberline {3.2}Attention To\IeC {\`a}n c\IeC {\d u}c}{25}{section.3.2}
 \contentsline {section}{\numberline {3.3}Attention C\IeC {\d u}c b\IeC {\d \ocircumflex }}{26}{section.3.3}
-\contentsline {subsection}{\numberline {3.3.1}Thu\IeC {\d \acircumflex }t to\IeC {\'a}n ``Sleep-Wake Stochastic Gradient Descent''}{28}{subsection.3.3.1}
-\contentsline {section}{\numberline {3.4}R\IeC {\`a}ng bu\IeC {\d \ocircumflex }c tr\IeC {\d o}ng s\IeC {\'\ocircumflex } trong SRAEs}{29}{section.3.4}
-\contentsline {subsection}{\numberline {3.4.1}C\IeC {\'a}ch r\IeC {\`a}ng bu\IeC {\d \ocircumflex }c tr\IeC {\d o}ng s\IeC {\'\ocircumflex } \IeC {\dj }\IeC {\`\ecircumflex } xu\IeC {\'\acircumflex }t cho SRAEs}{31}{subsection.3.4.1}
-\contentsline {chapter}{\numberline {4}C\IeC {\'a}c K\IeC {\'\ecircumflex }t Qu\IeC {\h a} Th\IeC {\'\i } Nghi\IeC {\d \ecircumflex }m}{34}{chapter.4}
-\contentsline {section}{\numberline {4.1}C\IeC {\'a}c thi\IeC {\'\ecircumflex }t l\IeC {\d \acircumflex }p th\IeC {\'\i } nghi\IeC {\d \ecircumflex }m}{34}{section.4.1}
-\contentsline {section}{\numberline {4.2}SGD v\IeC {\`a} SW-SGD}{36}{section.4.2}
-\contentsline {section}{\numberline {4.3}C\IeC {\'a}ch r\IeC {\`a}ng bu\IeC {\d \ocircumflex }c tr\IeC {\d o}ng s\IeC {\'\ocircumflex } \IeC {\dj }\IeC {\`\ecircumflex } xu\IeC {\'\acircumflex }t c\IeC {\h u}a ch\IeC {\'u}ng t\IeC {\^o}i v\IeC {\`a} c\IeC {\'a}c c\IeC {\'a}ch r\IeC {\`a}ng bu\IeC {\d \ocircumflex }c tr\IeC {\d o}ng s\IeC {\'\ocircumflex } kh\IeC {\'a}c}{39}{section.4.3}
-\contentsline {section}{\numberline {4.4}SRAEs v\IeC {\`a} c\IeC {\'a}c lo\IeC {\d a}i ``Auto-Encoders'' kh\IeC {\'a}c}{41}{section.4.4}
-\contentsline {chapter}{\numberline {5}K\IeC {\'\ecircumflex }t Lu\IeC {\d \acircumflex }n v\IeC {\`a} H\IeC {\uhorn }\IeC {\'\ohorn }ng Ph\IeC {\'a}t Tri\IeC {\h \ecircumflex }n}{43}{chapter.5}
-\contentsline {section}{\numberline {5.1}K\IeC {\'\ecircumflex }t lu\IeC {\d \acircumflex }n}{43}{section.5.1}
-\contentsline {section}{\numberline {5.2}H\IeC {\uhorn }\IeC {\'\ohorn }ng ph\IeC {\'a}t tri\IeC {\h \ecircumflex }n}{44}{section.5.2}
-\contentsline {chapter}{Ph\IeC {\d u} L\IeC {\d u}c: C\IeC {\'a}c C\IeC {\^o}ng Tr\IeC {\`\i }nh \IeC {\DJ }\IeC {\~a} C\IeC {\^o}ng B\IeC {\'\ocircumflex }}{46}{chapter*.20}
-\contentsline {chapter}{T\IeC {\`A}I LI\IeC {\d \ECIRCUMFLEX }U THAM KH\IeC {\h A}O}{57}{chapter*.21}
+\contentsline {subsection}{\numberline {3.3.1}C\IeC {\ohorn } ch\IeC {\'\ecircumflex } Input feeding}{29}{subsection.3.3.1}
+\contentsline {subsection}{\numberline {3.3.2}Thu\IeC {\d \acircumflex }t to\IeC {\'a}n ``Sleep-Wake Stochastic Gradient Descent''}{29}{subsection.3.3.2}
+\contentsline {section}{\numberline {3.4}R\IeC {\`a}ng bu\IeC {\d \ocircumflex }c tr\IeC {\d o}ng s\IeC {\'\ocircumflex } trong SRAEs}{32}{section.3.4}
+\contentsline {subsection}{\numberline {3.4.1}C\IeC {\'a}ch r\IeC {\`a}ng bu\IeC {\d \ocircumflex }c tr\IeC {\d o}ng s\IeC {\'\ocircumflex } \IeC {\dj }\IeC {\`\ecircumflex } xu\IeC {\'\acircumflex }t cho SRAEs}{33}{subsection.3.4.1}
+\contentsline {chapter}{\numberline {4}C\IeC {\'a}c K\IeC {\'\ecircumflex }t Qu\IeC {\h a} Th\IeC {\'\i } Nghi\IeC {\d \ecircumflex }m}{36}{chapter.4}
+\contentsline {section}{\numberline {4.1}C\IeC {\'a}c thi\IeC {\'\ecircumflex }t l\IeC {\d \acircumflex }p th\IeC {\'\i } nghi\IeC {\d \ecircumflex }m}{36}{section.4.1}
+\contentsline {section}{\numberline {4.2}SGD v\IeC {\`a} SW-SGD}{38}{section.4.2}
+\contentsline {section}{\numberline {4.3}C\IeC {\'a}ch r\IeC {\`a}ng bu\IeC {\d \ocircumflex }c tr\IeC {\d o}ng s\IeC {\'\ocircumflex } \IeC {\dj }\IeC {\`\ecircumflex } xu\IeC {\'\acircumflex }t c\IeC {\h u}a ch\IeC {\'u}ng t\IeC {\^o}i v\IeC {\`a} c\IeC {\'a}c c\IeC {\'a}ch r\IeC {\`a}ng bu\IeC {\d \ocircumflex }c tr\IeC {\d o}ng s\IeC {\'\ocircumflex } kh\IeC {\'a}c}{41}{section.4.3}
+\contentsline {section}{\numberline {4.4}SRAEs v\IeC {\`a} c\IeC {\'a}c lo\IeC {\d a}i ``Auto-Encoders'' kh\IeC {\'a}c}{43}{section.4.4}
+\contentsline {chapter}{\numberline {5}K\IeC {\'\ecircumflex }t Lu\IeC {\d \acircumflex }n v\IeC {\`a} H\IeC {\uhorn }\IeC {\'\ohorn }ng Ph\IeC {\'a}t Tri\IeC {\h \ecircumflex }n}{45}{chapter.5}
+\contentsline {section}{\numberline {5.1}K\IeC {\'\ecircumflex }t lu\IeC {\d \acircumflex }n}{45}{section.5.1}
+\contentsline {section}{\numberline {5.2}H\IeC {\uhorn }\IeC {\'\ohorn }ng ph\IeC {\'a}t tri\IeC {\h \ecircumflex }n}{46}{section.5.2}
+\contentsline {chapter}{Ph\IeC {\d u} L\IeC {\d u}c: C\IeC {\'a}c C\IeC {\^o}ng Tr\IeC {\`\i }nh \IeC {\DJ }\IeC {\~a} C\IeC {\^o}ng B\IeC {\'\ocircumflex }}{48}{chapter*.20}
+\contentsline {chapter}{T\IeC {\`A}I LI\IeC {\d \ECIRCUMFLEX }U THAM KH\IeC {\h A}O}{59}{chapter*.21}
