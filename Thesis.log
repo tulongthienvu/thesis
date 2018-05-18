@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6630 64-bit) (preloaded format=pdflatex 2018.5.12)  18 MAY 2018 08:28
+This is pdfTeX, Version 3.14159265-2.6-1.40.19 (MiKTeX 2.9.6630 64-bit) (preloaded format=pdflatex 2018.5.12)  18 MAY 2018 22:06
 entering extended mode
 **./Thesis.tex
 (Thesis.tex
@@ -1534,7 +1534,7 @@ l.23
 
 
 ]
-<Chapter1/Chapter1Figs/mthistory.png, id=273, 1405.25pt x 768.8725pt>
+<Chapter1/Chapter1Figs/mthistory.png, id=275, 1405.25pt x 768.8725pt>
 File: Chapter1/Chapter1Figs/mthistory.png Graphic file (type png)
 <use Chapter1/Chapter1Figs/mthistory.png>
 Package pdftex.def Info: Chapter1/Chapter1Figs/mthistory.png  used on input lin
@@ -1543,7 +1543,7 @@ e 28.
 LaTeX Font Info:    Font shape `T5/ptm/bx/n' in size <19> not available
 (Font)              Font shape `T5/ptm/b/n' tried instead on input line 37.
  [2 <./Chapter1/Chapter1Figs/mthistory.png>] [3]
-<Chapter1/Chapter1Figs/intro2nmt.png, id=287, 654.445pt x 171.64125pt>
+<Chapter1/Chapter1Figs/intro2nmt.png, id=289, 654.445pt x 171.64125pt>
 File: Chapter1/Chapter1Figs/intro2nmt.png Graphic file (type png)
 <use Chapter1/Chapter1Figs/intro2nmt.png>
 Package pdftex.def Info: Chapter1/Chapter1Figs/intro2nmt.png  used on input lin
@@ -1581,27 +1581,27 @@ File: omsptm.fd
 LaTeX Font Info:    Font shape `OMS/ptm/m/n' in size <13> not available
 (Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 33.
  [7]
-<Chapter2/Chapter2Figs/SparseCoding.png, id=318, 587.94656pt x 316.18124pt>
+<Chapter2/Chapter2Figs/SparseCoding.png, id=320, 587.94656pt x 316.18124pt>
 File: Chapter2/Chapter2Figs/SparseCoding.png Graphic file (type png)
 <use Chapter2/Chapter2Figs/SparseCoding.png>
 Package pdftex.def Info: Chapter2/Chapter2Figs/SparseCoding.png  used on input 
 line 53.
 (pdftex.def)             Requested size: 441.01773pt x 237.16911pt.
  [8] [9 <./Chapter2/Chapter2Figs/SparseCoding.png>]
-<Chapter2/Chapter2Figs/AE.png, id=333, 378.66469pt x 264.23718pt>
+<Chapter2/Chapter2Figs/AE.png, id=335, 378.66469pt x 264.23718pt>
 File: Chapter2/Chapter2Figs/AE.png Graphic file (type png)
 <use Chapter2/Chapter2Figs/AE.png>
 Package pdftex.def Info: Chapter2/Chapter2Figs/AE.png  used on input line 76.
 (pdftex.def)             Requested size: 302.93216pt x 211.39001pt.
  [10] [11 <./Chapter2/Chapter2Figs/AE.png>]
-<Chapter2/Chapter2Figs/SCvsSAE.png, id=348, 761.84625pt x 300.3722pt>
+<Chapter2/Chapter2Figs/SCvsSAE.png, id=350, 761.84625pt x 300.3722pt>
 File: Chapter2/Chapter2Figs/SCvsSAE.png Graphic file (type png)
 <use Chapter2/Chapter2Figs/SCvsSAE.png>
 Package pdftex.def Info: Chapter2/Chapter2Figs/SCvsSAE.png  used on input line 
 101.
 (pdftex.def)             Requested size: 441.01773pt x 173.87682pt.
  [12 <./Chapter2/Chapter2Figs/SCvsSAE.png>] [13]
-<Chapter2/Chapter2Figs/BGD.png, id=364, 792.71156pt x 406.51875pt>
+<Chapter2/Chapter2Figs/BGD.png, id=366, 792.71156pt x 406.51875pt>
 File: Chapter2/Chapter2Figs/BGD.png Graphic file (type png)
 <use Chapter2/Chapter2Figs/BGD.png>
 Package pdftex.def Info: Chapter2/Chapter2Figs/BGD.png  used on input line 172.
@@ -1616,7 +1616,7 @@ File: t5cmtt.fd 1999/05/25 v2.5h Standard LaTeX font definitions
 Package hyperref Info: bookmark level for unknown algorithm defaults to 0 on in
 put line 242.
  [17] [18]
-<Chapter2/Chapter2Figs/EarlyStopping.png, id=413, 395.97937pt x 396.7322pt>
+<Chapter2/Chapter2Figs/EarlyStopping.png, id=415, 395.97937pt x 396.7322pt>
 File: Chapter2/Chapter2Figs/EarlyStopping.png Graphic file (type png)
 <use Chapter2/Chapter2Figs/EarlyStopping.png>
 Package pdftex.def Info: Chapter2/Chapter2Figs/EarlyStopping.png  used on input
@@ -1634,37 +1634,45 @@ LaTeX Font Info:    Font shape `OMS/ptm/m/it' in size <13> not available
 
 
 ]
-<Chapter3/Chapter3Figs/Attention-2.png, id=434, 671.50874pt x 385.44pt>
+<Chapter3/Chapter3Figs/Attention-2.png, id=436, 671.50874pt x 385.44pt>
 File: Chapter3/Chapter3Figs/Attention-2.png Graphic file (type png)
 <use Chapter3/Chapter3Figs/Attention-2.png>
 Package pdftex.def Info: Chapter3/Chapter3Figs/Attention-2.png  used on input l
 ine 22.
 (pdftex.def)             Requested size: 352.81552pt x 202.51195pt.
  [23 <./Chapter3/Chapter3Figs/Attention-2.png>] [24]
-<Chapter3/Chapter3Figs/Global-Attention_2.png, id=450, 671.50874pt x 495.8525pt
+<Chapter3/Chapter3Figs/Global-Attention_2.png, id=452, 671.50874pt x 495.8525pt
 >
 File: Chapter3/Chapter3Figs/Global-Attention_2.png Graphic file (type png)
 <use Chapter3/Chapter3Figs/Global-Attention_2.png>
 Package pdftex.def Info: Chapter3/Chapter3Figs/Global-Attention_2.png  used on 
 input line 76.
 (pdftex.def)             Requested size: 352.81552pt x 260.52318pt.
- [25] [26 <./Chapter3/Chapter3Figs/Global-Attention_2.png>] [27] [28] [29]
-Overfull \hbox (39.0pt too wide) in paragraph at lines 184--185
+ [25] [26 <./Chapter3/Chapter3Figs/Global-Attention_2.png>]
+<Chapter3/Chapter3Figs/Local-Attention_2.png, id=469, 671.50874pt x 495.8525pt>
+
+File: Chapter3/Chapter3Figs/Local-Attention_2.png Graphic file (type png)
+<use Chapter3/Chapter3Figs/Local-Attention_2.png>
+Package pdftex.def Info: Chapter3/Chapter3Figs/Local-Attention_2.png  used on i
+nput line 103.
+(pdftex.def)             Requested size: 352.81552pt x 260.52318pt.
+ [27] [28 <./Chapter3/Chapter3Figs/Local-Attention_2.png>] [29] [30]
+Overfull \hbox (39.0pt too wide) in paragraph at lines 195--196
 [] [] 
  []
 
-[30] [31] [32] [33]
-<Chapter3/Chapter3Figs/SRAE.png, id=526, 362.85562pt x 219.82124pt>
+[31] [32] [33]
+<Chapter3/Chapter3Figs/SRAE.png, id=533, 362.85562pt x 219.82124pt>
 File: Chapter3/Chapter3Figs/SRAE.png Graphic file (type png)
 <use Chapter3/Chapter3Figs/SRAE.png>
-Package pdftex.def Info: Chapter3/Chapter3Figs/SRAE.png  used on input line 215
+Package pdftex.def Info: Chapter3/Chapter3Figs/SRAE.png  used on input line 226
 .
 (pdftex.def)             Requested size: 264.61333pt x 160.30716pt.
-<Chapter3/Chapter3Figs/local_charts.png, id=527, 686.565pt x 270.25969pt>
+<Chapter3/Chapter3Figs/local_charts.png, id=534, 686.565pt x 270.25969pt>
 File: Chapter3/Chapter3Figs/local_charts.png Graphic file (type png)
 <use Chapter3/Chapter3Figs/local_charts.png>
 Package pdftex.def Info: Chapter3/Chapter3Figs/local_charts.png  used on input 
-line 221.
+line 232.
 (pdftex.def)             Requested size: 441.01773pt x 173.60066pt.
 ) [34 <./Chapter3/Chapter3Figs/SRAE.png>] [35 <./Chapter3/Chapter3Figs/local_ch
 arts.png>]
@@ -1672,7 +1680,7 @@ arts.png>]
 
  (Chapter4/chapter4.tex
 Ch\uhorn \ohorn ng 4.
-<Chapter4/Chapter4Figs/MNIST.png, id=544, 290.08376pt x 290.08376pt>
+<Chapter4/Chapter4Figs/MNIST.png, id=551, 290.08376pt x 290.08376pt>
 File: Chapter4/Chapter4Figs/MNIST.png Graphic file (type png)
 <use Chapter4/Chapter4Figs/MNIST.png>
 Package pdftex.def Info: Chapter4/Chapter4Figs/MNIST.png  used on input line 16
@@ -1683,13 +1691,13 @@ Package pdftex.def Info: Chapter4/Chapter4Figs/MNIST.png  used on input line 16
 
 
 ] [37 <./Chapter4/Chapter4Figs/MNIST.png (PNG copy)>]
-<Chapter4/Chapter4Figs/SGD_vs_SW-SGD.png, id=559, 529.98pt x 418.56375pt>
+<Chapter4/Chapter4Figs/SGD_vs_SW-SGD.png, id=566, 529.98pt x 418.56375pt>
 File: Chapter4/Chapter4Figs/SGD_vs_SW-SGD.png Graphic file (type png)
 <use Chapter4/Chapter4Figs/SGD_vs_SW-SGD.png>
 Package pdftex.def Info: Chapter4/Chapter4Figs/SGD_vs_SW-SGD.png  used on input
  line 32.
 (pdftex.def)             Requested size: 352.81552pt x 278.64795pt.
-<Chapter4/Chapter4Figs/some_filters.png, id=561, 686.565pt x 380.17032pt>
+<Chapter4/Chapter4Figs/some_filters.png, id=568, 686.565pt x 380.17032pt>
 File: Chapter4/Chapter4Figs/some_filters.png Graphic file (type png)
 <use Chapter4/Chapter4Figs/some_filters.png>
 Package pdftex.def Info: Chapter4/Chapter4Figs/some_filters.png  used on input 
@@ -1715,7 +1723,7 @@ LaTeX Font Info:    Font shape `T5/ptm/bx/it' in size <13> not available
 
 pdfTeX warning: pdflatex.exe (file ./docs/SoICT.pdf): PDF inclusion: found PDF 
 version <1.6>, but at most version <1.5> allowed
-<docs/SoICT.pdf, id=617, 579.66495pt x 810.8861pt>
+<docs/SoICT.pdf, id=624, 579.66495pt x 810.8861pt>
 File: docs/SoICT.pdf Graphic file (type pdf)
 <use docs/SoICT.pdf>
 Package pdftex.def Info: docs/SoICT.pdf  used on input line 8.
@@ -1736,7 +1744,7 @@ version <1.6>, but at most version <1.5> allowed
 
 pdfTeX warning: pdflatex.exe (file ./docs/SoICT.pdf): PDF inclusion: found PDF 
 version <1.6>, but at most version <1.5> allowed
-<docs/SoICT.pdf, id=620, page=1, 579.66495pt x 810.8861pt>
+<docs/SoICT.pdf, id=627, page=1, 579.66495pt x 810.8861pt>
 File: docs/SoICT.pdf Graphic file (type pdf)
 <use docs/SoICT.pdf, page 1>
 Package pdftex.def Info: docs/SoICT.pdf , page1 used on input line 8.
@@ -1766,7 +1774,7 @@ Package pdftex.def Info: docs/SoICT.pdf , page1 used on input line 8.
 
 pdfTeX warning: pdflatex.exe (file ./docs/SoICT.pdf): PDF inclusion: found PDF 
 version <1.6>, but at most version <1.5> allowed
-<docs/SoICT.pdf, id=632, page=2, 579.66495pt x 810.8861pt>
+<docs/SoICT.pdf, id=639, page=2, 579.66495pt x 810.8861pt>
 File: docs/SoICT.pdf Graphic file (type pdf)
 <use docs/SoICT.pdf, page 2>
 Package pdftex.def Info: docs/SoICT.pdf , page2 used on input line 8.
@@ -1783,7 +1791,7 @@ Package pdftex.def Info: docs/SoICT.pdf , page2 used on input line 8.
 
 pdfTeX warning: pdflatex.exe (file ./docs/SoICT.pdf): PDF inclusion: found PDF 
 version <1.6>, but at most version <1.5> allowed
-<docs/SoICT.pdf, id=638, page=3, 601.24625pt x 844.15375pt>
+<docs/SoICT.pdf, id=645, page=3, 601.24625pt x 844.15375pt>
 File: docs/SoICT.pdf Graphic file (type pdf)
 <use docs/SoICT.pdf, page 3>
 Package pdftex.def Info: docs/SoICT.pdf , page3 used on input line 8.
@@ -1797,7 +1805,7 @@ File: docs/SoICT.pdf Graphic file (type pdf)
 Package pdftex.def Info: docs/SoICT.pdf , page3 used on input line 8.
 (pdftex.def)             Requested size: 620.45567pt x 871.12393pt.
 [51 <./docs/SoICT.pdf>]
-<docs/MyPaper.pdf, id=644, 597.50829pt x 845.0471pt>
+<docs/MyPaper.pdf, id=651, 597.50829pt x 845.0471pt>
 File: docs/MyPaper.pdf Graphic file (type pdf)
 <use docs/MyPaper.pdf>
 Package pdftex.def Info: docs/MyPaper.pdf  used on input line 9.
@@ -1806,7 +1814,7 @@ File: docs/MyPaper.pdf Graphic file (type pdf)
 <use docs/MyPaper.pdf>
 Package pdftex.def Info: docs/MyPaper.pdf  used on input line 9.
 (pdftex.def)             Requested size: 597.50682pt x 845.04504pt.
-<docs/MyPaper.pdf, id=647, page=1, 597.50829pt x 845.0471pt>
+<docs/MyPaper.pdf, id=654, page=1, 597.50829pt x 845.0471pt>
 File: docs/MyPaper.pdf Graphic file (type pdf)
 <use docs/MyPaper.pdf, page 1>
 Package pdftex.def Info: docs/MyPaper.pdf , page1 used on input line 9.
@@ -1828,7 +1836,7 @@ File: docs/MyPaper.pdf Graphic file (type pdf)
 Package pdftex.def Info: docs/MyPaper.pdf , page1 used on input line 9.
 (pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
  [52 <./docs/MyPaper.pdf>]
-<docs/MyPaper.pdf, id=693, page=2, 597.50829pt x 845.0471pt>
+<docs/MyPaper.pdf, id=700, page=2, 597.50829pt x 845.0471pt>
 File: docs/MyPaper.pdf Graphic file (type pdf)
 <use docs/MyPaper.pdf, page 2>
 Package pdftex.def Info: docs/MyPaper.pdf , page2 used on input line 9.
@@ -1842,7 +1850,7 @@ File: docs/MyPaper.pdf Graphic file (type pdf)
 Package pdftex.def Info: docs/MyPaper.pdf , page2 used on input line 9.
 (pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
  [53 <./docs/MyPaper.pdf>]
-<docs/MyPaper.pdf, id=728, page=3, 597.50829pt x 845.0471pt>
+<docs/MyPaper.pdf, id=735, page=3, 597.50829pt x 845.0471pt>
 File: docs/MyPaper.pdf Graphic file (type pdf)
 <use docs/MyPaper.pdf, page 3>
 Package pdftex.def Info: docs/MyPaper.pdf , page3 used on input line 9.
@@ -1857,7 +1865,7 @@ Package pdftex.def Info: docs/MyPaper.pdf , page3 used on input line 9.
 (pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
 
 [54 <./docs/MyPaper.pdf>]
-<docs/MyPaper.pdf, id=748, page=4, 597.50829pt x 845.0471pt>
+<docs/MyPaper.pdf, id=755, page=4, 597.50829pt x 845.0471pt>
 File: docs/MyPaper.pdf Graphic file (type pdf)
 <use docs/MyPaper.pdf, page 4>
 Package pdftex.def Info: docs/MyPaper.pdf , page4 used on input line 9.
@@ -1871,7 +1879,7 @@ File: docs/MyPaper.pdf Graphic file (type pdf)
 Package pdftex.def Info: docs/MyPaper.pdf , page4 used on input line 9.
 (pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
  [55 <./docs/MyPaper.pdf>]
-<docs/MyPaper.pdf, id=755, page=5, 597.50829pt x 845.0471pt>
+<docs/MyPaper.pdf, id=762, page=5, 597.50829pt x 845.0471pt>
 File: docs/MyPaper.pdf Graphic file (type pdf)
 <use docs/MyPaper.pdf, page 5>
 Package pdftex.def Info: docs/MyPaper.pdf , page5 used on input line 9.
@@ -1885,7 +1893,7 @@ File: docs/MyPaper.pdf Graphic file (type pdf)
 Package pdftex.def Info: docs/MyPaper.pdf , page5 used on input line 9.
 (pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
  [56 <./docs/MyPaper.pdf>]
-<docs/MyPaper.pdf, id=766, page=6, 597.50829pt x 845.0471pt>
+<docs/MyPaper.pdf, id=773, page=6, 597.50829pt x 845.0471pt>
 File: docs/MyPaper.pdf Graphic file (type pdf)
 <use docs/MyPaper.pdf, page 6>
 Package pdftex.def Info: docs/MyPaper.pdf , page6 used on input line 9.
@@ -1900,7 +1908,7 @@ Package pdftex.def Info: docs/MyPaper.pdf , page6 used on input line 9.
 (pdftex.def)             Requested size: 597.53416pt x 845.08372pt.
 
 [57 <./docs/MyPaper.pdf>]
-<docs/MyPaper.pdf, id=771, page=7, 597.50829pt x 845.0471pt>
+<docs/MyPaper.pdf, id=778, page=7, 597.50829pt x 845.0471pt>
 File: docs/MyPaper.pdf Graphic file (type pdf)
 <use docs/MyPaper.pdf, page 7>
 Package pdftex.def Info: docs/MyPaper.pdf , page7 used on input line 9.
@@ -1921,9 +1929,9 @@ Package pdftex.def Info: docs/MyPaper.pdf , page7 used on input line 9.
 [59
 
 
-])
+] [60])
 Package atveryend Info: Empty hook `BeforeClearDocument' on input line 198.
- [60]
+ [61]
 Package atveryend Info: Empty hook `AfterLastShipout' on input line 198.
  (Thesis.aux (Chapter1/chapter1.aux) (Chapter2/chapter2.aux)
 (Chapter3/chapter3.aux) (Chapter4/chapter4.aux) (Conclusions/conclusions.aux)
@@ -1931,9 +1939,9 @@ Package atveryend Info: Empty hook `AfterLastShipout' on input line 198.
 Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 198.
 Package atveryend Info: Executing hook `AtEndAfterFileList' on input line 198.
 Package rerunfilecheck Info: File `Thesis.out' has not changed.
-(rerunfilecheck)             Checksum: 3F30DD964A623ED7AE7689296CF7AE1B;7926.
+(rerunfilecheck)             Checksum: 13B44DE48CDFC9F5A5A39C13C0829C3B;7926.
 Package rerunfilecheck Info: File `Thesis.brf' has not changed.
-(rerunfilecheck)             Checksum: 73F7F92A35FF71689CCE9DC3C4C621A1;1720.
+(rerunfilecheck)             Checksum: F3469F335354292B172C2D044C6F0648;1845.
 
 
 LaTeX Warning: There were multiply-defined labels.
@@ -1941,10 +1949,10 @@ LaTeX Warning: There were multiply-defined labels.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 198.
  ) 
 Here is how much of TeX's memory you used:
- 19445 strings out of 493305
- 284286 string characters out of 3138850
- 428510 words of memory out of 3000000
- 22349 multiletter control sequences out of 15000+200000
+ 19458 strings out of 493305
+ 284622 string characters out of 3138850
+ 428620 words of memory out of 3000000
+ 22358 multiletter control sequences out of 15000+200000
  60422 words of font info for 91 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
  45i,22n,79p,2623b,545s stack positions out of 5000i,500n,10000p,200000b,50000s
@@ -1975,9 +1983,9 @@ a.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/vntex/urwvn/utmr8v.pfb><C:/Progr
 am Files/MiKTeX 2.9/fonts/type1/urw/times/utmri8a.pfb><C:/Program Files/MiKTeX 
 2.9/fonts/type1/vntex/urwvn/utmri8v.pfb><C:/Program Files/MiKTeX 2.9/fonts/type
 1/vntex/vnr/vntt12.pfb>
-Output written on Thesis.pdf (66 pages, 2161988 bytes).
+Output written on Thesis.pdf (67 pages, 2192116 bytes).
 PDF statistics:
- 913 PDF objects out of 1000 (max. 8388607)
- 164 named destinations out of 1000 (max. 500000)
- 451 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 928 PDF objects out of 1000 (max. 8388607)
+ 167 named destinations out of 1000 (max. 500000)
+ 456 words of extra memory for PDF output out of 10000 (max. 10000000)
 

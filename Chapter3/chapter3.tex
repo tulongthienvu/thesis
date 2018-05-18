@@ -98,6 +98,13 @@ Dễ thấy, với cách hoạt động chỉ tập trung một số các từ g
 	$D$ là một siêu tham số của mô hình. Việc lựa chọn giá trị của $D$ là dựa vào thực nghiệm. Theo đề xuất của \cite{attentionThangLuong2015}, chúng tôi lựa chọn $D = 10$.
 \end{itemize}
 
+\begin{figure}
+	\centering
+	\includegraphics[width=0.8\textwidth]{Local-Attention_2.png}
+	\caption[Minh họa cơ chế Attention Cục bộ.]{Minh họa cơ chế Attention Cục bộ. Tại thời điểm $t$, bộ giải mã nhìn vào một số các vị trí nguồn.}
+	\label{fig_Local_Attention}
+\end{figure}
+
 Mô hình Attention Cục bộ có 2 biến thể:
 \begin{itemize}
 	\item Gióng hàng đều (monotonic alignment - local-m): vị trí được gióng hàng được phát sinh một cách đơn giản bằng cách cho $p_t = t$ tại mỗi thời điểm $t$. Ta giả định rằng các từ ở câu nguồn và các từ ở câu đích được gióng hàng đều nhau theo từng từ.
@@ -119,6 +126,10 @@ Với cơ chế được trình bày cụ thể như trên, mô hình Attention 
 
 \subsection{Cơ chế Input feeding}
 Trong quá trình dịch, các mô hình được đề cập ở trên như Attention Toàn cục hay Cục bộ, đều vẫn còn một hạn chế về cách đặt "sự chú ý" lên các vị trí nguồn. Ở mỗi thời điểm $t$ khi dịch một từ ở câu đích, việc đặt "sự chú ý" của thời điểm $t$ độc lập hoàn toàn với việc đặt "sự chú ý" ở các thời điểm trước đó. Trong thực tế, khi dịch, một từ ở câu nguồn chỉ tương ứng với một vài từ ở câu đích. Do vậy, mô hình cần phải theo dõi xem là những từ nào ở câu nguồn đã được dịch trước đó thì hạn chế đặt "sự chú ý" lên lại những từ đó. Việc không có cơ chế kiểm soát những từ nào đã được dịch sẽ khiến cho mô hình sẽ rơi vào 2 trường hợp "được dịch quá nhiều" (over-translated) hoặc "được dịch quá ít" (under-translated). Tức là có một số từ ở câu nguồn sẽ được đặt "sự chú ý" lên quá nhiều lần dẫn tới bỏ qua những từ quan trọng khác hoặc là một số từ quan trọng được đặt "sự chú ý" lên quá ít dẫn tới việc bỏ qua thông tin của từ đó trong quá trình dịch. Dù là trường hợp nào thì cũng gây giảm chất lượng dịch của mô hình.
+
+Trong Dịch máy Thống kê, Koehn et al. 2003 \cite{smtKoehn2003} đã đề xuất một mô hình dịch dựa trên cụm từ (phrase-based) mà có cơ chế để giải quyết vấn đề trên. Cơ chế này rất đơn giản và trực quan. Trong bộ giải mã duy trì một véc-tơ bao phủ (coverage vector) để chỉ ra rằng từ ở câu nguồn nào đã được dịch hoặc chưa được dịch. Quá trình dịch được hoàn thành khi toàn bộ từ ở câu nguồn được "bao phủ" hay dẵ được dịch. Trong khi đó, các mô hình Dịch máy Nơ-ron hiện nay chỉ kết thúc quá trình dịch khi và chỉ khi gặp kí tự kết thúc câu hoặc vượt quá số lượng từ cho trước. Việc này dễ dẫn đến trường hợp "được dịch quá nhiều" khi kí hiệu kết thúc câu xuất hiện trễ hay ngược lại dẫn đến trường hợp "được dịch quá ít" khi kí hiệu kết thúc câu xuất hiện sớm. Ngoài ra còn bị ảnh hưởng bởi số lượng từ quy định khi dịch.
+
+Công trình \cite{attentionThangLuong2015} đề xuất một cơ chế góp phần giải quyết vấn đề ở trên: input feeding (tạm dịch là "cho đầu vào ăn" // TODO: dịch khác). 
 
 \subsection{Thuật toán ``Sleep-Wake Stochastic Gradient Descent''}
 Để khắc phục khó khăn của việc huấn luyện SRAEs với chuẩn L1, chúng tôi đề xuất một phiên bản điều chỉnh của thuật toán ``Stochastic Gradient Descent'' (SGD), gọi là ``Sleep-Wake Stochastic Gradient Descent'' (SW-SGD). Ý tưởng là trong mỗi ``epoch'' của SGD (một ``epoch'' ứng một lần duyệt qua tất cả các mẫu trong tập huấn luyện), ta tính tổng giá trị đầu ra của mỗi nơ-ron ẩn; và sau mỗi ``epoch'', ta kiểm xem có nơ-ron nào ``ngủ'' không (có tổng giá trị đầu ra bằng không) và ``đánh thức'' chúng bằng cách khởi tạo lại véc-tơ trọng số đi vào. Mặc dù cách làm này rất đơn giản, nhưng thí nghiệm của chúng tôi cho thấy nó có thể giúp SRAEs học được thành công các đặc trưng mà không có đặc trưng nào ``ngủ''.

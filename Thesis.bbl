@@ -49,6 +49,16 @@ I.~Goodfellow, H.~Lee, Q.~V. Le, A.~Saxe, and A.~Y. Ng, ``Measuring invariances
   in deep networks,'' in \emph{Advances in neural information processing
   systems}, 2009, pp. 646--654.
 
+\bibitem{smtKoehn2003}
+\BIBentryALTinterwordspacing
+P.~Koehn, F.~J. Och, and D.~Marcu, ``Statistical phrase-based translation,'' in
+  \emph{Proceedings of the 2003 Conference of the North American Chapter of the
+  Association for Computational Linguistics on Human Language Technology -
+  Volume 1}, ser. NAACL '03.\hskip 1em plus 0.5em minus 0.4em\relax
+  Stroudsburg, PA, USA: Association for Computational Linguistics, 2003, pp.
+  48--54. [Online]. Available: \url{https://doi.org/10.3115/1073445.1073462}
+\BIBentrySTDinterwordspacing
+
 \bibitem{attentionhistory2010}
 \BIBentryALTinterwordspacing
 H.~Larochelle and G.~E. Hinton, ``Learning to combine foveal glimpses with a
