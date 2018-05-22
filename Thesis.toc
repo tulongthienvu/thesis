@@ -20,16 +20,13 @@
 \contentsline {section}{\numberline {3.2}Attention To\IeC {\`a}n c\IeC {\d u}c}{26}{section.3.2}
 \contentsline {section}{\numberline {3.3}Attention C\IeC {\d u}c b\IeC {\d \ocircumflex }}{27}{section.3.3}
 \contentsline {subsection}{\numberline {3.3.1}C\IeC {\ohorn } ch\IeC {\'\ecircumflex } Input feeding}{30}{subsection.3.3.1}
-\contentsline {subsection}{\numberline {3.3.2}Thu\IeC {\d \acircumflex }t to\IeC {\'a}n ``Sleep-Wake Stochastic Gradient Descent''}{32}{subsection.3.3.2}
-\contentsline {section}{\numberline {3.4}R\IeC {\`a}ng bu\IeC {\d \ocircumflex }c tr\IeC {\d o}ng s\IeC {\'\ocircumflex } trong SRAEs}{34}{section.3.4}
-\contentsline {subsection}{\numberline {3.4.1}C\IeC {\'a}ch r\IeC {\`a}ng bu\IeC {\d \ocircumflex }c tr\IeC {\d o}ng s\IeC {\'\ocircumflex } \IeC {\dj }\IeC {\`\ecircumflex } xu\IeC {\'\acircumflex }t cho SRAEs}{35}{subsection.3.4.1}
-\contentsline {chapter}{\numberline {4}C\IeC {\'a}c K\IeC {\'\ecircumflex }t Qu\IeC {\h a} Th\IeC {\'\i } Nghi\IeC {\d \ecircumflex }m}{38}{chapter.4}
-\contentsline {section}{\numberline {4.1}C\IeC {\'a}c thi\IeC {\'\ecircumflex }t l\IeC {\d \acircumflex }p th\IeC {\'\i } nghi\IeC {\d \ecircumflex }m}{38}{section.4.1}
-\contentsline {section}{\numberline {4.2}SGD v\IeC {\`a} SW-SGD}{40}{section.4.2}
-\contentsline {section}{\numberline {4.3}C\IeC {\'a}ch r\IeC {\`a}ng bu\IeC {\d \ocircumflex }c tr\IeC {\d o}ng s\IeC {\'\ocircumflex } \IeC {\dj }\IeC {\`\ecircumflex } xu\IeC {\'\acircumflex }t c\IeC {\h u}a ch\IeC {\'u}ng t\IeC {\^o}i v\IeC {\`a} c\IeC {\'a}c c\IeC {\'a}ch r\IeC {\`a}ng bu\IeC {\d \ocircumflex }c tr\IeC {\d o}ng s\IeC {\'\ocircumflex } kh\IeC {\'a}c}{43}{section.4.3}
-\contentsline {section}{\numberline {4.4}SRAEs v\IeC {\`a} c\IeC {\'a}c lo\IeC {\d a}i ``Auto-Encoders'' kh\IeC {\'a}c}{45}{section.4.4}
-\contentsline {chapter}{\numberline {5}K\IeC {\'\ecircumflex }t Lu\IeC {\d \acircumflex }n v\IeC {\`a} H\IeC {\uhorn }\IeC {\'\ohorn }ng Ph\IeC {\'a}t Tri\IeC {\h \ecircumflex }n}{47}{chapter.5}
-\contentsline {section}{\numberline {5.1}K\IeC {\'\ecircumflex }t lu\IeC {\d \acircumflex }n}{47}{section.5.1}
-\contentsline {section}{\numberline {5.2}H\IeC {\uhorn }\IeC {\'\ohorn }ng ph\IeC {\'a}t tri\IeC {\h \ecircumflex }n}{48}{section.5.2}
-\contentsline {chapter}{Ph\IeC {\d u} L\IeC {\d u}c: C\IeC {\'a}c C\IeC {\^o}ng Tr\IeC {\`\i }nh \IeC {\DJ }\IeC {\~a} C\IeC {\^o}ng B\IeC {\'\ocircumflex }}{50}{chapter*.22}
-\contentsline {chapter}{T\IeC {\`A}I LI\IeC {\d \ECIRCUMFLEX }U THAM KH\IeC {\h A}O}{61}{chapter*.23}
+\contentsline {chapter}{\numberline {4}C\IeC {\'a}c K\IeC {\'\ecircumflex }t Qu\IeC {\h a} Th\IeC {\'\i } Nghi\IeC {\d \ecircumflex }m}{32}{chapter.4}
+\contentsline {section}{\numberline {4.1}C\IeC {\'a}c thi\IeC {\'\ecircumflex }t l\IeC {\d \acircumflex }p th\IeC {\'\i } nghi\IeC {\d \ecircumflex }m}{32}{section.4.1}
+\contentsline {section}{\numberline {4.2}SGD v\IeC {\`a} SW-SGD}{34}{section.4.2}
+\contentsline {section}{\numberline {4.3}C\IeC {\'a}ch r\IeC {\`a}ng bu\IeC {\d \ocircumflex }c tr\IeC {\d o}ng s\IeC {\'\ocircumflex } \IeC {\dj }\IeC {\`\ecircumflex } xu\IeC {\'\acircumflex }t c\IeC {\h u}a ch\IeC {\'u}ng t\IeC {\^o}i v\IeC {\`a} c\IeC {\'a}c c\IeC {\'a}ch r\IeC {\`a}ng bu\IeC {\d \ocircumflex }c tr\IeC {\d o}ng s\IeC {\'\ocircumflex } kh\IeC {\'a}c}{37}{section.4.3}
+\contentsline {section}{\numberline {4.4}SRAEs v\IeC {\`a} c\IeC {\'a}c lo\IeC {\d a}i ``Auto-Encoders'' kh\IeC {\'a}c}{39}{section.4.4}
+\contentsline {chapter}{\numberline {5}K\IeC {\'\ecircumflex }t Lu\IeC {\d \acircumflex }n v\IeC {\`a} H\IeC {\uhorn }\IeC {\'\ohorn }ng Ph\IeC {\'a}t Tri\IeC {\h \ecircumflex }n}{41}{chapter.5}
+\contentsline {section}{\numberline {5.1}K\IeC {\'\ecircumflex }t lu\IeC {\d \acircumflex }n}{41}{section.5.1}
+\contentsline {section}{\numberline {5.2}H\IeC {\uhorn }\IeC {\'\ohorn }ng ph\IeC {\'a}t tri\IeC {\h \ecircumflex }n}{42}{section.5.2}
+\contentsline {chapter}{Ph\IeC {\d u} L\IeC {\d u}c: C\IeC {\'a}c C\IeC {\^o}ng Tr\IeC {\`\i }nh \IeC {\DJ }\IeC {\~a} C\IeC {\^o}ng B\IeC {\'\ocircumflex }}{44}{chapter*.20}
+\contentsline {chapter}{T\IeC {\`A}I LI\IeC {\d \ECIRCUMFLEX }U THAM KH\IeC {\h A}O}{55}{chapter*.21}
