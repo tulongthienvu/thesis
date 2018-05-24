@@ -1,4 +1,4 @@
-\chapter{Các Kết Quả Thí Nghiệm}
+\chapter{Các Kết Quả Thực Nghiệm}
 \ifpdf
     \graphicspath{{Chapter4/Chapter4Figs/PNG/}{Chapter4/Chapter4Figs/PDF/}{Chapter4/Chapter4Figs/}}
 \else
@@ -6,10 +6,10 @@
 \fi
 \label{chap_4}
 \begin{quote}
-\textit{Trong chương này, chúng tôi trình bày các kết quả thí nghiệm để đánh giá các đề xuất đã được nói ở chương trước. Bộ dữ liệu được dùng để tiến hành các thí nghiệm là bộ MNIST (bộ ảnh chữ số viết tay gồm các chữ số từ 0 đến 9). Các kết quả thí nghiệm cho thấy khi huấn luyện ``Sparse Rectified Auto-Encoders'' (SRAEs) với chuẩn L1 sẽ gặp phải vấn đề nơ-ron ``ngủ'', và chiến lược ``ngủ - đánh thức'' trong thuật toán ``Sleep-Wake Stochastic Gradient Descent'' (SW-SGD) của chúng tôi có thể giúp khắc phục vấn đề này. Các kết quả thí nghiệm cũng cho thấy cách ràng buộc trọng số đề xuất của chúng tôi cho kết quả tốt nhất trong số các cách ràng buộc trọng số có thể áp dụng cho SRAEs. Cuối cùng, thí nghiệm cũng cho thấy SRAEs với hai đề xuất trên của chúng tôi (SW-SGD và cách ràng buộc trọng số) có thể học được những đặc trưng cho kết quả phân lớp tốt khi so sánh với các loại ``Auto-Encoders'' khác.}
+\textit{Trong chương này, chúng tôi trình bày các kết quả thí nghiệm để đánh giá các mô hình được tìm hiểu mà đã trình bày ở chương trước. Bộ dữ liệu được dùng để tiến hành các thí nghiệm là bộ WMT'14 English-German (bộ dữ liệu tiếng Anh-tiếng Đức của cuộc thi Dịch máy WMT năm 2014). Các kết quả thí nghiệm cho thấy khi huấn luyện mô hình mà không sử dụng cơ chế Attention thì kết quả đạt được rất thấp. Các kết quả cũng cho thấy rằng các mô hình Attention Toàn cục, Attention Cục bộ, cơ chế Input feeding cho kết quả được cải thiện một cách rõ rệt.}
 \end{quote}
-\section{Các thiết lập thí nghiệm}
-Chúng tôi tiến hành các thí nghiệm trên bộ dữ liệu MNIST \cite{MNIST}; bộ dữ liệu này gồm các ảnh xám (có kích thước $28 \times 28$) của mười chữ số viết tay từ 0 đến 9. Ở hình \ref{fig_MNIST} là một số ảnh mẫu của bộ dữ liệu này. Dữ liệu được tiến hành tiền xử lý bằng cách lấy mỗi giá trị điểm ảnh chia cho $255$ để đưa về đoạn $[0, 1]$. Chúng tôi sử dụng cách phân chia thường được sử dụng cho bộ dữ liệu này: $50000$ ảnh dùng để huấn luyện, $10000$ ảnh dùng để chọn các siêu tham số (validation), và $10000$ ảnh dùng để kiểm tra (test).
+\section{Các thiết lập thực nghiệm}
+Chúng tôi tiến hành các thực nghiệm trên bộ dữ liệu WMT' 14 English-German được cung cấp trên trang chủ của Nhóm Xử lý Ngôn ngữ Tự nhiên Đại học Stanford. Bộ dữ liệu này gồm các cặp câu được viết dưới dạng ngôn ngữ tự nhiên ở 2 ngôn ngữ là tiếng Anh và tiếng Đức. Dữ liệu được tiến hành tiền xử lý bằng cách thực hiện tách từ đối với mỗi câu.
 
 \begin{figure}
 	\centering
