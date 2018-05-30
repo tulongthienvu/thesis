@@ -76,7 +76,6 @@
 
 \pagenumbering{roman}
 \input {Acknowledgments}
-
 %\newpage
 %\thispagestyle{empty}
 %\mbox{}
@@ -160,6 +159,9 @@
 \newpage
 \pagenumbering{arabic}
 
+% caption font size 
+\captionsetup[figure]{font=small}
+
 \include{Chapter1/chapter1}
 \include{Chapter2/chapter2}
 %\include{Chapter3/chapter3}
@@ -189,7 +191,7 @@
 	}
 \bibliographystyle{Classes/IEEEtranS}
 \bibliographystyle{unsrt}
-\bibliography{References/my_bib}
+%\bibliography{References/my_bib}
 
 
 %\input{Appendix}
