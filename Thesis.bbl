@@ -27,15 +27,6 @@ J.~Bergstra, O.~Breuleux, F.~Bastien, P.~Lamblin, R.~Pascanu, G.~Desjardins,
   expression compiler,'' in \emph{Proceedings of the Python for Scientific
   Computing Conference ({SciPy})}, Jun. 2010, oral Presentation.
 
-\bibitem{coates2012demystifying}
-A.~Coates, ``Demystifying unsupervised feature learning,'' Ph.D. dissertation,
-  Stanford University, 2012.
-
-\bibitem{coates2011analysis}
-A.~Coates, A.~Y. Ng, and H.~Lee, ``An analysis of single-layer networks in
-  unsupervised feature learning,'' in \emph{International Conference on
-  Artificial Intelligence and Statistics}, 2011, pp. 215--223.
-
 \bibitem{attentionhistory2011}
 \BIBentryALTinterwordspacing
 M.~Denil, L.~Bazzani, H.~Larochelle, and N.~de~Freitas, ``Learning where to
@@ -43,11 +34,6 @@ M.~Denil, L.~Bazzani, H.~Larochelle, and N.~de~Freitas, ``Learning where to
   abs/1109.3737, 2011. [Online]. Available:
   \url{http://arxiv.org/abs/1109.3737}
 \BIBentrySTDinterwordspacing
-
-\bibitem{goodfellow2009measuring}
-I.~Goodfellow, H.~Lee, Q.~V. Le, A.~Saxe, and A.~Y. Ng, ``Measuring invariances
-  in deep networks,'' in \emph{Advances in neural information processing
-  systems}, 2009, pp. 646--654.
 
 \bibitem{smtKoehn2003}
 \BIBentryALTinterwordspacing
@@ -69,14 +55,6 @@ H.~Larochelle and G.~E. Hinton, ``Learning to combine foveal glimpses with a
   \url{http://papers.nips.cc/paper/4089-learning-to-combine-foveal-glimpses-with-a-third-order-boltzmann-machine.pdf}
 \BIBentrySTDinterwordspacing
 
-\bibitem{le2011ica}
-Q.~V. Le, A.~Karpenko, J.~Ngiam, and A.~Y. Ng, ``Ica with reconstruction cost
-  for efficient overcomplete feature learning,'' in \emph{NIPS}, 2011, pp.
-  1017--1025.
-
-\bibitem{MNIST}
-Y.~LeCun, ``The {MNIST} database,'' \url{http://yann.lecun.com/exdb/mnist/}.
-
 \bibitem{lee2006efficient}
 H.~Lee, A.~Battle, R.~Raina, and A.~Ng, ``Efficient sparse coding algorithms,''
   in \emph{Advances in neural information processing systems}, 2006, pp.
@@ -88,6 +66,11 @@ M.~Luong, H.~Pham, and C.~D. Manning, ``Effective approaches to attention-based
   neural machine translation,'' \emph{CoRR}, vol. abs/1508.04025, 2015.
   [Online]. Available: \url{http://arxiv.org/abs/1508.04025}
 \BIBentrySTDinterwordspacing
+
+\bibitem{pytorchworkshop}
+A.~Paszke, S.~Gross, S.~Chintala, G.~Chanan, E.~Yang, Z.~DeVito, Z.~Lin,
+  A.~Desmaison, L.~Antiga, and A.~Lerer, ``Automatic differentiation in
+  pytorch,'' 2017.
 
 \bibitem{rifai2011HCAEs}
 S.~Rifai, G.~Mesnil, P.~Vincent, X.~Muller, Y.~Bengio, Y.~Dauphin, and
@@ -117,10 +100,5 @@ K.~Xu, J.~Ba, R.~Kiros, K.~Cho, A.~C. Courville, R.~Salakhutdinov, R.~S. Zemel,
 \bibitem{zeiler2014thesis}
 M.~D. Zeiler, ``Hierarchical convolutional deep learning in computer vision,''
   Ph.D. dissertation, New York University, 2014.
-
-\bibitem{zeiler2013rectified}
-M.~Zeiler, M.~Ranzato, R.~Monga, M.~Mao, K.~Yang, Q.~Le, P.~Nguyen, A.~Senior,
-  V.~Vanhoucke, J.~Dean \emph{et~al.}, ``On rectified linear units for speech
-  processing.''\hskip 1em plus 0.5em minus 0.4em\relax ICASSP, 2013.
 
 \end{thebibliography}

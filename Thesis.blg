@@ -15,7 +15,7 @@ Database file #1: References/my_bib.bib
 -- http://www.michaelshell.org/tex/ieeetran/bibtex/
 -- See the "IEEEtran_bst_HOWTO.pdf" manual for usage information.
 ** Sorting version - not for normal IEEE work.
-Warning--empty booktitle in zeiler2013rectified
+Warning--empty journal in pytorchworkshop
 
 Done.
 (There was 1 error message)
