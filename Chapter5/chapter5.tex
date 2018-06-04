@@ -8,7 +8,21 @@
 
 \section{Kết luận}
 
-Trong khóa luận này, chúng tôi nghiên cứu bài toán Dịch máy nơ-ron bằng mô hình Attention-LSTM cộng với 
+Trong khóa luận này, chúng tôi nghiên cứu bài toán Dịch máy nơ-ron bằng mô hình Attention-LSTM. Mô hình Attention-LSTM học được cách dịch giữa 2 ngôn ngữ (trong khóa luận này là Anh-Đức) như các mô hình với kiến trúc Bộ mã hóa-Bộ giải mã với bộ mã hóa và bộ giải mã là các LSTM. Tuy nhiên cơ chế Attention đem lại nhiều lợi thế mà những mô hình không sử dụng Attention không có được:
+\begin{itemize}
+	\item Các mô hình sử dụng Attention tận dụng được các trạng thái ẩn trên bộ mã hóa để hạn chế vấn đề "sự phụ thuộc dài" của các mô hình RNNs.
+	\item Cơ chế có cách dịch giống với ý tưởng về cách con người dịch nhìn sự vật, hiện tượng.
+	\item Có thể sử dụng kết quả của cơ chế Attention để phát triển thêm các phương pháp, kĩ thuật khác:
+	\begin{itemize}
+		\item Phương pháp Input feeding: giúp mô hình có thể biết được thông tin gióng hàng trong những thời điểm trước đó thông qua véc-tơ attention $\tilde{h}_t$. Từ đó giúp mô hình có thể hạn chế vấn đề "đươc dịch quá nhiều" hoặc "được dịch quá ít".
+		\item Kĩ thuật thay thế từ hiếm: giúp mô hình giải quyết được vấn đề hạn chế của bộ từ vựng.
+	\end{itemize}
+\end{itemize}
+
+Các kết quả thực nghiệm trên bộ dữ liệu WMT'14 English-German cho thấy rằng:
+\begin{itemize}
+	\item Cải thiện chất lượng dịch của mô hình, đặc biệt là cho những câu dài.
+\end{itemize}
 
 
 %\section{Kết chương}

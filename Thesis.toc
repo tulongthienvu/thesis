@@ -26,8 +26,8 @@
 \contentsline {section}{\numberline {4.2}K\IeC {\'\ecircumflex }t qu\IeC {\h a} th\IeC {\d \uhorn }c nghi\IeC {\d \ecircumflex }m}{38}{section.4.2}
 \contentsline {chapter}{\numberline {5}K\IeC {\'\ecircumflex }t Lu\IeC {\d \acircumflex }n V\IeC {\`a} H\IeC {\uhorn }\IeC {\'\ohorn }ng Ph\IeC {\'a}t Tri\IeC {\h \ecircumflex }n}{39}{chapter.5}
 \contentsline {section}{\numberline {5.1}K\IeC {\'\ecircumflex }t lu\IeC {\d \acircumflex }n}{39}{section.5.1}
-\contentsline {chapter}{\numberline {6}K\IeC {\'\ecircumflex }t Lu\IeC {\d \acircumflex }n v\IeC {\`a} H\IeC {\uhorn }\IeC {\'\ohorn }ng Ph\IeC {\'a}t Tri\IeC {\h \ecircumflex }n}{40}{chapter.6}
-\contentsline {section}{\numberline {6.1}K\IeC {\'\ecircumflex }t lu\IeC {\d \acircumflex }n}{40}{section.6.1}
-\contentsline {section}{\numberline {6.2}H\IeC {\uhorn }\IeC {\'\ohorn }ng ph\IeC {\'a}t tri\IeC {\h \ecircumflex }n}{41}{section.6.2}
-\contentsline {chapter}{Ph\IeC {\d u} L\IeC {\d u}c: C\IeC {\'a}c C\IeC {\^o}ng Tr\IeC {\`\i }nh \IeC {\DJ }\IeC {\~a} C\IeC {\^o}ng B\IeC {\'\ocircumflex }}{43}{chapter*.16}
-\contentsline {chapter}{T\IeC {\`A}I LI\IeC {\d \ECIRCUMFLEX }U THAM KH\IeC {\h A}O}{54}{chapter*.17}
+\contentsline {chapter}{\numberline {6}K\IeC {\'\ecircumflex }t Lu\IeC {\d \acircumflex }n v\IeC {\`a} H\IeC {\uhorn }\IeC {\'\ohorn }ng Ph\IeC {\'a}t Tri\IeC {\h \ecircumflex }n}{41}{chapter.6}
+\contentsline {section}{\numberline {6.1}K\IeC {\'\ecircumflex }t lu\IeC {\d \acircumflex }n}{41}{section.6.1}
+\contentsline {section}{\numberline {6.2}H\IeC {\uhorn }\IeC {\'\ohorn }ng ph\IeC {\'a}t tri\IeC {\h \ecircumflex }n}{42}{section.6.2}
+\contentsline {chapter}{Ph\IeC {\d u} L\IeC {\d u}c: C\IeC {\'a}c C\IeC {\^o}ng Tr\IeC {\`\i }nh \IeC {\DJ }\IeC {\~a} C\IeC {\^o}ng B\IeC {\'\ocircumflex }}{44}{chapter*.16}
+\contentsline {chapter}{T\IeC {\`A}I LI\IeC {\d \ECIRCUMFLEX }U THAM KH\IeC {\h A}O}{55}{chapter*.17}
