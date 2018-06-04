@@ -21,11 +21,13 @@
 \contentsline {section}{\numberline {3.3}Attention C\IeC {\d u}c b\IeC {\d \ocircumflex }}{27}{section.3.3}
 \contentsline {section}{\numberline {3.4}Ph\IeC {\uhorn }\IeC {\ohorn }ng ph\IeC {\'a}p Input feeding}{30}{section.3.4}
 \contentsline {section}{\numberline {3.5}K\IeC {\~\i } thu\IeC {\d \acircumflex }t thay th\IeC {\'\ecircumflex } t\IeC {\`\uhorn } hi\IeC {\'\ecircumflex }m}{32}{section.3.5}
-\contentsline {chapter}{\numberline {4}C\IeC {\'a}c K\IeC {\'\ecircumflex }t Qu\IeC {\h a} Th\IeC {\d \uhorn }c Nghi\IeC {\d \ecircumflex }m}{35}{chapter.4}
-\contentsline {section}{\numberline {4.1}C\IeC {\'a}c thi\IeC {\'\ecircumflex }t l\IeC {\d \acircumflex }p th\IeC {\d \uhorn }c nghi\IeC {\d \ecircumflex }m}{35}{section.4.1}
-\contentsline {section}{\numberline {4.2}K\IeC {\'\ecircumflex }t qu\IeC {\h a} th\IeC {\d \uhorn }c nghi\IeC {\d \ecircumflex }m}{37}{section.4.2}
-\contentsline {chapter}{\numberline {5}K\IeC {\'\ecircumflex }t Lu\IeC {\d \acircumflex }n v\IeC {\`a} H\IeC {\uhorn }\IeC {\'\ohorn }ng Ph\IeC {\'a}t Tri\IeC {\h \ecircumflex }n}{38}{chapter.5}
-\contentsline {section}{\numberline {5.1}K\IeC {\'\ecircumflex }t lu\IeC {\d \acircumflex }n}{38}{section.5.1}
-\contentsline {section}{\numberline {5.2}H\IeC {\uhorn }\IeC {\'\ohorn }ng ph\IeC {\'a}t tri\IeC {\h \ecircumflex }n}{39}{section.5.2}
-\contentsline {chapter}{Ph\IeC {\d u} L\IeC {\d u}c: C\IeC {\'a}c C\IeC {\^o}ng Tr\IeC {\`\i }nh \IeC {\DJ }\IeC {\~a} C\IeC {\^o}ng B\IeC {\'\ocircumflex }}{41}{chapter*.16}
-\contentsline {chapter}{T\IeC {\`A}I LI\IeC {\d \ECIRCUMFLEX }U THAM KH\IeC {\h A}O}{52}{chapter*.17}
+\contentsline {chapter}{\numberline {4}C\IeC {\'a}c K\IeC {\'\ecircumflex }t Qu\IeC {\h a} Th\IeC {\d \uhorn }c Nghi\IeC {\d \ecircumflex }m}{36}{chapter.4}
+\contentsline {section}{\numberline {4.1}C\IeC {\'a}c thi\IeC {\'\ecircumflex }t l\IeC {\d \acircumflex }p th\IeC {\d \uhorn }c nghi\IeC {\d \ecircumflex }m}{36}{section.4.1}
+\contentsline {section}{\numberline {4.2}K\IeC {\'\ecircumflex }t qu\IeC {\h a} th\IeC {\d \uhorn }c nghi\IeC {\d \ecircumflex }m}{38}{section.4.2}
+\contentsline {chapter}{\numberline {5}K\IeC {\'\ecircumflex }t Lu\IeC {\d \acircumflex }n V\IeC {\`a} H\IeC {\uhorn }\IeC {\'\ohorn }ng Ph\IeC {\'a}t Tri\IeC {\h \ecircumflex }n}{39}{chapter.5}
+\contentsline {section}{\numberline {5.1}K\IeC {\'\ecircumflex }t lu\IeC {\d \acircumflex }n}{39}{section.5.1}
+\contentsline {chapter}{\numberline {6}K\IeC {\'\ecircumflex }t Lu\IeC {\d \acircumflex }n v\IeC {\`a} H\IeC {\uhorn }\IeC {\'\ohorn }ng Ph\IeC {\'a}t Tri\IeC {\h \ecircumflex }n}{40}{chapter.6}
+\contentsline {section}{\numberline {6.1}K\IeC {\'\ecircumflex }t lu\IeC {\d \acircumflex }n}{40}{section.6.1}
+\contentsline {section}{\numberline {6.2}H\IeC {\uhorn }\IeC {\'\ohorn }ng ph\IeC {\'a}t tri\IeC {\h \ecircumflex }n}{41}{section.6.2}
+\contentsline {chapter}{Ph\IeC {\d u} L\IeC {\d u}c: C\IeC {\'a}c C\IeC {\^o}ng Tr\IeC {\`\i }nh \IeC {\DJ }\IeC {\~a} C\IeC {\^o}ng B\IeC {\'\ocircumflex }}{43}{chapter*.16}
+\contentsline {chapter}{T\IeC {\`A}I LI\IeC {\d \ECIRCUMFLEX }U THAM KH\IeC {\h A}O}{54}{chapter*.17}
