@@ -10,8 +10,8 @@
 
 Trong khóa luận này, chúng tôi nghiên cứu bài toán Dịch máy nơ-ron bằng mô hình Attention-LSTM. Mô hình Attention-LSTM học được cách dịch giữa 2 ngôn ngữ (trong khóa luận này là Anh-Đức) như các mô hình với kiến trúc Bộ mã hóa-Bộ giải mã với bộ mã hóa và bộ giải mã là các LSTM. Tuy nhiên cơ chế Attention đem lại nhiều lợi thế mà những mô hình không sử dụng Attention không có được:
 \begin{itemize}
-	\item Các mô hình sử dụng Attention tận dụng được các trạng thái ẩn trên bộ mã hóa để hạn chế vấn đề "sự phụ thuộc dài" của các mô hình RNNs.
-	\item Cơ chế có cách dịch giống với ý tưởng về cách con người dịch nhìn sự vật, hiện tượng.
+	\item Các mô hình sử dụng Attention tận dụng được các trạng thái ẩn trên bộ mã hóa để hạn chế vấn đề "sự phụ thuộc dài" của các mô hình RNNs. Trong quá trình dự đoán, bộ giải mã sử dụng các trạng thái ẩn của bộ mã hóa bằng cách đặt "sự chú ý" lên một số trạng thái ẩn cần thiết và sử dụng nó để suy ra ngữ cảnh hiện tại của câu, sau đó mô hình dự đoán từ tiếp theo dựa vào ngữ cảnh đó.
+	\item Cơ chế có cách dịch giống với ý tưởng về cách con người dịch nhìn sự vật, hiện tượng. Con người thường chỉ tập trung vào những phần quan trọng mà cung cấp những thông tin cần thiết, phù hợp với mục đích quan sát của sự vật, hiện tượng.
 	\item Có thể sử dụng kết quả của cơ chế Attention để phát triển thêm các phương pháp, kĩ thuật khác:
 	\begin{itemize}
 		\item Phương pháp Input feeding: giúp mô hình có thể biết được thông tin gióng hàng trong những thời điểm trước đó thông qua véc-tơ attention $\tilde{h}_t$. Từ đó giúp mô hình có thể hạn chế vấn đề "đươc dịch quá nhiều" hoặc "được dịch quá ít", tránh được những câu dịch không thực tế như những câu dịch lặp lại một từ nhiều lần.
@@ -21,7 +21,15 @@ Trong khóa luận này, chúng tôi nghiên cứu bài toán Dịch máy nơ-ro
 
 Các kết quả thực nghiệm trên bộ dữ liệu WMT'14 English-German cho thấy rằng:
 \begin{itemize}
-	\item Cải thiện chất lượng dịch của mô hình, đặc biệt là cho những câu dài.
+	\item Cơ chế Attention cải thiện chất lượng dịch của mô hình rất cao so với những mô hình không sử dụng cơ chế Attention.
+	\item Những phương pháp, kĩ thuật sử dụng kết quả của cơ chế Attention để giải quyết những vấn đề còn tồn tại khi sử dụng mô hình dịch máy nơ-ron cũng cải thiện chất lượng dịch của mô hình lên đáng kể.
+\end{itemize}
+
+Cơ chế Attention đã mở ra một không gian rộng lớn để phát triển cho việc cải tiến mô hình các dịch máy nơ-ron.
+
+// TODO Chúng tôi đạt được trong khóa luận này:
+\begin{itemize}
+	\item 
 \end{itemize}
 
 
