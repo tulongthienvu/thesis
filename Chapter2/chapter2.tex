@@ -9,45 +9,64 @@
 
 %Trong chương này, chúng tôi sẽ trình bày những kiến thức nền tảng trên ba chủ đề chính bao gồm\textit{Mạng nơ-ron hồi quy (Recurrent neural network)} và biến thể của nó \textit{Long short-term memory} với khả năng giải quyết vấn đề về các \textit{phụ thuộc dài hạn} (Long term dependencies). Chúng tôi cũng trình bày về mô hình dịch máy nơ-ron dựa trên kiến trúc bộ mã hóa - bộ giải mã đã được đề cập đến trong chương giới thiệu. Những kiến thức được trình bày trong chương này cung cấp những nền tảng cũng như phân tích các vấn đề mà kiến trúc bộ mã hóa - bộ giải mã gặp phải để đi đến chương tiếp theo về cơ chế \textit{Attention} trong dịch máy nơ-ron.
 
-Trong chương này, chúng tôi sẽ trình bày những kiến thức nền tảng trên ba chủ đề bao gồm mạng nơ-ron hồi quy, mô hình ngôn ngữ nơ-ron và mô hình dịch máy nơ-ron. Mạng nơ-ron hồi quy (RNN) là xương sống của dịch máy nơ-ron. Nó được sử dụng để làm cả bộ mã hóa lẫn bộ giải mã. Ứng với mỗi vai trò, RNN sẽ có một thiết kế riêng. Một phiên bản cải tiến của RNN là \textit{Long short-term memory} cũng được chúng tôi trình bày, phiên bản này giúp cho việc huấn luyện RNN trở nên dễ dàng hơn. Sau đó, dựa trên những kiến thức về mạng nơ-ron hồi quy, chúng tôi nói về khái niệm \textit{mô hình ngôn ngữ hồi quy} với khả năng \textit{tạo ra ngôn ngữ}, là bước quan trọng trong dịch máy nơ-ron. Cuối cùng, chúng tôi cũng trình bày về mô hình dịch máy nơ-ron theo kiến trúc bộ mã hóa - bộ giải mã với RNN và mô hình ngôn ngữ hồi quy là những thành phần nền tảng.
+Trong chương này, chúng tôi sẽ trình bày những kiến thức nền tảng trên ba chủ đề bao gồm mạng nơ-ron hồi quy, mô hình ngôn ngữ nơ-ron và mô hình dịch máy nơ-ron. Mạng nơ-ron hồi quy (RNN) là xương sống của dịch máy nơ-ron. Nó được sử dụng để làm cả bộ mã hóa lẫn bộ giải mã. Ứng với mỗi vai trò, RNN sẽ có một thiết kế riêng. Một phiên bản cải tiến của RNN là \textit{Long short-term memory} cũng được chúng tôi trình bày, phiên bản này giúp cho việc huấn luyện RNN trở nên dễ dàng hơn. Sau đó, dựa trên những kiến thức về mạng nơ-ron hồi quy, chúng tôi nói về khái niệm \textit{mô hình ngôn ngữ} với chức năng tạo ra từ trong bộ giải mã, là bước quan trọng trong dịch máy nơ-ron. Cuối cùng, chúng tôi cũng trình bày về mô hình dịch máy nơ-ron theo kiến trúc bộ mã hóa - bộ giải mã với RNN và mô hình ngôn ngữ hồi quy là những thành phần nền tảng.
 
 \end{quote}
 \section{Mạng nơ-ron hồi quy (Recurrent neural network)}
 
-Trong bài toán dịch máy với dữ liệu văn bản, ta biết rằng những từ trong một câu hoặc một đoạn văn không bao giờ là độc lập với nhau. Ví dụ như trong câu sau \textit{Paris là thủ đô của nước \_\_}. Dễ biết được rằng từ trong chỗ trống sẽ là \textit{Pháp}. Tuy nhiên, trong trường hợp không đọc những từ phía trước, chúng ta không thể nào đoán được từ trong chỗ trống là gì. Điều này có nghĩa là một từ luôn có mối liên hệ với những từ phía trước nó và chúng có một thứ tự. Ta gọi loại dữ liệu có thứ tự là dữ liệu chuỗi.
+Trong tự nhiên, dữ liệu không phải lúc nào cũng được sinh ra một cách ngẫu nhiên. Trong một số trường hợp, chúng được sinh ra theo một thứ tự. Xét trong dữ liệu văn bản, ví dụ ta cần điền vào chỗ trống cho câu sau \textit{Paris là thủ đô của nước \_\_}. Dễ biết được rằng chỉ có duy nhất một từ phù hợp cho chỗ trống này, đó là \textit{Pháp}. Điều này có nghĩa là mỗi từ trong một câu không được tạo ra ngẫu nhiên mà nó được tạo ra dựa trên một liên hệ với những từ đứng trước nó. Các loại dữ liệu khác như những khung hình trong một bộ phim hoặc các đoạn âm thanh trong một bản nhạc cũng có tính chất tương tự. Những loại dữ liệu mang thứ tự này được gọi chung là dữ liệu chuỗi (sequential data).
 
-\textit{Mạng nơ-ron hồi quy (recurrent neural network)} \cite{elman1990} gọi tắt là \textit{RNN} là một nhánh của Mạng nơ-ron nhân tạo được thiết kế đặc biệt cho việc mô hình hóa loại dữ liệu chuỗi. Lý do RNN thích hợp là vì nó tận dụng được tính chất tuần tự của loại dữ liệu này. Xét một chuỗi $x={x_1,x_2,...,x_n}$ và đầu ra tương ứng của nó $y={y_1,y_2,...,y_n}$, ta muốn học một ánh xạ $f: x \mapsto y$. Trong trường hợp này, một mạng nơ-ron truyền thẳng chỉ có thể ánh xạ một đầu vào $x_i$ sang một đầu ra $y_i$. Trong khi đó, trên lý thuyết, một RNN hoàn toàn có thể tận dụng toàn bộ lịch sử của những đầu vào trước đó $x_{1 \mapsto i}$ vào việc tính toán $y_i$. Để làm được việc này, RNN với các kết nối vòng cho phép nó sở hữu một loại "bộ nhớ". Bộ nhớ này sẽ tồn tại trong RNN và tác động đến đầu ra của nó. %Hình \ref{fig_rnn_loop} thể hiện kết nối vòng của RNN.
+Trong quá khứ, một số mô hình xử lý dữ liệu chuỗi bằng cách giả định rằng đầu vào hiện tại có liên hệ với một số lượng xác định đầu vào trước đó, ví dụ như giả định Markov. Một cách đơn giản hơn, nhiều mô hình tạo ra một cửa sổ trượt để nối mỗi đầu vào hiện tại với một số lượng đầu vào trước đó nhằm tạo ra sự mô phỏng về tính phụ thuộc. Cách tiếp cận này đã được sử dụng cho mô hình \textit{Deep belief network} trong xử lý tiếng nói \cite{massetal2012}. Nhược điểm của những cách làm này là ta phải xác định trước kích thước của cửa sổ. Một mô hình với kích thước cửa sổ với chiều dài bằng 6 không thể nào quyết định được từ tiếp theo trong câu \textit{Hổ là loài động vật ăn} sẽ là \textit{thịt} hay \textit{cỏ}. Trong ví dụ này, từ tiếp theo của câu phụ thuộc mật thiết vào từ \textit{Hổ} cách nó đúng 6 t. Trên thực tế, có rất nhiều câu đòi hỏi sự phụ thuộc với nhiều từ xa hơn trước đó. Ta gọi những sự phụ thuộc kiểu như vậy là những \textit{phụ thuộc dài hạn} (long term dependency). 
 
-%\begin{figure}
-%	\centering
-%	\includegraphics[width=0.3\textwidth]{rnn_loop}
-%	\caption[Mô hình RNN đơn giản]{Mô hình RNN đơn giản với kết nối vòng, \textbf{$h$} được xem như bộ nhớ được luân chuyển trong RNN}
-%	\label{fig_rnn_loop}
-%\end{figure}
+%Trong những năm qua, các mô hình mạng nơ-ron nhân tạo trong đã trở nên mạnh mẽ và đạt được những kết quả "state-of-the-art" trong nhiều bài toán học máy. Thành công này đến từ khả năng tự học các đặc trưng ẩn bên dưới của dữ liệu của mạng nơ-ron, không như những phương pháp truyền thống dựa trên các đặc trưng được tạo thủ công (handcrafted features). Ngày nay, giá cả của các thiết bị vi xử lý đã trở rẻ hơn, các bộ dữ liệu trở nên lớn hơn và lĩnh vực tính toán song song đã phát triển đáng kể. Điều đó khiến cho việc huấn luyện và áp dụng các mạng nơ-ron trong thực tế trở nên dễ dàng hơn rất nhiều so với trước đây. Mạng nơ-ron ngày nay đã trở thành mô hình tiêu chuẩn và được áp dụng trong nhiều ứng dụng.
+ 
+% Mặc dù mạng nơ-ron truyền thống đã thể hiện sức mạnh trong nhiều bài toán, chúng cũng có những hạn chế. Đáng chú ý nhất, mạng nơ-ron truyền thống hoạt động dựa trên giả định rằng các mẫu dữ liệu là độc lập với nhau. Sau mỗi thời điểm một mẫu dữ liệu được xử lý, trạng thái hiện tại của mạng biến mất, các thiết lập của mạng lại trở về như ban đầu. Nếu các mẫu dữ liệu được tạo ra một cách độc lập, việc này là bình thường. Nhưng nếu các mẫu dữ liệu có liên hệ với nhau theo một thứ tự, điều này là một vấn đề. Ví dụ như các khung hình từ video, đoạn âm thanh hay các từ trong một câu là những loại dữ liệu mà ta không thể sử dụng giả định về độc lập. Thêm vào đó, những mạng nơ-ron truyền thống thường được thiết kế với các đầu vào là những vec-tơ có độ dài cố định. Điều này hạn là một hạn chế lớn với những bài toán dữ liệu đầu vào có độ dài chưa biết trước.
 
-Với mỗi đầu vào $x_i$ trong chuỗi $x={x_1,x_2,...,x_n}$, RNN cập nhật bộ nhớ để tạo ra một trạng thái ẩn $h_i$. Vector này có thể được xem như là một đại diện cho tập các đầu vào tại thời điểm trước đó $x_{1 \mapsto i}$. Điểm mấu chốt để RNN hoạt động là cách nó cập nhật trạng thái ẩn. Ở dạng đơn giản nhất, RNN định nghĩa công thức cập nhật trạng thái ẩn của nó như sau:
+\textit{Mạng nơ-ron hồi quy} (recurrent neural network) \cite{elman1990} gọi tắt là \textit{RNN} là một nhánh của nạng nơ-ron nhân tạo được thiết kế đặc biệt cho việc mô hình hóa dữ liệu chuỗi. Khác với những mô hình đã đề cập giả định sự phụ thuộc chỉ xảy ra trong một vùng có chiều dài cố định. RNN, trên lý thuyết, có khả năng nắm bắt được các phụ thuộc dài hạn với chiều dài bất kỳ. Để làm được điều đó, trong quá trình học, RNN lưu giữ những thông tin cần thiết cho các phụ thuộc dài hạn bằng một vec-tơ được gọi là \textit{trạng thái ẩn}.
+
+Xét một chuỗi đầu vào $x={x_1,x_2,...,x_n}$. Ta gọi $h_t$ là trạng thái ẩn tại thời điểm $t$, là lúc một mẫu dữ liệu $x_t$ được đưa vào RNN. Trạng thái ẩn $h_t$ không chỉ phụ thuộc vào mẫu dữ liệu hiện tại $x_t$ mà còn dựa trên trạng thái ẩn trước đó $h_{t-1}$. Một cách cụ thể, có thể thể hiện $h_t$ như một sau:
 \begin{equation} \label{basicRnnEquation}
 	h_t = f \left(h_{t-1}, x_t \right)
 \end{equation}
+trong đó hàm $f$ là một ánh xạ phi tuyến. Như vậy, $h_t$ có thể chứa được thông tin của toàn bộ chuỗi đầu mà nó đã xử lý nhờ vào định nghĩa hồi quy trong công thức \ref{basicRnnEquation}. Nói một các khác, RNN sử dụng trạng thái ẩn như một dạng bộ nhớ để lưu giữ thông tin từ một chuỗi.
 
-Trong công thức trên, hàm $f$ tính trạng thái ẩn ở thời điểm $t$ dựa trên trạng thái ẩn trước đó $h_{t-1}$ và đầu vào $x_t$. Thông thường, hàm $f$ là một hàm phi tuyến như hàm \textit{sigmoid} hay hàm \textit{tanh}. Xét một RNN với công thức cụ thể như sau:  
+%Trong bài toán dịch máy với dữ liệu văn bản, ta biết rằng những từ trong một câu hoặc một đoạn văn không bao giờ là độc lập với nhau. Ví dụ như trong câu sau \textit{Paris là thủ đô của nước \_\_}. Dễ biết được rằng từ trong chỗ trống sẽ là \textit{Pháp}. Tuy nhiên, trong trường hợp không đọc những từ phía trước, chúng ta không thể nào đoán được từ trong chỗ trống là gì. Điều này có nghĩa là một từ luôn có mối liên hệ với những từ phía trước nó và chúng có một thứ tự. Ta gọi loại dữ liệu có thứ tự là dữ liệu chuỗi.
+
+%\textit{Mạng nơ-ron hồi quy (recurrent neural network)} \cite{elman1990} gọi tắt là \textit{RNN} là một nhánh của Mạng nơ-ron nhân tạo được thiết kế đặc biệt cho việc mô hình hóa loại dữ liệu chuỗi. Lý do RNN thích hợp là vì nó tận dụng được tính chất tuần tự của loại dữ liệu này. Xét một chuỗi $x={x_1,x_2,...,x_n}$ và đầu ra tương ứng của nó $y={y_1,y_2,...,y_n}$, ta muốn học một ánh xạ $f: x \mapsto y$. Trong trường hợp này, một mạng nơ-ron truyền thẳng chỉ có thể ánh xạ một đầu vào $x_i$ sang một đầu ra $y_i$. Trong khi đó, trên lý thuyết, một RNN hoàn toàn có thể tận dụng toàn bộ lịch sử của những đầu vào trước đó $x_{1 \mapsto i}$ vào việc tính toán $y_i$. Để làm được việc này, RNN với các kết nối vòng cho phép nó sở hữu một loại "bộ nhớ". Bộ nhớ này sẽ tồn tại trong RNN và tác động đến đầu ra của nó. 
+
+%Hình \ref{fig_rnn_loop} thể hiện kết nối vòng của RNN.
+
+\begin{figure}
+	\centering
+	\includegraphics[width=0.3\textwidth]{rnn_loop}
+	\caption[Mô hình RNN đơn giản]{Mô hình RNN đơn giản với kết nối vòng, \textbf{$h$} được xem như bộ nhớ được luân chuyển trong RNN}
+	\label{fig_rnn_loop}
+\end{figure}
+
+%Với mỗi đầu vào $x_i$ trong chuỗi $x={x_1,x_2,...,x_n}$, RNN cập nhật bộ nhớ để tạo ra một trạng thái ẩn $h_i$. Vector này có thể được xem như là một đại diện cho tập các đầu vào tại thời điểm trước đó $x_{1 \mapsto i}$. Điểm mấu chốt để RNN hoạt động là cách nó cập nhật trạng thái ẩn. Ở dạng đơn giản nhất, RNN định nghĩa công thức cập nhật trạng thái ẩn của nó như sau:
+
+Thông thường, hàm $f$ là một hàm phi tuyến như hàm \textit{sigmoid} hay hàm \textit{tanh}. Xét một RNN với công thức cụ thể được miêu tả như trên hình \ref{fig_rnn_loop} như sau:
 \begin{equation} \label{rnnWithTanh}
 	h_t = tanh \left(W_{xh} x_t + W_{hh}h_{t-1} + b_h \right)
 \end{equation}
+
+Ở đây $W_{xh}$ là ma trận trọng số kết nối giữa đầu vào và trạng thái ẩn, $W_{hh}$ là ma trận trọng số hồi quy kết nối trạng thái ẩn với chính nó trong các bước thời gian liền kề. Vec-tơ $b_h$ là "bias" vec-tơ 
 
 Ở đây $W_{xh}$, $W_{hh}$ và $b_h$ là các tham số học của mô hình. Ta thấy hàm định nghĩa $h_t$ là một mạng nơ-ron truyền thẳng với $W_{xh}$ là ma trận trọng số kết nối kết nối đầu vào và trạng thái ẩn. $W_{hh}$ là ma trận kết nối trạng thái ẩn và chính nó, $b_h$ là vector bias của trạng thái ẩn. Tại thời điểm bắt đầu, trạng thái ẩn $h_0$ có thể được khởi tạo bằng 0 hoặc là một vector chứa tri thức có sẵn như trường hợp của bộ giải mã như chúng tôi đã đề cập trong chương 1.
 
 Tại mỗi thời điểm $t$, tùy vào mục tiêu cụ thể của quá trình học mà RNN có thể có thêm một đầu ra $y_t$. Trong ngữ cảnh bài toán dịch máy nơ-ron, đầu ra của RNN trong quá trình giải mã chính là một từ trong ngôn ngữ đích. Với mục tiêu đó, đầu ra dự đoán của RNN $\hat{y}_t$ sẽ có dạng là một phần phối xác suất trên tập từ vựng ở ngôn ngữ đích. Phân phối này nhằm dự đoán sự xuất hiện của từ $\hat{y}_t$ trong tập từ vựng.
 \begin{equation} \label{rnnOuputSoftmax}
 	s_t = W_{hy}h_t + b_y
-\end{equation}
+\end{equation} 
 \begin{equation} \label{rnnOuputSoftmaxDistribution}
 	\hat{y_t} = softmax(s_t)
 \end{equation}
 
-Trong công thức trên, $W_{hy}$, $b_y$ là những tham số khác của mô hình. $W_{hy}$ là ma trận trọng số kết nối đầu ra, $b_y$ là vector bias ở đầu ra. $s_t$ là một vector có độ dài bằng với là số lượng từ vựng trong ngôn ngữ đích. Vector này được chuẩn hóa thành một phân phối xác suất $\hat{y_t}$ bằng một hàm \textit{softmax}.
+Trong công thức trên, $W_{hy}$, $b_y$ là những tham số gắn với đầu ra của mô hình. $W_{hy}$ là ma trận trọng số kết nối đầu ra, $b_y$ là vector bias ở đầu ra. $s_t$ là một vector có độ dài bằng với là số lượng từ vựng trong ngôn ngữ đích. Vector này được chuẩn hóa thành một phân phối xác suất $\hat{y_t}$ bằng một hàm \textit{softmax}.
 
 Để ý rằng các ma trận trọng số $W_{xh}$, $W_{hh}$, $W_{hy}$ và các vector bias $b_h$, $b_y$ là duy nhất cho toàn bộ mô hình. Có nghĩa là khi những tham số này được học, bất kỳ một đầu vào nào cũng đều sử dụng chung một bộ tham số. Điều này chính là \textit{sự chia sẻ tham số (parameters sharing)} trong mạng nơ-ron hồi quy. Chia sẻ tham số khiến cho mô hình học dễ dàng hơn, nó giúp cho RNN có thể xử lý chuỗi đầu vào với độ dài bất kỳ mà không làm tăng độ phức tạp của mô hình. Quan trọng hơn, nó giúp ích cho việc tổng quát hóa. Đây chính là điểm đặc biệt của RNN so với mạng nơ-ron truyền thẳng.
+
+
 
 \subsection{Huấn luyện mạng nơ-ron hồi quy}
 
@@ -56,6 +75,8 @@ Trong công thức trên, $W_{hy}$, $b_y$ là những tham số khác của mô 
 \subsection{Long short-term memory}
 
 Hochreiter và Schmidhuber [1997] đã giới thiệu mô hình LSTM chủ yếu ở để khắc phục vấn đề biến mất gradient. Mô hình này tương tự với mô hình 
+
+\section{Mô hình ngôn ngữ}
 
 %Ta hãy xem xét một ví dụ về não người trong quá trình tạo ra các hành động. Khi chạm tay vào vật nóng, não sẽ tạo ra một tín hiệu để ra lệnh cho cơ thể chúng ta rút tay lại. Không những thế, cảm giác nóng sẽ chuyển hóa thành một suy nghĩ. Suy nghĩ này lại được truyền qua não và dựa trên thông tin của giác quan, ta tiếp tục thực hiện một hành động khác. Ví dụ nhúng tay vào nước khi biết có nước gần đó. Có thể hình dung một cách đơn giản rằng não người hoạt động như một hàm \textit{hồi quy}, nó nhận vào thông tin của giác quan và một suy nghĩ nội tại để tạo ra một hành động và suy nghĩ mới. Suy nghĩ mới này bao gồm cả những suy nghĩ trước đó. Cách hoạt động của não người trong ví dụ trên cũng chính là cách mà RNN làm việc. Trong đó, tại mỗi thời điểm, thông tin về giác quan được xem như đầu vào của RNN và đầu ra là một hành động. "Suy nghĩ" hoạt động như một loại bộ nhớ giúp RNN lưu giữ thông tin về bối cảnh, là những gì mà nó đã xử lý trong quá khứ. Việc sở hữu một loại "bộ nhớ" khiến RNN trở thành mô hình phù hợp cho dữ liệu chuỗi.
 %Trong thực tế, mạng nơ-ron hồi quy được áp dụng thành công trong các bài toán mô hình hóa ngôn ngữ \cite{mikolovLM}.

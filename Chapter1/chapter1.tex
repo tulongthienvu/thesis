@@ -69,11 +69,11 @@ Từ những năm 1980, dịch máy dựa trên \textit{Ngữ liệu} (Corpus-ba
 
 \textit{Dịch máy thống kê} (Statistical machine translation - SMT): ý tưởng của phương pháp này là thay vì định nghĩa những từ điển và các luật ngữ pháp một cách thủ công, SMT dùng mô hình thống kê để học các từ điển và các luật ngữ pháp này từ ngữ liệu. Những ý tưởng đầu tiên của SMT được giới thiệu đầu tiên bởi Waren Weaver vào năm 1949 bap gồm việc áp dụng lý thuyết thông tin của Claude Shannon vào dịch máy. SMT được giới thiệu lại vào cuối những năm 1980 và đầu những năm 1990 tại trung tâm nghiên cứu Thomas J. Watson của IBM. SMT là phương pháp được nghiên cứu rộng rãi nhất thời bấy giờ và thậm chí đến hiện tại, nó vẫn là một trong những phương pháp được nghiên cứu nhiều nhất về dịch máy. 
 
-Để hiểu rõ hơn về dịch máy thống kê, xét một ví dụ: ta cần dịch một câu $f$ trong tiếng Pháp sang dạng tiếng Anh $e$ của nó. Có nhiều bản dịch có thể có cuả $f$ trong tiếng Anh, việc cần làm là chọn $e$ sao cho nó là bản dịch "tốt nhất" của $f$. Chúng ta có thể mô hình hóa quá trình này bằng một xác suất có điều kiện $P(e|f)$ với $e$ là những bản dịch có thể có với câu cho trước $f$. Một cách hợp lý để chọn bản dịch "tốt nhất" là chọn $e$ sao cho nó tối đa xác suất có điều kiện $p(e|f)$. Cách tiếp cận quen thuộc là sử dụng định lý Bayes để viết lại $p(e|f)$:
+Để hiểu rõ hơn về dịch máy thống kê, xét một ví dụ: ta cần dịch một câu $f$ trong tiếng Pháp sang dạng tiếng Anh $e$ của nó. Có nhiều bản dịch có thể có cuả $f$ trong tiếng Anh, việc cần làm là chọn $e$ sao cho nó là bản dịch "tốt nhất" của $f$. Chúng ta có thể mô hình hóa quá trình này bằng một xác suất có điều kiện $p(e|f)$ với $e$ là những bản dịch có thể có với câu cho trước $f$. Một cách hợp lý để chọn bản dịch "tốt nhất" là chọn $e$ sao cho nó tối đa xác suất có điều kiện $p(e|f)$. Cách tiếp cận quen thuộc là sử dụng định lý Bayes để viết lại $p(e|f)$:
 \begin{equation} \label{bayesFomular}
 	p(e|f) = \frac{p(f|e)p(e)}{p(f)}
 \end{equation}
-Bởi vì $f$ là cố định, tối đa hóa $p(e|f)$ tương đương với tìm $e$ sao cho tối đa hóa $p(f|e)p(e)$. Để làm được điều này, chúng ta dựa vào một tập ngữ liệu là những câu song ngữ Anh - Pháp để suy ra các mô hình $P(f|e)$ và $P(e)$ và sử dụng những mô hình đó để tìm một bản dịch cụ thể $\tilde{e}$ sao cho:
+Bởi vì $f$ là cố định, tối đa hóa $p(e|f)$ tương đương với tìm $e$ sao cho tối đa hóa $p(f|e)p(e)$. Để làm được điều này, chúng ta dựa vào một tập ngữ liệu là những câu song ngữ Anh - Pháp để suy ra các mô hình $p(f|e)$ và $p(e)$ và sử dụng những mô hình đó để tìm một bản dịch cụ thể $\tilde{e}$ sao cho:
 \begin{equation} \label{ehatSMT}
 	\tilde{e} = \arg\max_{e \in e^*} p(e|f) = \arg\max_{e \in e^*} p(f|e)p(e)
 \end{equation}
