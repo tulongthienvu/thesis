@@ -14,8 +14,8 @@ Trong khóa luận này, chúng tôi nghiên cứu bài toán Dịch máy nơ-ro
 	\item Cơ chế có cách dịch giống với ý tưởng về cách con người dịch nhìn sự vật, hiện tượng.
 	\item Có thể sử dụng kết quả của cơ chế Attention để phát triển thêm các phương pháp, kĩ thuật khác:
 	\begin{itemize}
-		\item Phương pháp Input feeding: giúp mô hình có thể biết được thông tin gióng hàng trong những thời điểm trước đó thông qua véc-tơ attention $\tilde{h}_t$. Từ đó giúp mô hình có thể hạn chế vấn đề "đươc dịch quá nhiều" hoặc "được dịch quá ít".
-		\item Kĩ thuật thay thế từ hiếm: giúp mô hình giải quyết được vấn đề hạn chế của bộ từ vựng.
+		\item Phương pháp Input feeding: giúp mô hình có thể biết được thông tin gióng hàng trong những thời điểm trước đó thông qua véc-tơ attention $\tilde{h}_t$. Từ đó giúp mô hình có thể hạn chế vấn đề "đươc dịch quá nhiều" hoặc "được dịch quá ít", tránh được những câu dịch không thực tế như những câu dịch lặp lại một từ nhiều lần.
+		\item Kĩ thuật thay thế từ hiếm: giúp mô hình giải quyết được vấn đề hạn chế về kích thước của bộ từ vựng. Do bộ từ vựng không thể chứa hết tất cả các từ có thể có trong quá trình dịch, vì vậy chất lượng dịch của mô hình bị giảm đáng kể nếu  gặp những từ hiếm đó. Đặc biệt là khi mô hình gặp những câu có chứa các số, tên riêng, tên các địa danh, v.v... 
 	\end{itemize}
 \end{itemize}
 
