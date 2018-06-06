@@ -45,16 +45,18 @@ Attention sử dụng thêm một số đại lượng:
 			\end{array}
 		\right.
 	\end{equation}
-	// TODO: Phân tích 2 hàm
+	Đối với hàm score là hàm \textit{dot}, mô hình chỉ đơn giản là thực hiện tính tích vô hướng giữa 2 trạng thái ẩn. Giá trị của hàm score này đạt cao nhất khi 2 véc-tơ trạng thái ẩn hoàn toàn giống nhau. Ưu điểm của hàng \textit{dot} này là chi phí tính toán thấp nên thời gian huấn luyện và dự đoán nhanh.
+	Đối với hàm score là hàm \textit{general}, hàm này có sự tinh tế hơn hàm \textit{dot}. Hàm \textit{dot} thực hiện tính sự tương đồng lên tất cả cặp phần tử trong 2 véc-tơ, trong khi đó hàm \textit{general} sử dụng thêm một bộ trọng số $W_a$, do đó những thông tin giữa hai trạng thái ẩn sẽ được tính một cách chọn lọc hơn. Tuy nhiên, đổi lại thì hàm này sẽ có thời gian thực thi chậm hơn hàm \textit{dot} một chút. Trong thực tế, không có minh chứng rõ ràng nào cho thấy rằng hàm nào sẽ tốt hơn, do vậy cần phải thực nghiệm cẩn thận để có được sự lựa chọn chính xác nhất.
 	\item $c_t$: véc-tơ ngữ cảnh tại thời điểm $t$, là trung bình có trọng số của các trạng thái ẩn ở câu nguồn:
 	\begin{equation}
 	c_t = \sum_{s}a_{ts}h_s
 	\end{equation}
-	// TODO: Phân tích ý tưởng của véc-tơ ngữ cảnh. 
+	Véc-tơ $c_t$ cho mô hình biết thông tin rằng với trạng thái ẩn hiện tại (chứa thông tin của quá trình dịch trước đó) thì ngữ cảnh hiện của thời điểm $t$ hiện tại là gì. Ngữ cảnh đó được thể hiện thông qua những thông tin của các trạng thái ẩn $h_s$ của câu nguồn mà được lựa chọn một cách có chọn lọc (có trọng số). Véc-tơ ngữ cảnh $c_t$ là một cách biểu diễn ngữ cảnh của ngôn ngữ đích bằng ngữ cảnh của ngôn ngữ nguồn. Trong quá trình dịch, bộ giải mã cần phải dự đoán từ tiếp theo của câu dịch. Để dự đoán được chính xác, mô hình cần phải biết được ngữ cảnh hiện tại của câu là gì. Để đảm bảo ngữ cảnh mà mô hình nhận được chính xác, mô hình không thể chỉ dựa vào các trạng thái ẩn của bộ giải mã ở các thời điểm trước đó. Do vậy, mô hình sử dụng thêm các trạng thái ẩn của các từ ở câu nguồn để thể hiện ngữ cảnh một cách chính xác hơn.
 	\item $\tilde{h}_t$, véc-tơ attention tại thời điểm $t$, được tính như sau:
 	\begin{equation}
 	\boldsymbol{\tilde{h}_t} = \tanh(\bm{W_c}[\bm{c_t};\bm{h_t}])
 	\end{equation}
+	Véc-tơ attention chứa thông tin gióng hàng và trạng thái ẩn của thời điểm $t$ hiện tại. Nhờ đó, mô hình nắm giữ được nhiều thông tin hơn để có thể dự đoán tốt hơn.
 \end{itemize}
 Bước dự đoán đầu ra không thay đổi ngoài trạng thái ẩn $\bm{h_t}$ được thay thế bởi véc-tơ attention $\bm{\tilde{h}_t}$. $\bm{\tilde{h}_t}$ được đưa qua tầng softmax để cho ra phân bố xác suất dự đoán trên các từ:
 \begin{equation}
@@ -74,133 +76,99 @@ a_t = \text{align}(h_t, \bar{h}_s) = \frac{\exp\left(\text{score}(h_t, \bar{h}_s
 \begin{figure}
 	\centering
 	\includegraphics[width=0.8\textwidth]{Global-Attention_2.png}
-	\caption[Minh họa cơ chế Attention Toàn cục.]{Minh họa cơ chế Attention Toàn cục. Tại thời điểm $t$, bộ giải mã nhìn vào toàn bộ các vị trí nguồn.}
+	\caption[Minh họa cơ chế Attention Toàn cục.]{Minh họa cơ chế Attention Toàn cục. Tại thời điểm $t$, bộ giải mã nhìn vào toàn bộ trạng thái ẩn ở các vị trí nguồn. Trọng số gióng hàng và véc-tơ ngữ cảnh được tính dựa trên những trạng thái ẩn được "nhìn" bởi bộ giải mã. Sau đó véc-tơ ngữ cảnh sẽ được nối với trạng thái ẩn ở bộ giải mã ở thời điểm hiện tại để tạo thành véc-tơ attention. Sau đó mô hình sẽ dự đoán từ tiếp theo dựa trên véc-tơ attention này.}
 	\label{fig_Global_Attention}
 \end{figure}
 
-Ưu điểm của phương pháp này là ý tưởng đơn giản, dễ cài đặt nhưng vẫn đạt được hiệu quả tốt (sẽ được trình bày ở phần thực nghiệm). Tuy nhiên, ý tưởng này vẫn còn chưa thực sự tự nhiên và còn hạn chế. Khi dịch một từ thì không cần phải đặt "sự chú ý" lên toàn bộ câu nguồn, chỉ cần đặt "sự chú ý" lên một số từ cần thiết. Mặc dù khi mô hình Attention Toàn cục được huấn luyện tốt thì hoàn toàn có thể chỉ đặt "sự chú ý" lên một số từ thật sự cần thiết, nhưng dễ thấy rằng bản thân mô hình vẫn phải tiêu tốn chi phí cho việc tính toán trọng số gióng hàng $a_t$ cho những vị trí không cần thiết. Đó là trường hợp lý tưởng cho mô hình Attention Toàn cục, nhưng trong thực tế, để đạt được độ chính xác như thế thì phải tiêu tốn nhiều tài nguyên cho việc huấn luyện mô hình như tài nguyên về tập dữ liệu đủ lớn, đủ tốt hay thời gian huấn luyện phải đủ lâu.
+Hình \ref{fig_Global_Attention} minh họa cơ chế Attention Toàn cục cho thấy rằng tại thời điểm $t$, trước khi thực hiện dự đoán từ tiếp theo, mô hình đặt "sự chú ý" lên toàn bộ các trạng thái ẩn ở câu nguồn hay bộ mã hóa.
+
+Ưu điểm của phương pháp này là ý tưởng đơn giản, dễ cài đặt nhưng vẫn đạt được hiệu quả tốt (sẽ được trình bày ở phần thực nghiệm). Tuy nhiên, ý tưởng này vẫn còn chưa thực sự tự nhiên và còn hạn chế. Khi dịch một từ thì không cần phải đặt "sự chú ý" lên toàn bộ câu nguồn, chỉ cần đặt "sự chú ý" lên một số từ cần thiết. Mặc dù khi mô hình Attention Toàn cục được huấn luyện tốt thì hoàn toàn có thể chỉ đặt "sự chú ý" lên một số từ thật sự cần thiết. Trong thực tế, để đạt được độ chính xác như thế thì phải tiêu tốn nhiều tài nguyên cho việc huấn luyện mô hình như tài nguyên về tập dữ liệu đủ lớn, đủ tốt hay thời gian huấn luyện phải đủ lâu. Nhưng dễ thấy rằng dù bản thân mô hình đã học được cách đặt "sự chú ý" thật tốt nhưng vẫn phải tiêu tốn chi phí cho việc tính toán trọng số gióng hàng $a_t$ cho những vị trí không cần thiết.
 Để giải quyết hạn chế trên của Attention Toàn cục, chúng tôi đã tìm hiểu và sử dụng phiên bản tinh tế hơn, đó là mô hình Attention Cục bộ. Ở phần tiếp theo, chúng tôi sẽ trình bày về mô hình này.
 
 \section{Attention Cục bộ}
-Như đã nêu ở phần trước, Attention Toàn cục có một hạn chế là đặt "sự chú ý" lên toàn bộ các từ ở câu nguồn khi dịch từng từ ở câu đích. Điều này gây tiêu tốn chi phí tính toán và có thể tạo ra những câu dịch không thực tế khi dịch những câu dài như trong các đoạn văn hay trong một tài liệu. Attention Cục bộ ra đời để giải quyết hạn chế này.
+Như đã nêu ở phần trước, Attention Toàn cục có một hạn chế là đặt "sự chú ý" lên toàn bộ các từ ở câu nguồn khi dịch từng từ ở câu đích. Điều này gây tiêu tốn chi phí tính toán và có thể tạo ra những câu dịch không thực tế khi dịch những câu dài như trong các đoạn văn hay trong một tài liệu. Attention Cục bộ ra đời để giải quyết hạn chế này. Lưu ý, ý tưởng của cơ chế Attention Cục bộ này dựa vào đặc điểm của 2 cặp ngôn ngữ tiếng Anh và tiếng Đức. Do đó, sự hiệu quả của cơ chế này không đảm bảo cho các cặp ngôn ngữ khác.
 
 Khi dịch mỗi từ ở câu đích, Attention Cục bộ chỉ đặt "sự chú ý" lên một số từ gần nhau ở câu nguồn. Mô hình này lấy cảm hứng từ sự đánh đổi giữa 2 mô hình "soft attention" và "hard attention" được đề xuất trong công trình Show, Attend and Tell \cite{showattendandtellXu2015} để giải quyết bài toán Phát sinh câu miêu tả cho ảnh (Image Captioning). Trong công trình \cite{showattendandtellXu2015}, Attention Toàn cục tương ứng với "soft attention", "sự chú ý" được đặt trên toàn bộ bức ảnh. Còn "hard attention" thì đặt "sự chú ý" lên một số phần của bức ảnh.
 
 Dễ thấy, với cách hoạt động chỉ tập trung một số các từ gần nhau ở câu nguồn, mô hình hoạt động gần với cách con người tập trung vào một sự vật, hiện tượng nào đó. Chi phí cho huấn luyện và dự đoán sẽ được giảm bớt bởi vì chúng ta chỉ thực hiện tính véc-tơ trọng số gióng hàng $a_t$ cho những từ mà mô hình đặt "sự chú ý" lên.
 
-Để làm rõ hơn về cách thức hoạt động của mô hình Attention Cục bộ, chúng tôi sẽ trình bày cụ thể hơn về nền tảng Toán học của mô hình này. Bên cạnh những đại lượng đã có ở mô hình Attention Toàn cục, Attention Cục bộ có thêm một số đại lượng như sau:
+Để làm rõ hơn về cách thức hoạt động của mô hình Attention Cục bộ, chúng tôi sẽ trình bày cụ thể hơn về nền tảng Toán học của mô hình này. Bên cạnh những đại lượng đã có ở mô hình Attention Toàn cục, Attention Cục bộ có thêm và thay đổi một số đại lượng như sau:
 \begin{itemize}
-	\item $p_t$: vị trí được gióng hàng.
+	\item $p_t$: vị trí đã được gióng hàng. Tại mỗi thời điểm $t$, mô hình sẽ phát sinh một số thực $p_t$. Số thực này có giá trị nằm trong đoạn $[0, S]$ với ý nghĩa rằng đây là vị trí đã được gióng hàng của với từ ở câu nguồn tại thời điểm $t$ hiện tại. Hay nói cách khác, "sự chú ý" được đặt trên từ có vị trí $p_t$ này. Để ý thấy rằng có sự không tự nhiên khi $p_t$ là một số thực, do vậy $p_t$ không thể cho biết được chính xác từ nào sẽ được đặt "sự chú ý" lên. Thực tế, với miền giá trị số thực, $p_t$ có tác dụng là dùng để làm vị trí trung tâm cho các từ lân cận. Để làm rõ hơn về vấn đề này, chúng tôi sẽ trình bày rõ ràng hơn ở sau.
+	\item Đối quá trình tính véc-tơ ngữ cảnh $c_t$ có sự thay đổi rằng mô hình xét các vị trí ở câu nguồn mà nằm xung quanh vị trí $p_t$ một đoạn $D$. $D$ là một đại lượng với miền số nguyên lớn hơn 0 và được gọi là kích thước cửa sổ. Cụ thể:
+	\begin{equation}
+	c_t = \sum_{x \in [p_t - D, p_t + D]} a_{tx}\tilde{h}_x
+	\end{equation}
+	$D$ là một siêu tham số của mô hình. Việc lựa chọn giá trị của $D$ là dựa vào thực nghiệm. Theo đề xuất của \cite{attentionThangLuong2015}, chúng tôi lựa chọn $D = 10$.
 \end{itemize}
-
-\subsection{Thuật toán ``Sleep-Wake Stochastic Gradient Descent''}
-Để khắc phục khó khăn của việc huấn luyện SRAEs với chuẩn L1, chúng tôi đề xuất một phiên bản điều chỉnh của thuật toán ``Stochastic Gradient Descent'' (SGD), gọi là ``Sleep-Wake Stochastic Gradient Descent'' (SW-SGD). Ý tưởng là trong mỗi ``epoch'' của SGD (một ``epoch'' ứng một lần duyệt qua tất cả các mẫu trong tập huấn luyện), ta tính tổng giá trị đầu ra của mỗi nơ-ron ẩn; và sau mỗi ``epoch'', ta kiểm xem có nơ-ron nào ``ngủ'' không (có tổng giá trị đầu ra bằng không) và ``đánh thức'' chúng bằng cách khởi tạo lại véc-tơ trọng số đi vào. Mặc dù cách làm này rất đơn giản, nhưng thí nghiệm của chúng tôi cho thấy nó có thể giúp SRAEs học được thành công các đặc trưng mà không có đặc trưng nào ``ngủ''.
-
-Một cách cụ thể, cho tập huấn luyện không có nhãn $\{x^{(1)}, x^{(2)}, \ldots, x^{(N)}\}$, thuật toán SW-SGD dùng để cực tiểu hóa hàm chi phí sau của SRAEs:
-\begin{equation}
-\begin{split}
-	C(W) &= \frac{1}{N}\sum_{i=1}^N C^{(i)}(W)\\
-		 &= \frac{1}{N}\sum_{i=1}^N\left(\|x^{(i)} - \hat{x}^{(i)}\|_2^2 + \lambda \|h^{(i)}\|_1\right)
-\end{split}
-\end{equation}
-Trong đó:
-\begin{itemize}
-	\item $h^{(i)}$ là véc-tơ đầu ra ở tầng ẩn tương ứng với véc-tơ đầu vào $x^{(i)}$: \[h^{(i)} = \max\left(0, W^{(e)}x^{(i)} + b^{(e)}\right)\]
-	\item $\hat{x}^{(i)}$ là véc-tơ tái tạo của véc-tơ đầu vào $x^{(i)}$: \[\hat{x}^{(i)} = W^{(d)}h^{(i)} + b^{(d)}\]
-	\item $W=\{W^{(e)}, b^{(e)}, W^{(d)}, b^{(d)}\}$ là các tham số của SRAEs.
-\end{itemize}
-Từng bước của thuật toán SW-SGD được trình bày ở thuật toán \ref{alg_SW-SGD} (những chỗ thay đổi so với thuật toán SGD ban đầu được \emph{in nghiêng}).
-%\begin{leftbar}
-%\begin{enumerate}
-%	\item Khởi tạo ngẫu nhiên cho $W$.
-%	\item Lặp cho đến khi thỏa điều kiện dừng:
-%	\begin{itemize}
-%		\item \emph{Khởi tạo véc-tơ $s$ gồm có $D_h$ phần tử (với $D_h$ là số lượng nơ-ron ẩn của SRAEs), trong đó mỗi phần tử có giá trị bằng $0$ (phần tử $s_j$ của véc-tơ $s$ dùng để lưu tổng giá trị đầu ra của nơ-ron ẩn $j$ với tất cả các mẫu trong tập huấn luyện sau một ``epoch'').}
-%		\item Xáo trộn ngẫu nhiên thứ tự của các mẫu trong tập huấn luyện (thường sẽ giúp hội tụ nhanh hơn).
-%		\item Với ``mini-batch'' thứ $b=1,2,\ldots,\frac{N}{B}$ ($N$ là số lượng mẫu trong tập huấn luyện, $B$ là kích thước của ``mini-batch''):
-%		\begin{itemize}
-%			\item Với mẫu huấn luyện thứ $i=(b-1)B+1, (b-1)B+2, \ldots, bB$:
-%			\begin{itemize}
-%				\item Lan truyền tiến với véc-tơ đầu vào $x^{(i)}$.
-%				\item \emph{Cập nhật véc-tơ $s$: $s = s + h^{(i)}$ (với $h^{(i)}$ là véc-tơ đầu ra ở tầng ẩn tương ứng với véc-tơ đầu vào $x^{(i)}$).}
-%				\item Lan truyền ngược và tính véc-tơ đạo hàm riêng $\nabla C^{(i)}(W)$.
-%			\end{itemize}
-%			\item Cập nhật $W$:
-%			\[W = W - \alpha \frac{1}{B} \sum_{i=(b-1)B+1}^{bB} \nabla C^{(i)}(W)\]
-%			($\alpha > 0$ là hệ số học)
-%		\end{itemize}
-%		\item \emph{Kiểm xem có nơ-ron ẩn nào ``ngủ'' (có tổng đầu ra $s_j=0$) và ``đánh thức'' bằng cách khởi tạo lại véc-tơ trọng số đi vào nơ-ron ẩn này.}
-%	\end{itemize}
-%\end{enumerate}
-%\end{leftbar}
-\begin{algorithm}
-	\newalgname{Thuật toán}
-	\caption{Sleep-Wake Stochastic Gradient Descent (SW-SGD)}
-	\label{alg_SW-SGD}
-	\begin{algorithmic}[1]
-		\renewcommand{\algorithmicrequire}{\textbf{Đầu vào:}}
-		\renewcommand{\algorithmicensure}{\textbf{Đầu ra:}}
-		\algnewcommand\algorithmicoperation{\textbf{Thao tác:}}
-		\algnewcommand\Operation{\item[\algorithmicoperation]}
-		
-		\Require Tập huấn luyện không có nhãn $\{x^{(1)},\ldots,x^{(N)}\}$, hệ số học $\alpha>0$, kích thước ``mini-batch'' B
-		\Ensure Bộ tham số $W$ của SRAEs để cho hàm chi phí $C(W)$ đạt cực tiểu
-		
-		\Operation
-		\State Khởi tạo ngẫu nhiên cho $W$
-		\While{chưa thỏa điều kiện dừng} \%\% Với mỗi ``epoch''
-			\State \parbox[t]{\dimexpr\linewidth-\algorithmicindent}{\emph{Khởi tạo véc-tơ $s$ gồm có $D_h$ phần tử (với $D_h$ là số lượng nơ-ron ẩn của SRAEs), trong đó mỗi phần tử có giá trị bằng $0$ (phần tử $s_j$ của véc-tơ $s$ dùng để lưu tổng giá trị đầu ra của nơ-ron ẩn $j$ với tất cả các mẫu trong tập huấn luyện sau một ``epoch'')}\strut}
-			\State \parbox[t]{\dimexpr\linewidth-\algorithmicindent}{Xáo trộn ngẫu nhiên thứ tự của các mẫu trong tập huấn luyện (thường sẽ giúp hội tụ nhanh hơn)\strut}
-			\For{b = 1 : N/B} \%\% Với mỗi ``mini-batch''
-				\For{i = (b-1)B+1 : bB} \%\% Với mỗi mẫu huấn luyện trong ``mini-batch''
-					\State Lan truyền tiến với véc-tơ đầu vào $x^{(i)}$
-					\State \parbox[t]{\dimexpr\linewidth-\algorithmicindent}{\emph{Cập nhật véc-tơ $s$: $s = s + h^{(i)}$ \\(với $h^{(i)}$ là véc-tơ đầu ra ở tầng ẩn tương ứng với véc-tơ đầu vào $x^{(i)}$)}\strut}
-					\State Lan truyền ngược và tính véc-tơ đạo hàm riêng $\nabla C^{(i)}(W)$
-				\EndFor
-				\State Cập nhật $W$: $W = W - \alpha \frac{1}{B} \sum_{i=(b-1)B+1}^{bB} \nabla C^{(i)}(W)$ 
-			\EndFor
-			\State \parbox[t]{\dimexpr\linewidth-\algorithmicindent}{\emph{Kiểm xem có nơ-ron ẩn nào ``ngủ'' (có tổng đầu ra $s_j=0$) và ``đánh thức'' bằng cách khởi tạo lại véc-tơ trọng số đi vào nơ-ron ẩn này}}
-		\EndWhile
-	\end{algorithmic}
-\end{algorithm}
-
-\section{Ràng buộc trọng số trong SRAEs}
-Bên cạnh ràng buộc thưa, ràng buộc trọng số cũng là một thành phần quan trọng để làm cho SAEs ``hoạt động''. Tại sao cần phải ràng buộc trọng số? Ví dụ, trong Sparse Coding, ta cần phải ràng buộc các véc-tơ cơ sở được chuẩn hóa (có chiều dài bằng 1); nếu không thì sẽ xảy ra trường hợp là giá trị của hàm chi phí ở công thức (\ref{eq_SparseCoding}) có thể được làm giảm xuống một cách ``tầm thường'' bằng cách chia hệ số cho một số lớn tùy ý và nhân véc-tơ cơ sở tương ứng với cùng số lớn đó (làm như vậy sẽ làm độ thưa giảm xuống tùy ý, còn độ lỗi tái tạo thì giữ nguyên). Các véc-tơ cơ cở trong ``Sparse Coding'' tương ứng với các cột của ma trận trọng số $W^{(d)}$ của bộ giải mã của SAEs (mỗi cột của $W^{(d)}$ ứng với véc-tơ trọng số đi ra tại mỗi nơ-ron ẩn). Như vậy, trong SAEs, ta cũng có thể ràng buộc mỗi cột của $W^{(d)}$ được chuẩn hóa (có chiều dài bằng 1) giống như ở Sparse Coding. Nhưng còn ma trận trọng số $W^{(e)}$ của bộ mã hóa của SAEs? Ta nên ràng buộc $W^{(e)}$ như thế nào cho hợp lý?
-
-Dưới đây là một số cách đã được đề xuất để ràng buộc trọng số của SAEs:
-\begin{itemize}
-	\item \textbf{Ràng buộc $W^{(d)} = (W^{(e)})^T$}: bộ trọng số được dùng chung cho cả bộ mã hóa và bộ giải mã (cụ thể là $W^{(d)}$ và $W^{(e)}$ là chuyển vị của nhau) \cite{coates2012demystifying}. Cách ràng buộc trọng số này cũng được dùng trong các loại ``Auto-Encoders'' khác như ``Denoising Auto-Encoders'' và ``Contractive Auto-Encoders'' \cite{vincent2008extracting}\cite{rifai2011contractive}\cite{rifai2011HCAEs}. Lưu ý là tất cả \cite{coates2012demystifying}\cite{vincent2008extracting}\cite{rifai2011contractive}\cite{rifai2011HCAEs} đều dùng hàm kích hoạt sigmoid ở tầng ẩn. Trong trường hợp dùng hàm kích hoạt tuyến tính ($f(x) = x$) ở tầng ẩn, ràng buộc $W^{(d)} = (W^{(e)})^T$ sẽ có xu hướng làm cho các véc-tơ cơ sở (các dòng của $W^{(e)}$ hay các cột của $W^{(d)}$) trực giao với nhau và được chuẩn hóa \cite{le2011ica}; nhưng trong trường hợp dùng hàm kích hoạt sigmoid ở tầng ẩn, ta không rõ chuyện gì đang xảy ra. Một điểm lợi của việc dùng chung bộ trọng số là tiết kiệm bộ nhớ lưu trữ; điều này sẽ có ích khi cài đặt song song trên GPU (Graphical Processing Units).
-	\item \textbf{Ràng buộc $W^{(d)}$ được chuẩn hóa}: các cột của $W^{(d)}$ được ràng buộc là có độ dài bằng 1 \cite{zeiler2013rectified}. Ràng buộc này tương tự như ở ``Sparse Coding'' và giúp ngăn chặn việc hàm chi phí có thể bị làm giảm xuống một cách ``tầm thường'' như đã nói ở trên. Nhưng còn bộ trọng số $W^{(e)}$ của bộ mã hóa? Chẳng hạn, để công bằng giữa các đặc trưng, ta cũng nên ràng buộc các véc-tơ dòng của $W^{(e)}$ (ứng với các véc-tơ trọng số đi vào các nơ-ron ẩn; các véc-tơ này đóng vai trò như các bộ lọc đặc trưng) có cùng độ dài.
-	\item \textbf{Ràng buộc các trọng số có giá trị bình phương nhỏ (weight decay)}: các trọng số của cả bộ mã hóa và bộ giải mã đều được ràng buộc là có độ lớn nhỏ bằng cách phạt tổng bình phương của chúng \cite{goodfellow2009measuring}\cite{coates2011analysis}. Cách ràng buộc này vốn ban đầu được dùng trong mạng nơ-ron học có giám sát để tránh vấn đề quá khớp. Khi áp dụng cho SAEs, ta có hiểu nó là một phiên bản ``mềm'' của cách ràng buộc $W^{(d)}$ được chuẩn hóa ở trên và nhờ đó cũng sẽ giúp cho SAEs tránh khỏi tình trạng hàm chi phí bị giảm xuống một cách ``tầm thường''; ngoài ra, nó còn ràng buộc thêm là các véc-tơ dòng của $W^{(e)}$ (ứng với các bộ lọc đặc trưng) có độ dài xấp xỉ bằng nhau (đều nhỏ). Tuy nhiên, cách ràng buộc này lại làm xuất hiện thêm một siêu tham số; ta không muốn điều này.
-\end{itemize}
-
-\subsection{Cách ràng buộc trọng số đề xuất cho SRAEs}
-Với SRAEs (SAEs sử dụng hàm kích hoạt ``rectified linear'' ở tầng ẩn), không rõ là ta nên sử dụng cách ràng buộc trọng số nào trong những cách ở trên. Trong phần này, chúng tôi đề xuất một cách ràng buộc trọng số mới và hợp lý cho SRAEs. Cách ràng buộc này không đưa thêm siêu tham số nào. Cụ thể là, cách ràng buộc trọng số của chúng tôi bao gồm đồng thời hai ràng buộc:
-\begin{itemize}
-	\item Thứ nhất, chúng tôi ràng buộc ma trận trọng số $W^{(e)}$ của bộ mã hóa và ma trận trọng số $W^{(d)}$ của bộ giải mã là chuyển vị của nhau: $W^{(d)} = (W^{(e)})^T$.
-	\item Thứ hai, chúng tôi đồng thời cũng ràng buộc là các véc-tơ dòng của $W^{(e)}$ và các véc-tơ cột của $W^{(d)}$ được chuẩn hóa (có độ dài bằng 1). Ở đây, mỗi véc-tơ dòng của $W^{(e)}$ ứng với véc-tơ trọng số đi vào ở mỗi nơ-ron ẩn, và mỗi véc-tơ cột của $W^{(d)}$ ứng với véc-tơ trọng số đi ra ở mỗi nơ-ron ẩn.
-\end{itemize}
-
-Với một véc-tơ đầu vào $x$, nếu ta chỉ chú ý đến các nơ-ron được ``bật'' (có giá trị đầu ra khác không) ở tầng ẩn thì đây là một hệ thống tuyến tính (minh họa ở hình \ref{fig_SRAE}). Do đó, với hai ràng buộc ở trên, SRAEs sẽ chiếu véc-tơ đầu vào $x$ xuống một hệ trục tọa độ cục bộ sao cho từ hệ trục tọa độ này có thể tái tạo được tốt véc-tơ $x$ ban đầu; hệ trục tọa độ cục bộ này bao gồm một số ít các véc-tơ cơ sở (đã được chuẩn hóa) được chọn lựa bởi hàm ``rectified linear'' từ tập lớn các véc-tơ cơ sở. Ta có thể hiểu tập con các véc-tơ cơ sở này biểu diễn vùng không gian PCA cục bộ xung quanh $x$. Như vậy, SRAEs (với ràng buộc trọng số đề xuất của chúng tôi) có thể học được mặt phi tuyến mà ở đó dữ liệu tập trung bằng cách ghép nhiều mặt tuyến tính cục bộ lại với nhau (minh họa ở hình \ref{fig_local_charts}). Mỗi mặt tuyến tính cục bộ được phụ trách bởi một tập con các véc-tơ cơ sở. Điểm lợi ở đây là các véc-tơ cơ sở có thể được dùng chung giữa các mặt tuyến tính cục bộ láng giềng nhau.
 
 \begin{figure}
 	\centering
-	\includegraphics[width=0.6\textwidth]{SRAE}
-	\caption[Minh họa SRAEs]{Minh họa SRAEs. Với một véc-tơ đầu vào, nếu ta chỉ chú ý đến các nơ-ron được ``bật'' (có giá trị đầu ra khác không) ở tầng ẩn thì đây là một hệ thống tuyến tính.}
-	\label{fig_SRAE}
-\end{figure}
-\begin{figure}
-	\centering
-	\includegraphics[width=\textwidth]{local_charts}
-	\caption[Minh họa mặt phi tuyến mà SRAEs học được]{Với một véc-tơ đầu vào $x$, chỉ có một tập con các nơ-ron ẩn được bật. Tập con các véc-tơ cơ sở tương ứng với tập con các nơ-ron ẩn này biễu diễn một vùng không gian cục bộ xung quanh $x$ (giống như vùng không gian PCA cục bộ). Như vậy, SRAEs (với ràng buộc trọng số đề xuất của chúng tôi) có thể học được mặt phi tuyến mà ở đó dữ liệu tập trung bằng cách ghép nhiều mặt tuyến tính cục bộ lại với nhau. Mỗi mặt tuyến tính cục bộ được phụ trách bởi một tập con các véc-tơ cơ sở. Điểm lợi ở đây là các véc-tơ cơ sở có thể được dùng chung giữa các mặt tuyến tính cục bộ láng giềng nhau.}
-	\label{fig_local_charts}
+	\includegraphics[width=0.8\textwidth]{Local-Attention_2.png}
+	\caption[Minh họa cơ chế Attention Cục bộ.]{Minh họa cơ chế Attention Cục bộ. Tại thời điểm $t$, bộ giải mã nhìn vào một số trạng thái ẩn ở các vị trí nguồn nằm trong phạm vi của cửa sổ có kích thước $2D + 1$. Trọng số gióng hàng và véc-tơ ngữ cảnh được tính dựa trên những trạng thái ẩn được bộ giải mã đặt sự chú ý.}
+	\label{fig_Local_Attention}
 \end{figure}
 
-Như vậy, ta cần phải tối thiểu hóa hàm chi phí của SRAEs với hai ràng buộc trọng số ở trên. Trong khi ràng buộc thứ nhất ($W^{(d)} = (W^{(e)})^T$) có thể được tích hợp dễ dàng vào thuật toán tối ưu hóa ``Stochastic Gradient Descent''  (SGD), ràng buộc thứ hai (các dòng của $W^{(e)}$ và các cột của $W^{(d)}$ được chuẩn hóa) thoạt nhìn khó có thể tích hợp vào thuật toán SGD và có thể ta cần phải sử dụng đến các phương pháp tối ưu hóa phức tạp hơn. Để giải quyết vấn đề này, chúng tôi thay đổi công thức lan truyền tiến của SRAEs như sau:
+Mô hình Attention Cục bộ có 2 biến thể:
+\begin{itemize}
+	\item Gióng hàng đều (monotonic alignment - local-m): vị trí được gióng hàng được phát sinh một cách đơn giản bằng cách cho $p_t = t$ tại mỗi thời điểm $t$. Ta giả định rằng các từ ở câu nguồn và các từ ở câu đích được gióng hàng đều nhau theo từng từ.
+	\item Gióng hàng dự đoán (predictive alignment - local-p): giả định rằng tất cả từ ở câu nguồn và câu đích đều được gióng hàng đều nhau không thực tế vì giữa 2 ngôn ngữ có ngữ pháp riêng và trật tự từ khác nhau. Do vậy, mô hình sẽ phát sinh vị trí được gióng hàng $p_t$ một cách tự nhiên hơn cho phù hợp đặc điểm của ngôn ngữ. Cụ thể mô hình sẽ phát sinh vị trí $p_t$ tại mỗi thời điểm $t$ như sau:
+	\begin{equation}
+	p_t = S \cdot \text{sigmoid} (v^T_p \tanh(W_p h_t))
+	\end{equation}
+	Trong đó, $v_p$ và $W_p$ là 2 tham số mới của mô hình cho việc dự đoán vị trí $p_t$. Mô hình cần học 2 tham số này. Miền giá trị của $p_t \in [0, S]$.
+	Để "ưu tiên" các vị trí được gióng hàng $p_t$, mô hình thêm vào trọng số gióng hàng của những từ lân cận đó một lượng có giá trị bằng giá trị của phân phối chuẩn (Gauss) mà đã được đơn giản hóa với giá trị kì vọng $p_t$ và độ lệch chuẩn $\sigma = \frac{D}{2}$:
+	\begin{equation}
+	p_t = \text{align}(h_t, \bar{h}_s)\exp\left(-\frac{(s-p_t)^2}{2\sigma^2}\right)
+	\end{equation}
+	Mô hình sử dụng hàm gióng hàng như các phiên bản trước. $s$ là giá trị số nguyên thể hiện các vị trí nằm xung quanh $p_t$ mà nằm trong cửa sổ $D$.
+\end{itemize}
+ Đối với những vị trí $s$ nằm ngoài câu (cửa sổ $D$ vượt qua các biên của câu) thì mô hình sẽ bỏ qua những vị trí $s$ nằm ngoài và chỉ xem xét những vị trí $s$ nằm trong biên của câu.
+ 
+ Véc-tơ trọng số gióng hàng $a_t$ ở Attention Cục bộ có kích thước cố định $\in \mathbb{R}^{2D + 1}$ và thường ngắn hơn $a_t$ ở Attention Toàn cục. Local-p và local-m giống nhau chỉ khác rằng local-p tính vị trí $p_t$ một cách linh hoạt và sử dụng một phân phối chuẩn đã được đơn giản hóa để điều chỉnh các trọng số gióng hàng $\text{align}(h_t, \bar{h}_s)$. Việc sử dụng thêm phân phối chuẩn để khuyến khích mô hình đặt "sự chú ý" lên vị trí $p_t$ và phân chia dần cho các vị trí lân cận. Nếu không có việc sử dụng phân phối chuẩn này, mô hình có thể sẽ đặt "sự chú ý" hoàn toàn lên các từ lân cận xung quanh $p_t$ mà không phải là vị trí $p_t$. Điều này không phù hợp với ý tưởng ban đầu của việc phát sinh vị trí $p_t$ do vị trí này thể hiện ý nghĩa rằng bộ giải mã đang tập trung vào những từ ở vị trí $p_t$.
+Với cơ chế được trình bày cụ thể như trên, mô hình Attention Cục bộ hoạt động tự nhiên hơn, phù hợp với ý tưởng về cách con người đặt "sự chú ý" khi quan sát sự vật, hiện tượng. Bên cạnh đó, Attention Cục bộ giảm chi phí tính toán của mô hình khi chỉ thực hiện tính trên những từ được chú ý nằm trong phạm vị cửa sổ nhất định.
+
+\section{Phương pháp Input feeding}
+Trong quá trình dịch, các mô hình được đề cập ở trên như Attention Toàn cục hay Cục bộ, đều vẫn còn một hạn chế về cách đặt "sự chú ý" hay gióng hàng lên các vị trí nguồn. Ở mỗi thời điểm $t$ khi dịch một từ ở câu đích, việc đặt "sự chú ý" của thời điểm $t$ độc lập hoàn toàn với việc đặt "sự chú ý" ở các thời điểm trước đó. Việc quyết định gióng hàng như thế nào (véc-tơ $a_t$) hoàn toàn phụ thuộc vào điểm số (giá trị của hàm score) giữa trạng thái ẩn $h_t$ hiện tại và các trạng thái ẩn $\bar{h}_s$ ở câu nguồn. Trong thực tế, khi dịch, một từ ở câu nguồn chỉ tương ứng với một vài từ ở câu đích. Do vậy, mô hình cần phải theo dõi xem là những từ nào ở câu nguồn đã được dịch trước đó thì hạn chế đặt "sự chú ý" lên lại những từ đó. Việc không có cơ chế kiểm soát những từ nào đã được dịch sẽ khiến cho mô hình sẽ rơi vào 2 trường hợp "được dịch quá nhiều" (over-translated) hoặc "được dịch quá ít" (under-translated). Tức là có một số từ ở câu nguồn sẽ được đặt "sự chú ý" lên quá nhiều lần dẫn tới bỏ qua những từ quan trọng khác hoặc là một số từ quan trọng được đặt "sự chú ý" lên quá ít dẫn tới việc bỏ qua thông tin của từ đó trong quá trình dịch. Dù là trường hợp nào thì cũng gây giảm chất lượng dịch của mô hình.
+
+Trong Dịch máy Thống kê, Koehn et al. 2003 \cite{smtKoehn2003} đã đề xuất một mô hình dịch dựa trên cụm từ (phrase-based) mà có cơ chế để giải quyết vấn đề trên. Cơ chế này rất đơn giản và trực quan. Trong quá trình dịch, bộ giải mã duy trì một véc-tơ bao phủ (coverage vector) để chỉ ra rằng từ ở câu nguồn nào đã được dịch hoặc chưa được dịch. Quá trình dịch được hoàn thành khi toàn bộ từ ở câu nguồn được "bao phủ" hay dẵ được dịch. Trong khi đó, các mô hình Dịch máy Nơ-ron hiện nay chỉ kết thúc quá trình dịch khi và chỉ khi gặp kí tự kết thúc câu hoặc vượt quá số lượng từ cho trước. Việc này dễ dẫn đến trường hợp "được dịch quá nhiều" khi kí hiệu kết thúc câu xuất hiện trễ hay ngược lại dẫn đến trường hợp "được dịch quá ít" khi kí hiệu kết thúc câu xuất hiện sớm. Ngoài ra còn bị ảnh hưởng bởi số lượng từ quy định khi dịch.
+
+Công trình \cite{attentionThangLuong2015} đề xuất một cơ chế góp phần giải quyết vấn đề ở trên:  (tạm dịch là "cho đầu vào ăn" // TODO: dịch khác). Ý tưởng và cách thực hiện của Input feeding rất đơn giản. Nhận thấy véc-tơ attention $\tilde{h}_{t-1}$ lưu giữ thông tin gióng hàng của thời điểm $t-1$ trước đó, mô hình thực hiện truyền véc-tơ $\tilde{h}_{t-1}$ vào đầu vào $x_t$ của thời điểm $t$ hiện tại. Bằng cách như vậy, mô hình có thể nắm được thông tin gióng hàng trước đó từ $\tilde{h}_{t-1}$. Cụ thể, véc-tơ $\tilde{h}_{t-1}$ được nối với véc-tơ đầu vào của thời điểm $t$ là $x_t$:
 \begin{equation}
-	h = \max(0, \hat{W}^{(e)}x + b^{(e)})
+x^{'}_t = [x_t, \tilde{h}_t]
 \end{equation}
-\begin{equation}
-	\hat{x} = (\hat{W}^{(e)})^Th + b^{(d)}
-\end{equation}
-Trong đó, ma trận $\hat{W}^{(e)}$ là ma trận $W^{(e)}$ với các dòng đã được chuẩn hóa (bằng cách lấy mỗi phần tử trên một dòng của $W^{(e)}$ chia cho căn bậc hai của tổng bình phương của tất cả các phần tử trên dòng đó). Ở đây, các tham số được học vẫn là $W^{(e)}$, $b^{(e)}$, và $b^{(d)}$. Bằng cách này, ta vẫn có thể sử dụng thuật toán SGD như bình thường. Khi đưa thêm bước chuẩn hóa vào công thức lan truyền tiến như vậy, ta cũng cần phải tính lại các đạo hàm riêng của hàm chi phí theo các tham số (sẽ phức tạp hơn so với công thức lan truyền tiến ban đầu). Chúng tôi sử dụng ngôn ngữ lập trình là Theano \cite{bergstra+al:2010-scipy}; nhờ tính năng tính đạo hàm một cách tự động của Theano, ở đây ta sẽ không cần phải tính toán cụ thể công thức của các đạo hàm riêng này.
+
+\begin{figure}
+	\centering
+	\includegraphics[width=0.8\textwidth]{Input-feeding_2.png}
+	\caption[Minh họa cơ chế Attention Cục bộ.]{Minh họa phương pháp Input feeding. Tại thời điểm $t$, bộ giải mã nhận đầu vào gồm véc-tơ attention ở thời điểm trước đó $t-1$ và từ hiện tại $x_t$.}
+	\label{fig_Input_feeding}
+\end{figure}
+Tuy nhiên, phương pháp này chưa thực sự giải quyết triệt để vấn đề "được dịch quá nhiều" hay "được dịch quá ít". Vì mô hình chỉ nhận được thông tin gióng hàng từ các thời điểm trước đó nhưng lại không được hướng dẫn hay có ràng buộc cụ thể nào mà để giải quyết vấn đề này. Việc giải quyết vấn đề trên hoàn toàn phụ thuộc vào quyết định của mô hình. Mặc dù chưa thực sự giải quyết triệt để, nhưng lại cho mô hình tăng thêm tính mềm dẻo trong việc sử dụng thông tin gióng hảng trước đó. Trong thực tế, phương pháp này đã cải thiện chất lượng dịch lên đáng kể và đơn giản về mặt cài đặt.
+
+Ngoài ra, phương pháp này giúp cho mô hình phức tạp hơn nhờ vào việc đưa véc-tơ attention $\tilde{h}_{t}$ vào đầu vào của thời điểm tiếp theo, do đó làm tăng khả năng học của mô hình.
+
+\section{Kĩ thuật thay thế từ hiếm}
+Trong quá trình dịch thuật, có rất nhiều hạn chế gây ảnh hưởng tới chất lượng của bản dịch. Trong phần này, chúng tôi đề cập tới một vấn đề quan trọng mà dù là con người hay máy tính đều gặp phải và rất khó giải quyết. Đó là vấn đề về những "từ hiếm" (unknown words). 
+
+Mỗi ngôn ngữ có muôn hình vạn trạng các từ ngữ khác nhau. Số lượng từ ngữ trong một ngôn ngữ là không có định. Trong quá trình hình thành và phát triển ngôn ngữ, theo thời gian số lượng từ ngữ sẽ tăng lên hoặc mất đi (bị lãng quên hay không dùng nữa) tùy thuộc vào hoàn cảnh, môi trường sử dụng của ngôn ngữ đó. Nhưng thường đối với những ngôn ngữ phổ biển hiện nay thì số lượng từ ngữ tăng lên lớn hơn nhiều so với số lượng từ ngữ mất đi. Khi xã hội phát triển, nhu cầu giao tiếp giữa các dân tộc, quốc gia, nền văn hóa khác nhau cũng tăng theo. Mỗi nơi lại có cách sử dụng ngôn ngữ khác nhau, do đó bộ từ vựng của mỗi ngôn ngữ cũng phải thay đổi sao cho phù hợp với nhu cầu giao tiếp. Khoa học kĩ thuật phát triển kèm theo đó là những khám phá về thế giới tự nhiên. Những sự vật, hiện tượng mới được phát hiện ngày càng nhiều. Và không phải sự vật, hiện tượng nào cũng có thể được mô tả, thể hiện bằng những vốn từ vựng vốn có của một số ngôn ngữ. Ngoài ra còn có nhiều lí do làm cho bộ từ vựng của các ngôn ngữ thay đổi theo thời gian.
+
+Với tốc độ phát triển của ngôn ngữ là như vậy nhưng khả năng của con người là hữu hạn. Một người dù có thông thạo một ngôn ngữ tới đâu thì cũng không thể nào biết được hết tất cả từ vựng của ngôn ngữ đó. Theo thống kê, số lượng từ ngữ cần để giao tiếp hàng ngày trong tiếng Anh chỉ khoảng từ 2000-3000 từ, đối với lĩnh vực chuyên ngành thì khoảng 5000-6000 từ. Nhưng theo kích thước của một số bộ từ điển thịnh hành trong tiếng Anh thì số lượng từ vựng của những bộ từ điển đó khoảng 60000 từ. Tức là đa số mọi người chưa biết hết được 10\% từ vựng của tiếng Anh. Do vậy khi thực hiện việc dịch thuật giữa các ngôn ngữ với nhau, mọi người chỉ có thể dịch tốt khi văn bản, hội thoại cần dịch thuộc về chủ đề mà họ quen thuộc. Mọi người sẽ gặp khó khăn khi gặp những từ nằm ngoài bộ từ vựng của bản thân (out-of-vocabulary words - OOV words) vì không biết phải dịch như thế nào.
+
+Khi huấn luyện một mô hình Dịch máy thì cần phải có một bộ từ vựng cố định cho mô hình đó trong suốt quá trình huấn luyện và dự đoán. Kích thước của bộ từ vựng này bị hạn chế với số lượng nhất định. Sự hạn chế về kích thước này xuất phát từ nhiều lí do như giới hạn về dữ liệu huấn luyện, khả năng học của mô hình, tài nguyên tính toán (phần cứng), v.v... Do vậy việc quyết định xem những từ nào sẽ được đưa vào bộ từ vựng của mô hình cũng rất quan trọng. Thông thường có 2 chiến thuật để xây dựng bộ từ vựng này. Cách đầu tiên phù hợp cho việc phát triển các ứng dụng là lấy các từ vựng có trong dữ liệu huấn luyện làm bộ từ vựng và lọc ra những từ nào có tần số xuất hiện trong dữ liệu huấn luyện thấp hơn một ngưỡng nhất định (ví dụ: lọc ra những từ vựng nào có tần số xuất hiện ít hơn 10). Cách thứ 2 thường phù hợp cho việc nghiên cứu, đó là lựa chọn số lượng từ vựng nhất định mà có tần số xuất hiện cao nhất (ví dụ: lấy 50000 từ có tần số xuất hiện cao nhất). Do đó có những từ xuất hiện trong dữ liệu huấn luyện nhưng vì có tần số xuất hiện thấp nên bị coi là từ nằm ngoài bộ từ vựng (OOV). Đó là lí do chúng tôi gọi đây là vấn đề "từ hiếm".
+
+Có nhiều cách để giải quyết vấn đề này, cách mà mọi người hay sử dụng nhất là thêm từ mới đó vào bộ từ vựng. Cách thứ 2 là giữ nguyên từ đó và đưa nó vào vị trí thích hợp trong câu ở ngôn ngữ đích. Trong khóa luận này chúng tôi sẽ sử dụng cách thứ 2 để giải quyết vấn đề các từ nằm ngoái bộ từ vựng.
+
+Kĩ thuật thay thế từ hiếm mà chúng tôi trình bày sau đây là một phương pháp dựa trên kết quả của cơ chế Attention. Do vậy, hiệu quả của phương pháp này phụ thuộc lớn vào độ chính xác của cơ chế Attention. Kĩ thuật này chúng tôi sử dụng từ bài báo của Jean et al., 2015 \cite{JeanUnkRepl} về sử dụng cơ chế Attention trong mô hình Dịch máy nơ-ron. Nếu mô hình không sử dụng cơ chế Attention thì cũng không sử dụng được phương pháp thay thế từ hiếm này. Kĩ thuật này chỉ được sử dụng trong quá trình dự đoán, trong quá trình huấn luyện thì không sử dụng. Cách hoạt động của phương pháp này rất đơn giản. Sau khi mô hình đã dự đoán (dịch) xong một câu, mô hình sẽ thực hiện xử lý những từ nào mà được dự đoán là từ hiếm (unknown words) trong câu đã được dự đoán (những từ hiếm được ký hiệu là \textit{<unk>}). Đối với mỗi từ hiếm, mô hình sẽ thực hiện dịch lại từ đó bằng cách chọn một từ phù hợp trong câu nguồn rồi thực hiện sao chép từ được chọn vào từ hiếm hiện tại. Cách mà mô hình lựa chọn từ phù hợp là dựa vào véc-tơ trọng số gióng hàng $a_t$. Mô hình sẽ lựa chọn từ nào có trọng số cao nhất.
+
+\begin{figure}
+	\centering
+	\includegraphics[width=0.5\textwidth]{unk-rpl-example.png}
+	\caption[Minh họa kĩ thuật thay thế từ hiếm.]{Minh họa phương pháp thay thế từ hiếm. Khi gặp một từ hiếm (được kí hiệu là <unk>) trong kết quả dự đoán, mô hình sẽ tìm một từ ở câu nguồn có trọng số gióng hàng từ kết quả cơ chế Attention cao nhất và thực hiện sao chép từ đó thay cho từ hiếm hiện tại. (Mũi tên càng đậm thì trọng số gióng hàng càng cao). Kết quả dự đoán được cập nhật với từ hiếm đã được thay thế. }
+	\label{fig_unk_rpl_example}
+\end{figure}
+Trong thực tế, kĩ thuật này giúp cho mô hình có thể dịch được chính xác những câu có chữ số, số, tên riêng, tên địa danh v.v... Bởi vì những từ này rất ít xuất hiện trong tập dữ liệu so với những từ khác. Hơn nữa, những loại từ như thế này rất đa dạng (số lượng số có thể có rất lớn hay tên riêng, tên địa danh có rất nhiều). Điều đặc biệt rằng những từ này thường không cần phải dịch, chúng ta chỉ cần sao chép chính xác chúng lại qua câu ở ngôn ngữ đích với một vị trí phù hợp do những từ này dù ở ngôn ngữ nào thì cũng đều có một cách biểu diễn 
+
+Với kĩ thuật đơn giản là tận dụng ý nghĩa của kết quả của cơ chế Attention, kĩ thuật này đã cải thiện kết quả dịch lên một cách rõ rệt (sẽ được trình bày ở trong phần thực nghiệm).
+
+
